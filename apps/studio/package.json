@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "sanity dev",
     "build": "sanity build",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "create:technical": "sanity exec scripts/create-technical-documents.ts --with-user-token"
   },
   "dependencies": {
     "@sanity/locale-es-es": "^1.2.35",
