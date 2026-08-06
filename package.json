@@ -11,6 +11,7 @@
     "dev:studio": "npm run dev --workspace=apps/studio",
     "build:web": "npm run build --workspace=apps/web",
     "build:studio": "npm run build --workspace=apps/studio",
+    "sanity:check": "node apps/web/scripts/check-sanity.mjs",
     "typecheck": "npm run typecheck --workspace=apps/web && npm run typecheck --workspace=apps/studio",
     "build": "npm run build:web && npm run build:studio",
     "format": "prettier --write .",
