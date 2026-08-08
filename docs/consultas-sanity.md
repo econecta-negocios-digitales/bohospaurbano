@@ -4,7 +4,7 @@ Las consultas están en `apps/web/src/lib/sanity/queries.ts`. Usan proyecciones 
 
 ## Reglas comunes
 
-- IDs de singletons canónicos: `siteSettings`, `homePage`, `aboutPage`, `servicesPage`, `giftCardsPage`, `corporatePage`, `contactPage`, `faqPage`, `navigation`, `footer`, `giftCardPolicy`, `legalPage.privacy` y `legalPage.terms`.
+- IDs de singletons canónicos: `siteSettings`, `homePage`, `aboutPage`, `servicesPage`, `giftCardsPage`, `corporatePage`, `faqPage`, `navigation`, `footer`, `giftCardPolicy`, `legalPage.privacy` y `legalPage.terms`.
 - `perspective: "published"` se configura en el cliente.
 - Se conserva un filtro defensivo contra `drafts.**`.
 - Documentos archivados se excluyen con `archived != true`.

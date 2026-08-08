@@ -1,0 +1,287 @@
+{
+  "references": [
+    {
+      "from": "servicesPage",
+      "to": "serviceCategory.experiencias-boho",
+      "_ref": "serviceCategory.experiencias-boho",
+      "status": "canonical"
+    },
+    {
+      "from": "servicesPage",
+      "to": "serviceCategory.masajes-bienestar",
+      "_ref": "serviceCategory.masajes-bienestar",
+      "status": "canonical"
+    },
+    {
+      "from": "servicesPage",
+      "to": "serviceCategory.cuidado-facial-corporal",
+      "_ref": "serviceCategory.cuidado-facial-corporal",
+      "status": "canonical"
+    },
+    {
+      "from": "servicesPage",
+      "to": "serviceCategory.belleza-consciente",
+      "_ref": "serviceCategory.belleza-consciente",
+      "status": "canonical"
+    },
+    {
+      "from": "servicesPage",
+      "to": "service.boho-spa-day",
+      "_ref": "service.boho-spa-day",
+      "status": "canonical"
+    },
+    {
+      "from": "servicesPage",
+      "to": "service.experiencia-summer",
+      "_ref": "service.experiencia-summer",
+      "status": "canonical"
+    },
+    {
+      "from": "servicesPage",
+      "to": "service.masaje-renovacion-integral",
+      "_ref": "service.masaje-renovacion-integral",
+      "status": "canonical"
+    },
+    {
+      "from": "servicesPage",
+      "to": "service.ritual-natural-glow",
+      "_ref": "service.ritual-natural-glow",
+      "status": "canonical"
+    },
+    {
+      "from": "servicesPage",
+      "to": "service.manicura-japonesa",
+      "_ref": "service.manicura-japonesa",
+      "status": "canonical"
+    },
+    {
+      "from": "giftCardsPage",
+      "to": "giftCard.servicio",
+      "_ref": "giftCard.servicio",
+      "status": "canonical"
+    },
+    {
+      "from": "giftCardsPage",
+      "to": "giftCard.experiencia-boho",
+      "_ref": "giftCard.experiencia-boho",
+      "status": "canonical"
+    },
+    {
+      "from": "giftCardsPage",
+      "to": "giftCard.monto-abierto",
+      "_ref": "giftCard.monto-abierto",
+      "status": "canonical"
+    },
+    {
+      "from": "corporatePage",
+      "to": "corporateExperience.experiencia-esencial",
+      "_ref": "corporateExperience.experiencia-esencial",
+      "status": "canonical"
+    },
+    {
+      "from": "corporatePage",
+      "to": "corporateExperience.experiencia-plus",
+      "_ref": "corporateExperience.experiencia-plus",
+      "status": "canonical"
+    },
+    {
+      "from": "corporatePage",
+      "to": "corporateExperience.boho-con-brunch",
+      "_ref": "corporateExperience.boho-con-brunch",
+      "status": "canonical"
+    },
+    {
+      "from": "faqPage",
+      "to": "faq.reservas-1",
+      "_ref": "faq.reservas-1",
+      "status": "canonical"
+    },
+    {
+      "from": "faqPage",
+      "to": "faq.reservas-2",
+      "_ref": "faq.reservas-2",
+      "status": "canonical"
+    },
+    {
+      "from": "faqPage",
+      "to": "faq.reservas-3",
+      "_ref": "faq.reservas-3",
+      "status": "canonical"
+    },
+    {
+      "from": "faqPage",
+      "to": "faq.reservas-4",
+      "_ref": "faq.reservas-4",
+      "status": "canonical"
+    },
+    {
+      "from": "faqPage",
+      "to": "faq.servicios-y-tratamientos-5",
+      "_ref": "faq.servicios-y-tratamientos-5",
+      "status": "canonical"
+    },
+    {
+      "from": "faqPage",
+      "to": "faq.servicios-y-tratamientos-6",
+      "_ref": "faq.servicios-y-tratamientos-6",
+      "status": "canonical"
+    },
+    {
+      "from": "faqPage",
+      "to": "faq.servicios-y-tratamientos-7",
+      "_ref": "faq.servicios-y-tratamientos-7",
+      "status": "canonical"
+    },
+    {
+      "from": "faqPage",
+      "to": "faq.servicios-y-tratamientos-8",
+      "_ref": "faq.servicios-y-tratamientos-8",
+      "status": "canonical"
+    },
+    {
+      "from": "faqPage",
+      "to": "faq.experiencias-boho-9",
+      "_ref": "faq.experiencias-boho-9",
+      "status": "canonical"
+    },
+    {
+      "from": "faqPage",
+      "to": "faq.experiencias-boho-10",
+      "_ref": "faq.experiencias-boho-10",
+      "status": "canonical"
+    },
+    {
+      "from": "faqPage",
+      "to": "faq.experiencias-boho-11",
+      "_ref": "faq.experiencias-boho-11",
+      "status": "canonical"
+    },
+    {
+      "from": "faqPage",
+      "to": "faq.gift-cards-12",
+      "_ref": "faq.gift-cards-12",
+      "status": "canonical"
+    },
+    {
+      "from": "faqPage",
+      "to": "faq.gift-cards-13",
+      "_ref": "faq.gift-cards-13",
+      "status": "canonical"
+    },
+    {
+      "from": "faqPage",
+      "to": "faq.gift-cards-14",
+      "_ref": "faq.gift-cards-14",
+      "status": "canonical"
+    },
+    {
+      "from": "faqPage",
+      "to": "faq.gift-cards-15",
+      "_ref": "faq.gift-cards-15",
+      "status": "canonical"
+    },
+    {
+      "from": "faqPage",
+      "to": "faq.gift-cards-16",
+      "_ref": "faq.gift-cards-16",
+      "status": "canonical"
+    },
+    {
+      "from": "faqPage",
+      "to": "faq.antes-de-venir-17",
+      "_ref": "faq.antes-de-venir-17",
+      "status": "canonical"
+    },
+    {
+      "from": "faqPage",
+      "to": "faq.antes-de-venir-18",
+      "_ref": "faq.antes-de-venir-18",
+      "status": "canonical"
+    },
+    {
+      "from": "faqPage",
+      "to": "faq.antes-de-venir-19",
+      "_ref": "faq.antes-de-venir-19",
+      "status": "canonical"
+    },
+    {
+      "from": "service.boho-spa-day",
+      "to": "serviceCategory.experiencias-boho",
+      "_ref": "serviceCategory.experiencias-boho",
+      "status": "canonical"
+    },
+    {
+      "from": "service.experiencia-summer",
+      "to": "serviceCategory.experiencias-boho",
+      "_ref": "serviceCategory.experiencias-boho",
+      "status": "canonical"
+    },
+    {
+      "from": "service.experiencia-armonia",
+      "to": "serviceCategory.experiencias-boho",
+      "_ref": "serviceCategory.experiencias-boho",
+      "status": "canonical"
+    },
+    {
+      "from": "service.experiencia-full-body",
+      "to": "serviceCategory.experiencias-boho",
+      "_ref": "serviceCategory.experiencias-boho",
+      "status": "canonical"
+    },
+    {
+      "from": "service.experiencia-felicidad",
+      "to": "serviceCategory.experiencias-boho",
+      "_ref": "serviceCategory.experiencias-boho",
+      "status": "canonical"
+    },
+    {
+      "from": "service.masaje-renovacion-integral",
+      "to": "serviceCategory.masajes-bienestar",
+      "_ref": "serviceCategory.masajes-bienestar",
+      "status": "canonical"
+    },
+    {
+      "from": "service.masaje-corporal-relajante",
+      "to": "serviceCategory.masajes-bienestar",
+      "_ref": "serviceCategory.masajes-bienestar",
+      "status": "canonical"
+    },
+    {
+      "from": "service.reflexologia-podal",
+      "to": "serviceCategory.masajes-bienestar",
+      "_ref": "serviceCategory.masajes-bienestar",
+      "status": "canonical"
+    },
+    {
+      "from": "service.drenaje-linfatico-manual",
+      "to": "serviceCategory.masajes-bienestar",
+      "_ref": "serviceCategory.masajes-bienestar",
+      "status": "canonical"
+    },
+    {
+      "from": "service.ritual-natural-glow",
+      "to": "serviceCategory.cuidado-facial-corporal",
+      "_ref": "serviceCategory.cuidado-facial-corporal",
+      "status": "canonical"
+    },
+    {
+      "from": "service.limpieza-facial-boho",
+      "to": "serviceCategory.cuidado-facial-corporal",
+      "_ref": "serviceCategory.cuidado-facial-corporal",
+      "status": "canonical"
+    },
+    {
+      "from": "service.ritual-pro-age",
+      "to": "serviceCategory.cuidado-facial-corporal",
+      "_ref": "serviceCategory.cuidado-facial-corporal",
+      "status": "canonical"
+    },
+    {
+      "from": "service.manicura-japonesa",
+      "to": "serviceCategory.belleza-consciente",
+      "_ref": "serviceCategory.belleza-consciente",
+      "status": "canonical"
+    }
+  ],
+  "invalidDraftReferences": []
+}

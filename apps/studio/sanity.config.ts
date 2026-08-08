@@ -12,7 +12,6 @@ const protectedTypes = new Set([
   "servicesPage",
   "giftCardsPage",
   "corporatePage",
-  "contactPage",
   "faqPage",
   "navigation",
   "footer",

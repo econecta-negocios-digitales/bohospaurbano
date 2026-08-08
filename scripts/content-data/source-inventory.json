@@ -1,0 +1,2113 @@
+{
+  "generatedBy": "scripts/content-tools.mjs",
+  "sourceRoot": "../MaterialSitio",
+  "rules": [
+    "MaterialSitio is read-only",
+    "approved content is the only publication candidate",
+    "images are not imported in Phase A"
+  ],
+  "files": [
+    {
+      "path": "../MaterialSitio/contenido/00-lineamientos-generales.md",
+      "type": "markdown",
+      "sizeBytes": 1463,
+      "sourceHash": "db5bc562e908bb02a1a531de5eef6e5a7588864fa41d37c4538134483352d922",
+      "sectionsFound": [
+        "Lineamientos generales de contenido",
+        "Posicionamiento",
+        "Diferenciales",
+        "Voz",
+        "Evitar",
+        "Audiencia",
+        "Datos confirmados"
+      ],
+      "status": "approved",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": []
+    },
+    {
+      "path": "../MaterialSitio/contenido/01-home.md",
+      "type": "markdown",
+      "sizeBytes": 9953,
+      "sourceHash": "cf640a6f927dfe126f1c23359207fcb96db0768108c34c495f2a775df3ab4ca6",
+      "sectionsFound": [
+        "Home — Boho Spa Urbano",
+        "1. Hero",
+        "2. Propuesta de valor",
+        "Atención personalizada",
+        "Técnicas manuales y no invasivas",
+        "Cosmética consciente",
+        "Experiencias individuales y compartidas",
+        "3. Categorías de servicios",
+        "Experiencias Boho",
+        "Masajes & Bienestar",
+        "Cuidado Facial & Corporal",
+        "Belleza Consciente",
+        "4. Experiencias destacadas",
+        "Boho Spa Day",
+        "Experiencia Armonía",
+        "Experiencia Full Body",
+        "Limpieza Facial Boho",
+        "5. Gift Cards",
+        "6. Por qué elegir Boho",
+        "7. Opiniones de Google",
+        "8. Ubicación y contacto",
+        "9. Cierre de conversión",
+        "Header",
+        "Elementos persistentes",
+        "Botón flotante de WhatsApp",
+        "CTA de reserva",
+        "SEO inicial",
+        "Datos pendientes antes de publicar",
+        "Criterios de publicación MVP"
+      ],
+      "status": "provisional",
+      "possibleDocuments": [
+        "homePage"
+      ],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": []
+    },
+    {
+      "path": "../MaterialSitio/contenido/02-nosotros.md",
+      "type": "markdown",
+      "sizeBytes": 3376,
+      "sourceHash": "63b20e3258b1b4eea6b65ae0d27d4f089619cc108aee830eeb04c793fb0f9f45",
+      "sectionsFound": [
+        "Nosotros — Boho Spa Urbano",
+        "Encabezado",
+        "Nuestra historia",
+        "Conocimiento, experiencia y una mirada compartida",
+        "Nuestra forma de trabajar",
+        "Escuchamos antes de empezar",
+        "Personalizamos cada propuesta",
+        "Priorizamos técnicas manuales",
+        "Elegimos productos con criterio",
+        "Cuidamos toda la experiencia",
+        "Cierre",
+        "SEO"
+      ],
+      "status": "approved",
+      "possibleDocuments": [
+        "aboutPage",
+        "teamMember"
+      ],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": []
+    },
+    {
+      "path": "../MaterialSitio/contenido/03-servicios.md",
+      "type": "markdown",
+      "sizeBytes": 5845,
+      "sourceHash": "3e1a2173c04e0e3a49cffec8e5c1b9f3d0dc18e339d644cfa3c20b98a96fbabe",
+      "sectionsFound": [
+        "Servicios — Boho Spa Urbano",
+        "Encabezado",
+        "1. Una experiencia pensada para vos",
+        "2. Categorías",
+        "Experiencias Boho",
+        "Masajes & Bienestar",
+        "Cuidado Facial & Corporal",
+        "Belleza Consciente",
+        "3. Propuestas destacadas",
+        "Boho Spa Day",
+        "Experiencia Summer",
+        "Masaje Renovación Integral",
+        "Ritual Natural Glow",
+        "Manicura Japonesa · Cuidado Natural",
+        "4. Servicios de temporada",
+        "Jornadas de depilación definitiva",
+        "Tratamientos estacionales",
+        "5. Gift Cards",
+        "6. Contacto y reserva",
+        "SEO"
+      ],
+      "status": "approved",
+      "possibleDocuments": [
+        "servicesPage",
+        "serviceCategory"
+      ],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": []
+    },
+    {
+      "path": "../MaterialSitio/contenido/04-experiencias-boho.md",
+      "type": "markdown",
+      "sizeBytes": 8224,
+      "sourceHash": "859db6341b8ff3fbd85b3dcc370404193070b4f99fa9db9ff9f011b34e0fc1b3",
+      "sectionsFound": [
+        "Experiencias Boho — Boho Spa Urbano",
+        "Encabezado",
+        "1. Más que una suma de servicios",
+        "2. Individuales o compartidas",
+        "3. Experiencias",
+        "Boho Spa Day",
+        "Experiencia Summer",
+        "Experiencia Armonía",
+        "Experiencia Full Body",
+        "Experiencia Felicidad",
+        "4. Una experiencia para compartir",
+        "5. Gift Cards",
+        "6. Contacto y reserva",
+        "SEO"
+      ],
+      "status": "approved",
+      "possibleDocuments": [
+        "service"
+      ],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": []
+    },
+    {
+      "path": "../MaterialSitio/contenido/05-masajes-bienestar.md",
+      "type": "markdown",
+      "sizeBytes": 5820,
+      "sourceHash": "00fd9853bbe7b463ba79a3af538bd29e3c822ef7b1ca3ad1019dc65620546dcf",
+      "sectionsFound": [
+        "Masajes & Bienestar — Boho Spa Urbano",
+        "Encabezado",
+        "1. Una pausa que empieza por el cuerpo",
+        "2. Masajes destacados",
+        "Masaje Renovación Integral",
+        "Masaje Corporal Relajante",
+        "Reflexología Podal",
+        "Drenaje Linfático Manual",
+        "3. ¿Qué masaje elegir?",
+        "4. Gift Cards",
+        "5. Contacto y reserva",
+        "SEO"
+      ],
+      "status": "approved",
+      "possibleDocuments": [
+        "serviceCategory",
+        "service"
+      ],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": []
+    },
+    {
+      "path": "../MaterialSitio/contenido/06-cuidado-facial-corporal.md",
+      "type": "markdown",
+      "sizeBytes": 1596,
+      "sourceHash": "adf7b4db0c2a27cbb244e91f5e729167df6681d76dace1428d371fa01e953701",
+      "sectionsFound": [
+        "Cuidado Facial & Corporal",
+        "Encabezado",
+        "Contenido",
+        "Servicios recuperados como fuente",
+        "Nota editorial",
+        "CTA",
+        "SEO inicial"
+      ],
+      "status": "provisional",
+      "possibleDocuments": [
+        "serviceCategory",
+        "service"
+      ],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": []
+    },
+    {
+      "path": "../MaterialSitio/contenido/07-belleza-consciente.md",
+      "type": "markdown",
+      "sizeBytes": 4566,
+      "sourceHash": "c61a7552430701ee7af2dc8b2d90875a72dbf821796c3c3a8b0060f73d1f253f",
+      "sectionsFound": [
+        "Belleza Consciente — Boho Spa Urbano",
+        "Encabezado",
+        "1. Nuestra manera de trabajar",
+        "2. Manos y pies como parte del cuidado personal",
+        "3. Manicura Japonesa · Cuidado Natural",
+        "4. Una filosofía que atraviesa Boho",
+        "5. Gift Cards",
+        "6. Contacto y reserva",
+        "SEO"
+      ],
+      "status": "approved",
+      "possibleDocuments": [
+        "serviceCategory",
+        "service"
+      ],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": []
+    },
+    {
+      "path": "../MaterialSitio/contenido/08-gift-cards.md",
+      "type": "markdown",
+      "sizeBytes": 6000,
+      "sourceHash": "85a0f283cc85abe660d7431da08cac2cf2998a0a2bff6d05f8aae21ae0f93e7b",
+      "sectionsFound": [
+        "Gift Cards — Boho Spa Urbano",
+        "Encabezado",
+        "1. Un regalo pensado para cada persona",
+        "2. Tres formas de regalar Boho",
+        "Regalá un servicio",
+        "Regalá una Experiencia Boho",
+        "Elegí un monto",
+        "3. Para regalar solos o compartir",
+        "4. Hacelo personal",
+        "5. Cómo funciona",
+        "6. Condiciones de uso",
+        "7. ¿Es un regalo para una empresa?",
+        "8. Contacto y reserva",
+        "SEO",
+        "Criterios de implementación"
+      ],
+      "status": "provisional",
+      "possibleDocuments": [
+        "giftCardsPage",
+        "giftCard",
+        "giftCardPolicy"
+      ],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": []
+    },
+    {
+      "path": "../MaterialSitio/contenido/09-regalos-corporativos.md",
+      "type": "markdown",
+      "sizeBytes": 5398,
+      "sourceHash": "685e2c70f164e601e33c4e734fc3cac7a556203f9902a7f34094148d49cbf5fa",
+      "sectionsFound": [
+        "Regalos Corporativos — Boho Spa Urbano",
+        "1. Encabezado",
+        "2. Elegí la modalidad que mejor se adapte",
+        "Regalos para equipos",
+        "Convenio Corporativo",
+        "3. Experiencias recomendadas",
+        "Experiencia Esencial",
+        "Experiencia Plus",
+        "Boho con Brunch",
+        "4. Propuestas a medida para empresas",
+        "5. Una gestión simple para la empresa",
+        "6. Contacto y reserva",
+        "SEO",
+        "Criterios de implementación"
+      ],
+      "status": "provisional",
+      "possibleDocuments": [
+        "corporatePage",
+        "corporateExperience"
+      ],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": []
+    },
+    {
+      "path": "../MaterialSitio/contenido/10-contacto.md",
+      "type": "markdown",
+      "sizeBytes": 1523,
+      "sourceHash": "55c6636b5f6f45b055eb32c1952c5c63bc21cf70b38feb4f1a379404667d8dbc",
+      "sectionsFound": [
+        "Contacto",
+        "Encabezado",
+        "Datos confirmados",
+        "Mensajes del formulario",
+        "CTA",
+        "SEO inicial",
+        "Pendientes operativos"
+      ],
+      "status": "approved",
+      "possibleDocuments": [
+        "siteSettings"
+      ],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": []
+    },
+    {
+      "path": "../MaterialSitio/contenido/11-preguntas-frecuentes.md",
+      "type": "markdown",
+      "sizeBytes": 6312,
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "sectionsFound": [
+        "Preguntas Frecuentes — Boho Spa Urbano",
+        "Encabezado",
+        "Reservas",
+        "¿Es necesario reservar con anticipación?",
+        "¿Cómo puedo reservar?",
+        "¿Puedo reservar para más de una persona?",
+        "¿Qué pasa si necesito cancelar o cambiar mi turno?",
+        "Servicios y tratamientos",
+        "¿Cómo sé qué tratamiento elegir?",
+        "¿Los tratamientos son personalizados?",
+        "¿Qué tipo de productos utilizan?",
+        "¿Utilizan torno en los servicios de manicuría?",
+        "Experiencias Boho",
+        "¿Qué diferencia hay entre una Experiencia Boho y un servicio individual?",
+        "¿Todas las experiencias incluyen brunch?",
+        "¿Puedo compartir una experiencia con otra persona?",
+        "Gift Cards",
+        "¿Qué puedo regalar con una Gift Card?",
+        "¿La Gift Card puede ser digital?",
+        "¿Puedo agregar una dedicatoria?",
+        "¿Cuánto tiempo tiene de vigencia?",
+        "¿Qué pasa si cambia el precio del servicio?",
+        "Antes de venir",
+        "¿Dónde está Boho?",
+        "¿Tengo que avisar si tengo alguna necesidad particular?",
+        "¿Tengo que avisar si necesito retirar un esmaltado anterior?",
+        "Contacto y reserva",
+        "SEO",
+        "Criterios de implementación"
+      ],
+      "status": "approved",
+      "possibleDocuments": [
+        "faqPage",
+        "faq"
+      ],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": []
+    },
+    {
+      "path": "../MaterialSitio/contenido/12-legales.md",
+      "type": "markdown",
+      "sizeBytes": 10443,
+      "sourceHash": "08efc0b565fdbcdde3e83c2173741962851ef1c501e5a4bb0bad86d26c51e824",
+      "sectionsFound": [
+        "Legales — Boho Spa Urbano",
+        "Política de Privacidad — Boho Spa Urbano",
+        "1. Introducción",
+        "2. Información que podemos recopilar",
+        "3. Para qué utilizamos la información",
+        "4. Canales y servicios externos",
+        "5. Conservación y protección de los datos",
+        "6. Compartir información",
+        "7. Derechos sobre tus datos",
+        "8. Cambios en esta política",
+        "9. Contacto",
+        "SEO",
+        "Criterios de implementación",
+        "Términos y Condiciones — Boho Spa Urbano",
+        "1. Alcance",
+        "2. Información sobre servicios",
+        "3. Reservas y turnos",
+        "Cancelaciones y reprogramaciones",
+        "4. Condiciones particulares de los servicios",
+        "5. Precios y pagos",
+        "6. Gift Cards",
+        "7. Promociones y beneficios",
+        "8. Sitios y servicios de terceros",
+        "9. Contenido del sitio",
+        "10. Modificaciones",
+        "11. Contacto",
+        "SEO",
+        "Criterios de implementación"
+      ],
+      "status": "approved",
+      "possibleDocuments": [
+        "legalPage.privacy",
+        "legalPage.terms"
+      ],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": []
+    },
+    {
+      "path": "../MaterialSitio/contenido/99-auditoria-recuperacion.md",
+      "type": "markdown",
+      "sizeBytes": 13407,
+      "sourceHash": "db30b93ef81b7524afbca4742788acc9b4726dc4fe10bfaafde1397f9cc1484a",
+      "sectionsFound": [
+        "Estado editorial y pendientes para implementación",
+        "1. Fuente editorial vigente",
+        "2. Páginas y documentos revisados",
+        "01 — Home",
+        "02 — Nosotros",
+        "03 — Servicios",
+        "04 — Experiencias Boho",
+        "05 — Masajes & Bienestar",
+        "06 — Cuidado Facial & Corporal",
+        "07 — Belleza Consciente",
+        "08 — Gift Cards",
+        "09 — Regalos Corporativos",
+        "10 — Contacto",
+        "11 — Preguntas Frecuentes",
+        "12 — Legales",
+        "Política de Privacidad",
+        "Términos y Condiciones",
+        "3. Bloque global de contacto y reserva",
+        "4. Información todavía pendiente",
+        "Datos operativos",
+        "Catálogo y precios",
+        "Autoridad y prueba social",
+        "Visual",
+        "SEO",
+        "Legal y tracking",
+        "5. Reglas de negocio y contenido que no deben modificarse sin validación",
+        "6. Reglas para CX/Codex",
+        "7. Estado para retomar la carga de contenido"
+      ],
+      "status": "provisional",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": []
+    },
+    {
+      "path": "../MaterialSitio/contenido-index.json",
+      "type": "file",
+      "sizeBytes": 1518,
+      "sourceHash": "6828d2b684791fa7b8062d813cbc884e122728829c296a83397ea14e6767bfb3",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/fuentes/agendapro/.gitkeep",
+      "type": "file",
+      "sizeBytes": 0,
+      "sourceHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/fuentes/documentos-originales/.gitkeep",
+      "type": "file",
+      "sizeBytes": 0,
+      "sourceHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/fuentes/propuesta-corporativa/.gitkeep",
+      "type": "file",
+      "sizeBytes": 0,
+      "sourceHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/DETALLES/IMG_7073.jpg",
+      "type": "image",
+      "sizeBytes": 2675829,
+      "sourceHash": "cabcc3f44a2b5e250154dc9124ac3b29ba78f60586980baab07c0549b6565c0c",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/DETALLES/IMG_7075.jpg",
+      "type": "image",
+      "sizeBytes": 5038326,
+      "sourceHash": "bdefa5a2990b46287b4185b9ac1d8975705cb876b076a94f2135e814fa0bec35",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/DETALLES/IMG_7085.jpg",
+      "type": "image",
+      "sizeBytes": 4654508,
+      "sourceHash": "3c831c575245f6ff11c36a39c51955d38f543bd6301420da844c035c30a4d5b8",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/DETALLES/IMG_7092.jpg",
+      "type": "image",
+      "sizeBytes": 2577056,
+      "sourceHash": "ef10e3ccd7a4b77cf1f0997a66dd9ffe04fe635187d10de918adcee7281b9557",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/DETALLES/IMG_7111.jpg",
+      "type": "image",
+      "sizeBytes": 2109958,
+      "sourceHash": "335d304ea806ab623b0ddde954dbd3c9dc52a87f71b66d1037081f78a822da07",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/DETALLES/IMG_7133.jpg",
+      "type": "image",
+      "sizeBytes": 3676513,
+      "sourceHash": "214369650557581604a02a5941c56be5b9502cdb467c90f2da5058933f19c45e",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/DETALLES/IMG_7135.jpg",
+      "type": "image",
+      "sizeBytes": 3783760,
+      "sourceHash": "cde3fe3e38eea28cb93de2de221ba0ac98f160bce5871772b06533e06fd03846",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/DETALLES/IMG_7139.jpg",
+      "type": "image",
+      "sizeBytes": 3736100,
+      "sourceHash": "02d7d01d43a4e75acc4b2cddf0f0b6f9ded5db10e5738b6b3e1d7589d59bcaaa",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/DETALLES/IMG_7173.jpg",
+      "type": "image",
+      "sizeBytes": 3926232,
+      "sourceHash": "44f0b137a2ca16952e4958b81931e5642a5bada0933d1494e1572e063170f6b0",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/DETALLES/IMG_7565.jpg",
+      "type": "image",
+      "sizeBytes": 2183522,
+      "sourceHash": "2c98c9a9ae181ca254d57ea7969a13c2a7070ee31abcfc9c49b07808bd608768",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/DETALLES/IMG_7568.jpg",
+      "type": "image",
+      "sizeBytes": 1591737,
+      "sourceHash": "9a256473b0b3de1db09fc12b960c4d6cc2a08108ab91d9f4b88bd4e34fa016c5",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/DETALLES/IMG_7597.jpg",
+      "type": "image",
+      "sizeBytes": 2019352,
+      "sourceHash": "d03cbbec1a3caa47512f3de5f9362fc0528bcc66980c486075a4e42568309da5",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/DETALLES/IMG_7604.jpg",
+      "type": "image",
+      "sizeBytes": 2074177,
+      "sourceHash": "3f7b66ccdf836246aecf9e79675a36dfe92b6e07a421b5b0940440b69d777cc6",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/DETALLES/IMG_7614.jpg",
+      "type": "image",
+      "sizeBytes": 2129789,
+      "sourceHash": "5ef94937165c0974ce2a52819d9b9946554eaeab5e4dea773ddea0b31661fcc5",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/DETALLES/IMG_7631.jpg",
+      "type": "image",
+      "sizeBytes": 3445596,
+      "sourceHash": "b2901d240d49b67d8f3944f591522f97d08d5ed535683f04a49f8e4680bc4a8d",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/DETALLES/IMG_8386.jpg",
+      "type": "image",
+      "sizeBytes": 2858585,
+      "sourceHash": "1bdd14d7c177b6eb483da9216f22dfa921a311cc89f9d7e262423ec9043acc5e",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/DETALLES/IMG_9019.jpg",
+      "type": "image",
+      "sizeBytes": 1616173,
+      "sourceHash": "028c606362ba286a1f388f299c8e25aecee6f0e15b7a21d36e48f7a9ad760b53",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/DETALLES/IMG_9805.jpg",
+      "type": "image",
+      "sizeBytes": 2253084,
+      "sourceHash": "ce1250f225bf32b01d263768b7bc9f05bfa2fa75b4045d88f76321ac3db0c76b",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/SERVICIOS/IMG_1918.jpg",
+      "type": "image",
+      "sizeBytes": 1484356,
+      "sourceHash": "18794cd5a6f4b0a7bace0c451d2db48febecbd03e7d279363e5d65da6762b923",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/SERVICIOS/IMG_1919.jpg",
+      "type": "image",
+      "sizeBytes": 1473962,
+      "sourceHash": "f3d6ae0165a60bf5c78f74c8735430e687de16d5a0414c0a391b0f2ea5f99285",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/SERVICIOS/IMG_1922.jpg",
+      "type": "image",
+      "sizeBytes": 1432191,
+      "sourceHash": "1786adb44b70e8be9295a421d12cee518bb390dd3615940e5ef45b4076e5d9ea",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/SERVICIOS/IMG_1937.jpg",
+      "type": "image",
+      "sizeBytes": 1335419,
+      "sourceHash": "8aef88a5fe4fccbadad820931e642a35564616b7e776f9cddb26d879b09cce26",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/SERVICIOS/IMG_2229.jpg",
+      "type": "image",
+      "sizeBytes": 1538785,
+      "sourceHash": "b205a5c3e72bcad4fe933241961dcf336846f8b1fcd8bff74030402d5950670e",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/SERVICIOS/IMG_2253.jpg",
+      "type": "image",
+      "sizeBytes": 1643949,
+      "sourceHash": "795fbd49436cfc2180bd0e5b2004eca7ba98c07a71a10e3848b1a20614a54e65",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/SERVICIOS/IMG_7396.jpg",
+      "type": "image",
+      "sizeBytes": 2256692,
+      "sourceHash": "f5b6881a296c05ae5b63f658ba9691b97c7d04f25555e342a449bea056ae1edd",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/SERVICIOS/IMG_7426.jpg",
+      "type": "image",
+      "sizeBytes": 2469797,
+      "sourceHash": "94114f9d4cf9a06cfbf456c641c0dfe89d2e7a256b9e4cfcca87cb957fa74722",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/SERVICIOS/IMG_7456.jpg",
+      "type": "image",
+      "sizeBytes": 2077113,
+      "sourceHash": "f6a2e274df0298db722bc0245ff5b0a1be62e7db795837b7a97c3be37cfb021c",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/SERVICIOS/IMG_7498.jpg",
+      "type": "image",
+      "sizeBytes": 2033831,
+      "sourceHash": "1ca81ef1cedec616bac8a2f1233ca6a677f7cc0d6f0110003ec47aae532e56de",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/SERVICIOS/IMG_7511.jpg",
+      "type": "image",
+      "sizeBytes": 2266036,
+      "sourceHash": "aa9258f7a0c473f73fa71646b1137d30bbb4efd308de91ef31648b1f7cc62820",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/SERVICIOS/IMG_7534.jpg",
+      "type": "image",
+      "sizeBytes": 2256609,
+      "sourceHash": "8becf6ab94d79e840c5c64613fc88fc492ec6647a7929d5c61e6072e78e84a78",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/converted-review/SERVICIOS/IMG_7546.jpg",
+      "type": "image",
+      "sizeBytes": 2042682,
+      "sourceHash": "409ac41692e07c0a8aa7965c11654e2f29b4bbd88afc676cba327d99b568dcbf",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/DETALLES/1A847327-A50A-43AD-B572-8E7B64621C9A.jpg",
+      "type": "image",
+      "sizeBytes": 267527,
+      "sourceHash": "d0d04c219f867c5b2884ea55c6bc057db412fe08cf99e46cd7d7ba764e54f6b4",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/DETALLES/D73A7E1F-3072-4CD3-AEE7-547A2147D834.jpg",
+      "type": "image",
+      "sizeBytes": 527809,
+      "sourceHash": "afe3b5a0baff72246a6577d0d61812fd5f06944d6393c7a4f14bfa86721cbffc",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/DETALLES/IMG_7073.HEIC",
+      "type": "file",
+      "sizeBytes": 1670542,
+      "sourceHash": "8c0f02d1132a3e83213a782207a69e70a820ab174ec607a3ce00aae4b2032cfa",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/DETALLES/IMG_7075.HEIC",
+      "type": "file",
+      "sizeBytes": 3054242,
+      "sourceHash": "1448ae7925fdd0f7dd0c2f6d05f94639c16b94940cf29a9e4e6675e41433bdd3",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/DETALLES/IMG_7085.HEIC",
+      "type": "file",
+      "sizeBytes": 2934816,
+      "sourceHash": "0dc68420e311b065ad20b899f16940987aff2823eb8819b00a683028c9711e61",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/DETALLES/IMG_7092.HEIC",
+      "type": "file",
+      "sizeBytes": 1377725,
+      "sourceHash": "83a03c6d5f7e13bce3ff78d2ed8f08d535bf0a6b6abb783ac11d44badf243283",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/DETALLES/IMG_7111.HEIC",
+      "type": "file",
+      "sizeBytes": 1203904,
+      "sourceHash": "4274c21161052ce95ff1b34d11342dac411ca680c1b339500db83d5b3f9d0934",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/DETALLES/IMG_7133.HEIC",
+      "type": "file",
+      "sizeBytes": 2806083,
+      "sourceHash": "bdc70a9321c53cfcbe448c6d4628b30a5daa50d0924345b066afd407aae81e02",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/DETALLES/IMG_7135.HEIC",
+      "type": "file",
+      "sizeBytes": 2793337,
+      "sourceHash": "6c14d8812fa6395fb4256e9968ce322fb86610f50b9dc7e6bfb313323f3dc662",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/DETALLES/IMG_7139.HEIC",
+      "type": "file",
+      "sizeBytes": 2617290,
+      "sourceHash": "cc762d94640bffb0b09025c13805b083a080e8e3ae87c6de647d5062b5b4a7ad",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/DETALLES/IMG_7173.HEIC",
+      "type": "file",
+      "sizeBytes": 2505676,
+      "sourceHash": "dde6fd6624605bf836ed61285c1a40e683a19de64145bc254cf7fe74a27b18fd",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/DETALLES/IMG_7322.PNG",
+      "type": "image",
+      "sizeBytes": 9182594,
+      "sourceHash": "15fa87bce57bee82667d75b777a47ebdd39e3b3291706cf2cfb97b90695c2b49",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/DETALLES/IMG_7565.HEIC",
+      "type": "file",
+      "sizeBytes": 1417916,
+      "sourceHash": "fb961f9e2aa0a1a478823b87661eb5e67cffb837411227d0a8604e45a16cd34a",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/DETALLES/IMG_7568.HEIC",
+      "type": "file",
+      "sizeBytes": 731871,
+      "sourceHash": "58fbae60c6ca304f49d4902484599a11ea633d2bc29571b7ba9b8b932234ff61",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/DETALLES/IMG_7597.HEIC",
+      "type": "file",
+      "sizeBytes": 1251855,
+      "sourceHash": "d38102b4ef1a4979ccfa142bcf1a8f30f2f6ccfdb94ada69b7fbf86d962da133",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/DETALLES/IMG_7604.HEIC",
+      "type": "file",
+      "sizeBytes": 1351486,
+      "sourceHash": "cd6afb8cf4664a50211cf3ebed79c58673436ed91e8f1d5eca75f13e9316efde",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/DETALLES/IMG_7614.HEIC",
+      "type": "file",
+      "sizeBytes": 1369071,
+      "sourceHash": "775630bcf6048c7993ec834fe3bc4a8c60414135d0b586fa494a7d8fd8d250aa",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/DETALLES/IMG_7631.HEIC",
+      "type": "file",
+      "sizeBytes": 2286800,
+      "sourceHash": "c6601882a4d4cef0894d7ee96504498b1b22beb3b1d1f58a9a4385d448e284e8",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/DETALLES/IMG_8386.HEIC",
+      "type": "file",
+      "sizeBytes": 1415250,
+      "sourceHash": "037b1d4490564575ff3517fbcb81b379e5295cc27b14b5000da21c41695475f5",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/DETALLES/IMG_9019.HEIC",
+      "type": "file",
+      "sizeBytes": 910633,
+      "sourceHash": "4640adb17c9c6086b09eac0ad961a2993def340a0610468d5237dd553da30791",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/DETALLES/IMG_9805.heic",
+      "type": "file",
+      "sizeBytes": 1057826,
+      "sourceHash": "abbff39c9d6fd79f6635f2a50741aae47657037f286cb9500f44d2be13926780",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/SERVICIOS/4740349c-d1fa-4230-bfbf-17f762020469.jpg",
+      "type": "image",
+      "sizeBytes": 135159,
+      "sourceHash": "0d51e3192eec580764fe33ce2590a865abd12c6aad02e488305ad0f53ac6cd7c",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/SERVICIOS/6ded7e3c-2224-47d1-9dfa-cbee029e02ed.jpg",
+      "type": "image",
+      "sizeBytes": 238687,
+      "sourceHash": "1fb2939dc8ab98d9d2e68c97626aa04c18e80f706d5429cd7c843c4b8049e54d",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/SERVICIOS/861c0217-f371-4702-8752-39a2e729a63e.jpg",
+      "type": "image",
+      "sizeBytes": 189723,
+      "sourceHash": "ed42e4ad5210e88b5d7c322f3af1c049dbefb733e5f16b0444a5849b68f3dc2e",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/SERVICIOS/a0af3c1c-b8be-4499-8496-2cdd9e9f8006.jpg",
+      "type": "image",
+      "sizeBytes": 243782,
+      "sourceHash": "9e932c333f0f1fe7d0a9242965bac054fc03442427e288cefe014f6eed0b2d87",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/SERVICIOS/cdff9f35-55cb-41f8-85d3-1949888e4780.jpg",
+      "type": "image",
+      "sizeBytes": 140139,
+      "sourceHash": "9855ff243661f86ce7d1ba80d7b117c049c839b0716304132cc6a1b44e739c88",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/SERVICIOS/dec79e93-0953-46d5-a6ba-157655ffa46b.jpg",
+      "type": "image",
+      "sizeBytes": 171081,
+      "sourceHash": "e3e9491b8a08df90e8fca929952fb32cfe9b2c349bb19f4ba79be364d78e2c56",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/SERVICIOS/ec3272a2-b5a0-42e6-86ec-e8bdbf990b74.jpg",
+      "type": "image",
+      "sizeBytes": 118145,
+      "sourceHash": "e71e5bd29097a43660fc75bba247858e05b02296ae37c60fe7575d6ee3e94b59",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/SERVICIOS/IMG_1918.HEIC",
+      "type": "file",
+      "sizeBytes": 817933,
+      "sourceHash": "fbf0ea5aded1a305195798f1c84ca25d8a6a0fd6e97dbef6ceeade8ac5ff7f41",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/SERVICIOS/IMG_1919.HEIC",
+      "type": "file",
+      "sizeBytes": 803025,
+      "sourceHash": "bbe18eb7ef56cc06ea0201e205df558e7aa9c6ce1e0e10e86f1bbc41c25abcfd",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/SERVICIOS/IMG_1922.HEIC",
+      "type": "file",
+      "sizeBytes": 781352,
+      "sourceHash": "543375350549f1852c59977543675e744e9c7022c70bcf5b48d38a07d76ed4d6",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/SERVICIOS/IMG_1937.HEIC",
+      "type": "file",
+      "sizeBytes": 785849,
+      "sourceHash": "cf6ae6f56e6dc046ad334acae6bb24bd640a576424726cad4ea77e31166917b8",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/SERVICIOS/IMG_2229.HEIC",
+      "type": "file",
+      "sizeBytes": 754810,
+      "sourceHash": "29afc81a16906111be73c55a538e28ca3510ee2c30cd65ef0ee3d8f175e80a2b",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/SERVICIOS/IMG_2253.HEIC",
+      "type": "file",
+      "sizeBytes": 788245,
+      "sourceHash": "5edbbbbd4d850a08210bbfdfa03590dd08b63430effa8351a3b75cfdd9c033f3",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/SERVICIOS/IMG_7396.HEIC",
+      "type": "file",
+      "sizeBytes": 1197804,
+      "sourceHash": "0256dc3dd52cfb4dfe43296ab0c141fdff8adeb55dd893f1bc840852b5d0826f",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/SERVICIOS/IMG_7398.JPG",
+      "type": "image",
+      "sizeBytes": 1719763,
+      "sourceHash": "f23b3cbe9b34a79d915e456d43eea3757d0ec67a28f212102b7b456e2760f77a",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/SERVICIOS/IMG_7426.HEIC",
+      "type": "file",
+      "sizeBytes": 1388049,
+      "sourceHash": "f6e823e70f54286ae741459215d549ac119ea300d7b2e9a8df1ebd5a86391d16",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/SERVICIOS/IMG_7456.HEIC",
+      "type": "file",
+      "sizeBytes": 1132864,
+      "sourceHash": "f5fada98d625b1c4a43ef3cec9dd8e03ecb000162f3ca32c2c4745b2320e92a8",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/SERVICIOS/IMG_7498.HEIC",
+      "type": "file",
+      "sizeBytes": 984336,
+      "sourceHash": "c814f0ff879df97ad9312a9bd09b906ab1a1d9fba9529ed0d0f55099028f9361",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/SERVICIOS/IMG_7511.HEIC",
+      "type": "file",
+      "sizeBytes": 1135052,
+      "sourceHash": "8a3e8a75c0ab0c25b63c99b794d2f1f4cfa41f3946060756504802f8fc28417d",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/SERVICIOS/IMG_7534.HEIC",
+      "type": "file",
+      "sizeBytes": 1116817,
+      "sourceHash": "c6679f1c2fe4b6d974ea90a5438e83b7dd2c3f7ef7645a2d7f41f79b511ff22f",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/SERVICIOS/IMG_7546.HEIC",
+      "type": "file",
+      "sizeBytes": 1113076,
+      "sourceHash": "325ecc004892324ea0ccbe3a98b4136c68bed9937a5a4f95cfae5dc7d1ad2ffe",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/VIDEOS/IMG_1848.MOV",
+      "type": "file",
+      "sizeBytes": 5015721,
+      "sourceHash": "a6698c02007aaa8d09bc0c10fa96fb8ade8dbde365473c88305ab7395140107e",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/VIDEOS/IMG_1853.MOV",
+      "type": "file",
+      "sizeBytes": 12639885,
+      "sourceHash": "30b4c377f44ce3923105327378ef077e46ce33cb69f5eb91bb5115d8edfeac4a",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/VIDEOS/IMG_1901.MOV",
+      "type": "file",
+      "sizeBytes": 5518918,
+      "sourceHash": "d633dea550258e2dc4961f65a5e18f0b2179837e96861f61e215da6ba48c6686",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/VIDEOS/IMG_1930.MOV",
+      "type": "file",
+      "sizeBytes": 6605121,
+      "sourceHash": "0b53f2ec7cacec903ea1105c0bef8f671a262bb59cab5cc5fa6fabe224993bd9",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/VIDEOS/IMG_1940.MOV",
+      "type": "file",
+      "sizeBytes": 10798928,
+      "sourceHash": "c0be40bf79d389ffb0f86d5a97c6c4d772ae8c7422012a621ea2cdfcd3599392",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/VIDEOS/IMG_2231.MOV",
+      "type": "file",
+      "sizeBytes": 15304802,
+      "sourceHash": "fe2c8b6fd3c9002c218a75a1900b094a8d07057be024eecaebb1d982f42138a7",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/VIDEOS/IMG_2239.MOV",
+      "type": "file",
+      "sizeBytes": 6929566,
+      "sourceHash": "beba1b3d18d4f361cb6b7d506c33a3e01cf9b900ff8738090e1fe6b9c96f9c11",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/VIDEOS/IMG_7115.MOV",
+      "type": "file",
+      "sizeBytes": 8016511,
+      "sourceHash": "1a6d1a90242cff24e74845ebd93a145d8423fc94054cce674c0dc8e0519095fd",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/VIDEOS/IMG_7130.MOV",
+      "type": "file",
+      "sizeBytes": 13380988,
+      "sourceHash": "7b9894a43de7e972ef17fe6051a1a3527ef90f387e79f9e6c01e6395e4e73969",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/VIDEOS/IMG_7131.MOV",
+      "type": "file",
+      "sizeBytes": 6962166,
+      "sourceHash": "127b22414ef98966a1773b4743b9b5171377389af259013f72069d6ea21a30cf",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/VIDEOS/IMG_7190.MOV",
+      "type": "file",
+      "sizeBytes": 12085063,
+      "sourceHash": "9caa63daef67473a66cce3f2813871cc16ca39986d1f0105daceca2761a117be",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/VIDEOS/IMG_7194.MOV",
+      "type": "file",
+      "sizeBytes": 9885937,
+      "sourceHash": "54a562a1214bfe8156bc1578446afae44e78325a548ec1a63a515f4778dd3adf",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/VIDEOS/IMG_7203.MOV",
+      "type": "file",
+      "sizeBytes": 13058737,
+      "sourceHash": "9cfb9ab833f49b020caf1f8d46aeed4eea7bb2846428845c824ed0e8fc73b248",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/VIDEOS/IMG_7205.MOV",
+      "type": "file",
+      "sizeBytes": 6253199,
+      "sourceHash": "540f6c31586f25a209ec9768bc692613d5549f29f9db963f3e4eaad0f2c76131",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/VIDEOS/IMG_7212.MOV",
+      "type": "file",
+      "sizeBytes": 8663857,
+      "sourceHash": "c1eeaa6664dda3fd769361e051f71a77c48bf97a5d6c3af1bf5fc298273aff60",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/VIDEOS/IMG_7216.MOV",
+      "type": "file",
+      "sizeBytes": 13428972,
+      "sourceHash": "20881d1642e19e3380dcb06753fb63ca80c97600e2d266f348a7065c2ff43ce2",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/grafica/VIDEOS/IMG_7287.MOV",
+      "type": "file",
+      "sizeBytes": 10111973,
+      "sourceHash": "e1d3415c6100ca433b1c77bcf976753959f0fcf84737d7792d4da79441208dc2",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/imagenes/equipo/.gitkeep",
+      "type": "file",
+      "sizeBytes": 0,
+      "sourceHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/imagenes/espacio/.gitkeep",
+      "type": "file",
+      "sizeBytes": 0,
+      "sourceHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/imagenes/gift-cards/.gitkeep",
+      "type": "file",
+      "sizeBytes": 0,
+      "sourceHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/imagenes/marca/.gitkeep",
+      "type": "file",
+      "sizeBytes": 0,
+      "sourceHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/imagenes/servicios/.gitkeep",
+      "type": "file",
+      "sizeBytes": 0,
+      "sourceHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/marca/identidad-verbal.md",
+      "type": "markdown",
+      "sizeBytes": 737,
+      "sourceHash": "f4f8ef84f56fe24520ffabdfb2f5e6d3e7df9f931a9c77100aecc2cb0967c998",
+      "sectionsFound": [
+        "Identidad verbal",
+        "Esencia",
+        "Personalidad",
+        "Forma de hablar",
+        "Palabras y territorios",
+        "Evitar"
+      ],
+      "status": "approved",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": []
+    },
+    {
+      "path": "../MaterialSitio/marca/identidad-visual.md",
+      "type": "markdown",
+      "sizeBytes": 417,
+      "sourceHash": "36343840d7fcd5ff5793c921ba349babbd6bac4b0b4657a0eb79ed599f437499",
+      "sectionsFound": [
+        "Identidad visual"
+      ],
+      "status": "provisional",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": []
+    },
+    {
+      "path": "../MaterialSitio/marca/logo Boho Spa Urbano color.pdf",
+      "type": "pdf",
+      "sizeBytes": 11432,
+      "sourceHash": "60d4714e8b2501363f0d2fe6be37dde6fea2cbb7e6608acb9fbf04882ca2b2be",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/marca/logo Boho Spa Urbano negro.pdf",
+      "type": "pdf",
+      "sizeBytes": 392215,
+      "sourceHash": "be871f12e63e13a811ec1237c90887e93b0b86937e13805d21228650614c70b6",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/marca/paleta-colores.jpg",
+      "type": "image",
+      "sizeBytes": 50288,
+      "sourceHash": "40d8bc1d9bc4a81c3ebd9d07195094a55902ffa20b9ef5429257ed7d2e2ecd82",
+      "sectionsFound": [],
+      "status": "unreviewed",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": [
+        "Requires manual review before use."
+      ]
+    },
+    {
+      "path": "../MaterialSitio/marca/referencias.md",
+      "type": "markdown",
+      "sizeBytes": 248,
+      "sourceHash": "98efaf3826954cf3465d2ab2a30de65de37e2b3295c2aafe577f11439f57a0e5",
+      "sectionsFound": [
+        "Referencias de marca"
+      ],
+      "status": "unclassified",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": []
+    },
+    {
+      "path": "../MaterialSitio/README.md",
+      "type": "markdown",
+      "sizeBytes": 1513,
+      "sourceHash": "fcc3165b5bb09d10f00c36edd817efb69da738b7d9333347427a5a138248102c",
+      "sectionsFound": [
+        "MaterialSitio — actualización editorial recuperada",
+        "Uso",
+        "Criterio de recuperación",
+        "Documentos principales"
+      ],
+      "status": "unclassified",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": []
+    },
+    {
+      "path": "../MaterialSitio/servicios/pendientes-editoriales.md",
+      "type": "markdown",
+      "sizeBytes": 882,
+      "sourceHash": "3e4030b806257269bf70ef4e0c8657602b07b7620761e3ab868d8638ddf10cee",
+      "sectionsFound": [
+        "Pendientes editoriales de servicios",
+        "Bloqueantes para publicación",
+        "No bloqueantes para importar como draft",
+        "Regla"
+      ],
+      "status": "unclassified",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": []
+    },
+    {
+      "path": "../MaterialSitio/servicios/servicios-agendapro-origen.md",
+      "type": "markdown",
+      "sizeBytes": 744,
+      "sourceHash": "7c084af8bb7c5a602a1d9c474cd1715acfb85ec11caf2ff046653be239028608",
+      "sectionsFound": [
+        "Fuente AgendaPro recuperada",
+        "Regla de uso"
+      ],
+      "status": "provisional",
+      "possibleDocuments": [
+        "service"
+      ],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": []
+    },
+    {
+      "path": "../MaterialSitio/servicios/servicios-normalizados.md",
+      "type": "markdown",
+      "sizeBytes": 10416,
+      "sourceHash": "18c4289c6a96ffc002cea4833ae3ed28c16e458550b5df82b7e9fb8526ffdfba",
+      "sectionsFound": [
+        "Servicios normalizados — base recuperada",
+        "Experiencias Boho",
+        "Boho Spa Day Individual",
+        "Experiencia Armonía Individual",
+        "Experiencia Armonía para dos",
+        "Experiencia Armonía para tres",
+        "Experiencia Felicidad Individual",
+        "Experiencia Felicidad para dos",
+        "Experiencia Felicidad para tres",
+        "Experiencia Full Body Individual",
+        "Experiencia Full Body para dos",
+        "Experiencia Full Body para tres",
+        "Experiencia Summer Individual",
+        "Experiencia Summer para dos",
+        "Experiencia Summer para tres",
+        "Masajes & Bienestar",
+        "Masaje integral corporal — 60 minutos",
+        "Masaje corporal relajante — 60 minutos",
+        "Reflexología podal",
+        "Drenaje linfático manual",
+        "Cuidado Facial & Corporal",
+        "Limpieza Facial Boho",
+        "Higiene Facial Profunda",
+        "Peeling de verano",
+        "Spa facial hidratante",
+        "Belleza Consciente",
+        "Belleza de pies sin esmaltado",
+        "Belleza de manos sin esmaltado",
+        "Belleza de manos con esmaltado semipermanente",
+        "Belleza de pies con esmaltado tradicional",
+        "Belleza de manos con esmaltado tradicional",
+        "Belleza de manos y pies con esmaltado semipermanente",
+        "Servicios y promociones que no deben importarse automáticamente"
+      ],
+      "status": "provisional",
+      "possibleDocuments": [
+        "service"
+      ],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": []
+    },
+    {
+      "path": "../MaterialSitio/tecnico/arquitectura-aprobada.md",
+      "type": "markdown",
+      "sizeBytes": 184,
+      "sourceHash": "7997f98564f93b195fa2939c41d387040c2e7e9ca0c70e72ca7c8e2dc0e054b9",
+      "sectionsFound": [
+        "Arquitectura técnica aprobada"
+      ],
+      "status": "approved",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": []
+    },
+    {
+      "path": "../MaterialSitio/tecnico/decisiones-contenido-recuperado.md",
+      "type": "markdown",
+      "sizeBytes": 723,
+      "sourceHash": "12435fba5d530ef547d066d2980d3bb45bc1c62040e445e4a835e178db77c91c",
+      "sectionsFound": [
+        "Decisiones para normalización e importación"
+      ],
+      "status": "unclassified",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": []
+    },
+    {
+      "path": "../MaterialSitio/tecnico/decisiones-tecnicas.md",
+      "type": "markdown",
+      "sizeBytes": 254,
+      "sourceHash": "f8ea2a56b752e957f9bfe234f6dfaeaaad53c14c24077e6d5aecde340d03952f",
+      "sectionsFound": [
+        "Registro de decisiones técnicas"
+      ],
+      "status": "provisional",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": []
+    },
+    {
+      "path": "../MaterialSitio/tecnico/formulario-apps-script.md",
+      "type": "markdown",
+      "sizeBytes": 234,
+      "sourceHash": "5fc63c24a6badcb5685f6bb0c1e0da49f18ec58e95d185164803739b4f70cb35",
+      "sectionsFound": [
+        "Formulario con Google Apps Script"
+      ],
+      "status": "provisional",
+      "possibleDocuments": [],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": []
+    },
+    {
+      "path": "../MaterialSitio/tecnico/modelo-sanity.md",
+      "type": "markdown",
+      "sizeBytes": 245,
+      "sourceHash": "7a3c10543ac6e9b50ee0de34aea08ccd76c6b76082b253880f61b1ffe28510bc",
+      "sectionsFound": [
+        "Modelo editorial de Sanity"
+      ],
+      "status": "approved",
+      "possibleDocuments": [
+        "all"
+      ],
+      "missingFields": [],
+      "contradictions": [],
+      "observations": []
+    }
+  ],
+  "summary": {
+    "totalFiles": 128,
+    "markdown": 26,
+    "visualAssets": 45,
+    "placeholders": 0,
+    "approved": 12,
+    "provisional": 10,
+    "pending": 0
+  }
+}

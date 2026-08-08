@@ -4,6 +4,7 @@ const base = (
   name: string,
   title: string,
   variants: { title: string; value: string }[],
+  extraFields: ReturnType<typeof defineField>[] = [],
 ) =>
   defineType({
     name,
@@ -44,6 +45,7 @@ const base = (
         options: { list: variants },
         validation: (Rule) => Rule.required(),
       }),
+      ...extraFields,
     ],
   });
 
@@ -89,6 +91,7 @@ export const homeContactLocation = base(
     { title: "Mapa a la derecha", value: "mapRight" },
     { title: "Apilado", value: "stacked" },
   ],
+  [defineField({ name: "tertiaryCta", title: "CTA terciario", type: "cta" })],
 );
 export const homeObjects = [
   homeHero,

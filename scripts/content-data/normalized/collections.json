@@ -1,0 +1,1237 @@
+{
+  "documents": [
+    {
+      "canonicalId": "giftCard.servicio",
+      "draftId": "drafts.giftCard.servicio",
+      "_type": "giftCard",
+      "source": [
+        "../MaterialSitio/contenido/08-gift-cards.md"
+      ],
+      "sourceSection": "Regalá un servicio",
+      "sourceHash": "85a0f283cc85abe660d7431da08cac2cf2998a0a2bff6d05f8aae21ae0f93e7b",
+      "status": "approved",
+      "data": {
+        "name": "Regalá un servicio",
+        "slug": {
+          "current": "servicio"
+        },
+        "kind": "service",
+        "shortDescription": "Regalá un servicio",
+        "content": [
+          {
+            "_key": "gift-card-servicio",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "gift-card-servicio-span",
+                "_type": "span",
+                "marks": [],
+                "text": "Elegí directamente uno de nuestros masajes, tratamientos faciales o propuestas de cuidado personal.\n\nEs una buena alternativa cuando ya sabés qué experiencia puede disfrutar esa persona.\n\n**CTA:**  \nElegir un servicio"
+              }
+            ]
+          }
+        ],
+        "deliveryFormat": "both",
+        "coordinateByWhatsapp": true,
+        "showPrice": false,
+        "visible": true,
+        "archived": false
+      },
+      "managedFields": [
+        "name",
+        "slug",
+        "kind",
+        "shortDescription",
+        "content",
+        "deliveryFormat",
+        "coordinateByWhatsapp",
+        "showPrice",
+        "visible",
+        "archived"
+      ],
+      "references": [],
+      "missingFields": [
+        "image",
+        "cta"
+      ],
+      "warnings": [
+        "No se cargan precios ni imágenes."
+      ],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "giftCard.experiencia-boho",
+      "draftId": "drafts.giftCard.experiencia-boho",
+      "_type": "giftCard",
+      "source": [
+        "../MaterialSitio/contenido/08-gift-cards.md"
+      ],
+      "sourceSection": "Regalá una Experiencia Boho",
+      "sourceHash": "85a0f283cc85abe660d7431da08cac2cf2998a0a2bff6d05f8aae21ae0f93e7b",
+      "status": "approved",
+      "data": {
+        "name": "Regalá una Experiencia Boho",
+        "slug": {
+          "current": "experiencia-boho"
+        },
+        "kind": "experience",
+        "shortDescription": "Regalá una Experiencia Boho",
+        "content": [
+          {
+            "_key": "gift-card-experiencia-boho",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "gift-card-experiencia-boho-span",
+                "_type": "span",
+                "marks": [],
+                "text": "Para cuando querés regalar algo más que un tratamiento.\n\nLas Experiencias Boho combinan distintos momentos de cuidado y bienestar dentro de una misma propuesta y algunas también pueden disfrutarse de manera compartida.\n\n**CTA:**  \nVer Experiencias Boho"
+              }
+            ]
+          }
+        ],
+        "deliveryFormat": "both",
+        "coordinateByWhatsapp": true,
+        "showPrice": false,
+        "visible": true,
+        "archived": false
+      },
+      "managedFields": [
+        "name",
+        "slug",
+        "kind",
+        "shortDescription",
+        "content",
+        "deliveryFormat",
+        "coordinateByWhatsapp",
+        "showPrice",
+        "visible",
+        "archived"
+      ],
+      "references": [],
+      "missingFields": [
+        "image",
+        "cta"
+      ],
+      "warnings": [
+        "No se cargan precios ni imágenes."
+      ],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "giftCard.monto-abierto",
+      "draftId": "drafts.giftCard.monto-abierto",
+      "_type": "giftCard",
+      "source": [
+        "../MaterialSitio/contenido/08-gift-cards.md"
+      ],
+      "sourceSection": "Elegí un monto",
+      "sourceHash": "85a0f283cc85abe660d7431da08cac2cf2998a0a2bff6d05f8aae21ae0f93e7b",
+      "status": "approved",
+      "data": {
+        "name": "Elegí un monto",
+        "slug": {
+          "current": "monto-abierto"
+        },
+        "kind": "openAmount",
+        "shortDescription": "Elegí un monto",
+        "content": [
+          {
+            "_key": "gift-card-monto-abierto",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "gift-card-monto-abierto-span",
+                "_type": "span",
+                "marks": [],
+                "text": "Cuando preferís que la persona tenga libertad para decidir.\n\nPodemos preparar una Gift Card por un valor determinado para utilizar en los servicios y experiencias disponibles de Boho.\n\n**CTA:**  \nConsultar por WhatsApp\n\n---"
+              }
+            ]
+          }
+        ],
+        "deliveryFormat": "both",
+        "coordinateByWhatsapp": true,
+        "showPrice": false,
+        "visible": true,
+        "archived": false
+      },
+      "managedFields": [
+        "name",
+        "slug",
+        "kind",
+        "shortDescription",
+        "content",
+        "deliveryFormat",
+        "coordinateByWhatsapp",
+        "showPrice",
+        "visible",
+        "archived"
+      ],
+      "references": [],
+      "missingFields": [
+        "image",
+        "cta"
+      ],
+      "warnings": [
+        "No se cargan precios ni imágenes."
+      ],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "corporateExperience.experiencia-esencial",
+      "draftId": "drafts.corporateExperience.experiencia-esencial",
+      "_type": "corporateExperience",
+      "source": [
+        "../MaterialSitio/contenido/09-regalos-corporativos.md"
+      ],
+      "sourceSection": "Experiencia Esencial",
+      "sourceHash": "685e2c70f164e601e33c4e734fc3cac7a556203f9902a7f34094148d49cbf5fa",
+      "status": "approved",
+      "data": {
+        "name": "Experiencia Esencial",
+        "description": "Experiencia Esencial",
+        "content": [
+          {
+            "_key": "corporate-experiencia-esencial",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "corporate-experiencia-esencial-span",
+                "_type": "span",
+                "marks": [],
+                "text": "Una pausa centrada en el bienestar y la relajación, con el masaje como protagonista.\n\nPensada como una alternativa simple y accesible para reconocer al equipo con un momento personal de descanso."
+              }
+            ]
+          }
+        ],
+        "archived": false
+      },
+      "managedFields": [
+        "name",
+        "description",
+        "content",
+        "archived"
+      ],
+      "references": [],
+      "missingFields": [
+        "seo",
+        "image",
+        "priceOrBudget",
+        "primaryCta",
+        "secondaryCta"
+      ],
+      "warnings": [
+        "Precios, imágenes, SEO y condiciones comerciales adicionales quedan pendientes."
+      ],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "corporateExperience.experiencia-plus",
+      "draftId": "drafts.corporateExperience.experiencia-plus",
+      "_type": "corporateExperience",
+      "source": [
+        "../MaterialSitio/contenido/09-regalos-corporativos.md"
+      ],
+      "sourceSection": "Experiencia Plus",
+      "sourceHash": "685e2c70f164e601e33c4e734fc3cac7a556203f9902a7f34094148d49cbf5fa",
+      "status": "approved",
+      "data": {
+        "name": "Experiencia Plus",
+        "description": "Experiencia Plus",
+        "content": [
+          {
+            "_key": "corporate-experiencia-plus",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "corporate-experiencia-plus-span",
+                "_type": "span",
+                "marks": [],
+                "text": "Una propuesta más completa que combina masaje con otros momentos de cuidado y bienestar.\n\nIdeal para acciones donde se busca ofrecer una experiencia con mayor nivel de contenido."
+              }
+            ]
+          }
+        ],
+        "archived": false
+      },
+      "managedFields": [
+        "name",
+        "description",
+        "content",
+        "archived"
+      ],
+      "references": [],
+      "missingFields": [
+        "seo",
+        "image",
+        "priceOrBudget",
+        "primaryCta",
+        "secondaryCta"
+      ],
+      "warnings": [
+        "Precios, imágenes, SEO y condiciones comerciales adicionales quedan pendientes."
+      ],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "corporateExperience.boho-con-brunch",
+      "draftId": "drafts.corporateExperience.boho-con-brunch",
+      "_type": "corporateExperience",
+      "source": [
+        "../MaterialSitio/contenido/09-regalos-corporativos.md"
+      ],
+      "sourceSection": "Boho con Brunch",
+      "sourceHash": "685e2c70f164e601e33c4e734fc3cac7a556203f9902a7f34094148d49cbf5fa",
+      "status": "approved",
+      "data": {
+        "name": "Boho con Brunch",
+        "description": "Boho con Brunch",
+        "content": [
+          {
+            "_key": "corporate-boho-con-brunch",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "corporate-boho-con-brunch-span",
+                "_type": "span",
+                "marks": [],
+                "text": "Una experiencia integral que combina distintos momentos de bienestar y finaliza con el Brunch Boho.\n\nUna alternativa especialmente pensada para reconocimientos, celebraciones o regalos donde se busca generar una experiencia más completa.\n\n**CTA:**  \nMás información\n\n---"
+              }
+            ]
+          }
+        ],
+        "archived": false
+      },
+      "managedFields": [
+        "name",
+        "description",
+        "content",
+        "archived"
+      ],
+      "references": [],
+      "missingFields": [
+        "seo",
+        "image",
+        "priceOrBudget",
+        "primaryCta",
+        "secondaryCta"
+      ],
+      "warnings": [
+        "Precios, imágenes, SEO y condiciones comerciales adicionales quedan pendientes."
+      ],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "faq.reservas-1",
+      "draftId": "drafts.faq.reservas-1",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceSection": "¿Es necesario reservar con anticipación?",
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "status": "approved",
+      "data": {
+        "question": "¿Es necesario reservar con anticipación?",
+        "answer": [
+          {
+            "_key": "faq-reservas-1",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "faq-reservas-1-span",
+                "_type": "span",
+                "marks": [],
+                "text": "Sí. Trabajamos con reserva previa para poder organizar cada atención y preparar la experiencia según el servicio elegido."
+              }
+            ]
+          }
+        ],
+        "visible": true,
+        "archived": false,
+        "order": 1
+      },
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "references": [],
+      "missingFields": [],
+      "warnings": [],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "faq.reservas-2",
+      "draftId": "drafts.faq.reservas-2",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceSection": "¿Cómo puedo reservar?",
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "status": "approved",
+      "data": {
+        "question": "¿Cómo puedo reservar?",
+        "answer": [
+          {
+            "_key": "faq-reservas-2",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "faq-reservas-2-span",
+                "_type": "span",
+                "marks": [],
+                "text": "Podés consultar disponibilidad y reservar desde nuestra agenda online.\n\nSi no sabés qué servicio elegir, querés combinar propuestas o necesitás una atención especial, escribinos por WhatsApp y te orientamos."
+              }
+            ]
+          }
+        ],
+        "visible": true,
+        "archived": false,
+        "order": 2
+      },
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "references": [],
+      "missingFields": [],
+      "warnings": [],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "faq.reservas-3",
+      "draftId": "drafts.faq.reservas-3",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceSection": "¿Puedo reservar para más de una persona?",
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "status": "approved",
+      "data": {
+        "question": "¿Puedo reservar para más de una persona?",
+        "answer": [
+          {
+            "_key": "faq-reservas-3",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "faq-reservas-3-span",
+                "_type": "span",
+                "marks": [],
+                "text": "Sí. Algunas experiencias y servicios pueden organizarse para dos o más personas, según disponibilidad.\n\nEn el caso de las Experiencias Boho, algunas propuestas pueden disfrutarse en grupos de hasta cuatro personas.\n\nRecomendamos consultar por WhatsApp para coordinar este tipo de reservas."
+              }
+            ]
+          }
+        ],
+        "visible": true,
+        "archived": false,
+        "order": 3
+      },
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "references": [],
+      "missingFields": [],
+      "warnings": [],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "faq.reservas-4",
+      "draftId": "drafts.faq.reservas-4",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceSection": "¿Qué pasa si necesito cancelar o cambiar mi turno?",
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "status": "approved",
+      "data": {
+        "question": "¿Qué pasa si necesito cancelar o cambiar mi turno?",
+        "answer": [
+          {
+            "_key": "faq-reservas-4",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "faq-reservas-4-span",
+                "_type": "span",
+                "marks": [],
+                "text": "Las cancelaciones o solicitudes de reprogramación deben realizarse con al menos **24 horas hábiles de anticipación** respecto del turno reservado.\n\nCuando el aviso se realiza dentro de ese plazo, el turno puede reprogramarse sujeto a disponibilidad.\n\nSi la cancelación o reprogramación se solicita fuera de ese plazo, o la persona no se presenta al turno, la seña abonada se pierde.\n\nSi Boho debe reprogramar un turno por razones de fuerza mayor o circunstancias operativas excepcionales, se respeta íntegramente el importe abonado y se coordina una nueva fecha buscando la mejor alternativa posible para la persona.\n\n---"
+              }
+            ]
+          }
+        ],
+        "visible": true,
+        "archived": false,
+        "order": 4
+      },
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "references": [],
+      "missingFields": [],
+      "warnings": [],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "faq.servicios-y-tratamientos-5",
+      "draftId": "drafts.faq.servicios-y-tratamientos-5",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceSection": "¿Cómo sé qué tratamiento elegir?",
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "status": "approved",
+      "data": {
+        "question": "¿Cómo sé qué tratamiento elegir?",
+        "answer": [
+          {
+            "_key": "faq-servicios-y-tratamientos-5",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "faq-servicios-y-tratamientos-5-span",
+                "_type": "span",
+                "marks": [],
+                "text": "Si tenés dudas sobre qué servicio puede adaptarse mejor a lo que buscás, podés escribirnos antes de reservar.\n\nTe ayudamos a elegir según tus necesidades, el tiempo disponible y el tipo de experiencia que querés disfrutar."
+              }
+            ]
+          }
+        ],
+        "visible": true,
+        "archived": false,
+        "order": 5
+      },
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "references": [],
+      "missingFields": [],
+      "warnings": [],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "faq.servicios-y-tratamientos-6",
+      "draftId": "drafts.faq.servicios-y-tratamientos-6",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceSection": "¿Los tratamientos son personalizados?",
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "status": "approved",
+      "data": {
+        "question": "¿Los tratamientos son personalizados?",
+        "answer": [
+          {
+            "_key": "faq-servicios-y-tratamientos-6",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "faq-servicios-y-tratamientos-6-span",
+                "_type": "span",
+                "marks": [],
+                "text": "Sí. En muchos de nuestros protocolos adaptamos productos, activos, maniobras o intensidad según las necesidades de cada persona y el estado de la piel o el cuerpo en ese momento."
+              }
+            ]
+          }
+        ],
+        "visible": true,
+        "archived": false,
+        "order": 6
+      },
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "references": [],
+      "missingFields": [],
+      "warnings": [],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "faq.servicios-y-tratamientos-7",
+      "draftId": "drafts.faq.servicios-y-tratamientos-7",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceSection": "¿Qué tipo de productos utilizan?",
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "status": "approved",
+      "data": {
+        "question": "¿Qué tipo de productos utilizan?",
+        "answer": [
+          {
+            "_key": "faq-servicios-y-tratamientos-7",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "faq-servicios-y-tratamientos-7-span",
+                "_type": "span",
+                "marks": [],
+                "text": "Siempre que el protocolo lo permite priorizamos cosmética natural, fitocosmética y productos con ingredientes cuidadosamente seleccionados.\n\nLa elección depende de cada servicio y de las necesidades particulares de la persona."
+              }
+            ]
+          }
+        ],
+        "visible": true,
+        "archived": false,
+        "order": 7
+      },
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "references": [],
+      "missingFields": [],
+      "warnings": [],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "faq.servicios-y-tratamientos-8",
+      "draftId": "drafts.faq.servicios-y-tratamientos-8",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceSection": "¿Utilizan torno en los servicios de manicuría?",
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "status": "approved",
+      "data": {
+        "question": "¿Utilizan torno en los servicios de manicuría?",
+        "answer": [
+          {
+            "_key": "faq-servicios-y-tratamientos-8",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "faq-servicios-y-tratamientos-8-span",
+                "_type": "span",
+                "marks": [],
+                "text": "No. Nuestros protocolos habituales de manicuría se realizan de manera manual y sin torno.\n\n---"
+              }
+            ]
+          }
+        ],
+        "visible": true,
+        "archived": false,
+        "order": 8
+      },
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "references": [],
+      "missingFields": [],
+      "warnings": [],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "faq.experiencias-boho-9",
+      "draftId": "drafts.faq.experiencias-boho-9",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceSection": "¿Qué diferencia hay entre una Experiencia Boho y un servicio individual?",
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "status": "approved",
+      "data": {
+        "question": "¿Qué diferencia hay entre una Experiencia Boho y un servicio individual?",
+        "answer": [
+          {
+            "_key": "faq-experiencias-boho-9",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "faq-experiencias-boho-9-span",
+                "_type": "span",
+                "marks": [],
+                "text": "Una Experiencia Boho combina distintos momentos de cuidado y bienestar dentro de una misma propuesta.\n\nNo se trata simplemente de realizar varios servicios uno detrás de otro, sino de integrarlos dentro de una experiencia continua."
+              }
+            ]
+          }
+        ],
+        "visible": true,
+        "archived": false,
+        "order": 9
+      },
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "references": [],
+      "missingFields": [],
+      "warnings": [],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "faq.experiencias-boho-10",
+      "draftId": "drafts.faq.experiencias-boho-10",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceSection": "¿Todas las experiencias incluyen brunch?",
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "status": "approved",
+      "data": {
+        "question": "¿Todas las experiencias incluyen brunch?",
+        "answer": [
+          {
+            "_key": "faq-experiencias-boho-10",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "faq-experiencias-boho-10-span",
+                "_type": "span",
+                "marks": [],
+                "text": "No necesariamente.\n\nCada Experiencia Boho tiene una composición propia. Algunas incluyen Brunch Boho como cierre y otras pueden tener una estructura diferente."
+              }
+            ]
+          }
+        ],
+        "visible": true,
+        "archived": false,
+        "order": 10
+      },
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "references": [],
+      "missingFields": [],
+      "warnings": [],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "faq.experiencias-boho-11",
+      "draftId": "drafts.faq.experiencias-boho-11",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceSection": "¿Puedo compartir una experiencia con otra persona?",
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "status": "approved",
+      "data": {
+        "question": "¿Puedo compartir una experiencia con otra persona?",
+        "answer": [
+          {
+            "_key": "faq-experiencias-boho-11",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "faq-experiencias-boho-11-span",
+                "_type": "span",
+                "marks": [],
+                "text": "Sí. Varias experiencias pueden organizarse para compartir, siempre sujeto a disponibilidad y a la capacidad del espacio.\n\n---"
+              }
+            ]
+          }
+        ],
+        "visible": true,
+        "archived": false,
+        "order": 11
+      },
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "references": [],
+      "missingFields": [],
+      "warnings": [],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "faq.gift-cards-12",
+      "draftId": "drafts.faq.gift-cards-12",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceSection": "¿Qué puedo regalar con una Gift Card?",
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "status": "approved",
+      "data": {
+        "question": "¿Qué puedo regalar con una Gift Card?",
+        "answer": [
+          {
+            "_key": "faq-gift-cards-12",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "faq-gift-cards-12-span",
+                "_type": "span",
+                "marks": [],
+                "text": "Podés regalar un servicio específico, una Experiencia Boho o elegir un monto determinado para que la persona decida qué quiere disfrutar."
+              }
+            ]
+          }
+        ],
+        "visible": true,
+        "archived": false,
+        "order": 12
+      },
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "references": [],
+      "missingFields": [],
+      "warnings": [],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "faq.gift-cards-13",
+      "draftId": "drafts.faq.gift-cards-13",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceSection": "¿La Gift Card puede ser digital?",
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "status": "approved",
+      "data": {
+        "question": "¿La Gift Card puede ser digital?",
+        "answer": [
+          {
+            "_key": "faq-gift-cards-13",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "faq-gift-cards-13-span",
+                "_type": "span",
+                "marks": [],
+                "text": "Sí. Podemos enviarla en formato digital por WhatsApp o prepararla en formato físico para retirar en Boho."
+              }
+            ]
+          }
+        ],
+        "visible": true,
+        "archived": false,
+        "order": 13
+      },
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "references": [],
+      "missingFields": [],
+      "warnings": [],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "faq.gift-cards-14",
+      "draftId": "drafts.faq.gift-cards-14",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceSection": "¿Puedo agregar una dedicatoria?",
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "status": "approved",
+      "data": {
+        "question": "¿Puedo agregar una dedicatoria?",
+        "answer": [
+          {
+            "_key": "faq-gift-cards-14",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "faq-gift-cards-14-span",
+                "_type": "span",
+                "marks": [],
+                "text": "Sí. La Gift Card puede personalizarse con nombre y dedicatoria."
+              }
+            ]
+          }
+        ],
+        "visible": true,
+        "archived": false,
+        "order": 14
+      },
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "references": [],
+      "missingFields": [],
+      "warnings": [],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "faq.gift-cards-15",
+      "draftId": "drafts.faq.gift-cards-15",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceSection": "¿Cuánto tiempo tiene de vigencia?",
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "status": "approved",
+      "data": {
+        "question": "¿Cuánto tiempo tiene de vigencia?",
+        "answer": [
+          {
+            "_key": "faq-gift-cards-15",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "faq-gift-cards-15-span",
+                "_type": "span",
+                "marks": [],
+                "text": "Las Gift Cards personales tienen una vigencia de **30 días desde su emisión**."
+              }
+            ]
+          }
+        ],
+        "visible": true,
+        "archived": false,
+        "order": 15
+      },
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "references": [],
+      "missingFields": [],
+      "warnings": [],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "faq.gift-cards-16",
+      "draftId": "drafts.faq.gift-cards-16",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceSection": "¿Qué pasa si cambia el precio del servicio?",
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "status": "approved",
+      "data": {
+        "question": "¿Qué pasa si cambia el precio del servicio?",
+        "answer": [
+          {
+            "_key": "faq-gift-cards-16",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "faq-gift-cards-16-span",
+                "_type": "span",
+                "marks": [],
+                "text": "Si la Gift Card corresponde a un servicio determinado y su precio cambia durante el período de vigencia, se respeta el servicio originalmente adquirido.\n\nTambién puede utilizarse el importe abonado como crédito para elegir otra propuesta, abonando la diferencia cuando corresponda.\n\n---"
+              }
+            ]
+          }
+        ],
+        "visible": true,
+        "archived": false,
+        "order": 16
+      },
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "references": [],
+      "missingFields": [],
+      "warnings": [],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "faq.antes-de-venir-17",
+      "draftId": "drafts.faq.antes-de-venir-17",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceSection": "¿Dónde está Boho?",
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "status": "approved",
+      "data": {
+        "question": "¿Dónde está Boho?",
+        "answer": [
+          {
+            "_key": "faq-antes-de-venir-17",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "faq-antes-de-venir-17-span",
+                "_type": "span",
+                "marks": [],
+                "text": "Estamos en **Santa Fe 157, Bahía Blanca**.\n\n**CTA:**  \nCómo llegar"
+              }
+            ]
+          }
+        ],
+        "visible": true,
+        "archived": false,
+        "order": 17
+      },
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "references": [],
+      "missingFields": [],
+      "warnings": [],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "faq.antes-de-venir-18",
+      "draftId": "drafts.faq.antes-de-venir-18",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceSection": "¿Tengo que avisar si tengo alguna necesidad particular?",
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "status": "approved",
+      "data": {
+        "question": "¿Tengo que avisar si tengo alguna necesidad particular?",
+        "answer": [
+          {
+            "_key": "faq-antes-de-venir-18",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "faq-antes-de-venir-18-span",
+                "_type": "span",
+                "marks": [],
+                "text": "Sí. Si existe alguna condición, sensibilidad, embarazo, tratamiento previo o situación que pueda influir en el servicio, recomendamos informarlo antes de la reserva o al momento de coordinar el turno."
+              }
+            ]
+          }
+        ],
+        "visible": true,
+        "archived": false,
+        "order": 18
+      },
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "references": [],
+      "missingFields": [],
+      "warnings": [],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "faq.antes-de-venir-19",
+      "draftId": "drafts.faq.antes-de-venir-19",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceSection": "¿Tengo que avisar si necesito retirar un esmaltado anterior?",
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "status": "approved",
+      "data": {
+        "question": "¿Tengo que avisar si necesito retirar un esmaltado anterior?",
+        "answer": [
+          {
+            "_key": "faq-antes-de-venir-19",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "faq-antes-de-venir-19-span",
+                "_type": "span",
+                "marks": [],
+                "text": "Sí. Es importante informarlo antes de reservar para poder contemplar el tiempo necesario dentro del turno.\n\n---"
+              }
+            ]
+          }
+        ],
+        "visible": true,
+        "archived": false,
+        "order": 19
+      },
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "references": [],
+      "missingFields": [],
+      "warnings": [],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    }
+  ],
+  "detectedTypes": [
+    "giftCard",
+    "corporateExperience",
+    "faq",
+    "teamMember",
+    "testimonial",
+    "promotion"
+  ],
+  "missing": [
+    "team records",
+    "authorized testimonials",
+    "current promotions",
+    "prepared images"
+  ]
+}

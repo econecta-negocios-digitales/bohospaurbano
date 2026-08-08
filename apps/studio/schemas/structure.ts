@@ -52,7 +52,6 @@ export const structure: StructureResolver = (S) =>
                 "corporatePage",
                 "Regalos corporativos",
               ),
-              documentItem(S, "contactPage", "contactPage", "Contacto"),
               documentItem(S, "faqPage", "faqPage", "Preguntas frecuentes"),
               documentItem(S, "legalPage.privacy", "legalPage", "Privacidad"),
               documentItem(

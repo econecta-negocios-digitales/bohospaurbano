@@ -1,0 +1,752 @@
+{
+  "documents": [
+    {
+      "canonicalId": "service.boho-spa-day",
+      "draftId": "drafts.service.boho-spa-day",
+      "_type": "service",
+      "source": [
+        "../MaterialSitio/contenido/04-experiencias-boho.md"
+      ],
+      "sourceSection": "Boho Spa Day",
+      "sourceHash": "859db6341b8ff3fbd85b3dcc370404193070b4f99fa9db9ff9f011b34e0fc1b3",
+      "status": "approved",
+      "data": {
+        "name": "Boho Spa Day",
+        "slug": {
+          "current": "boho-spa-day"
+        },
+        "category": {
+          "_ref": "serviceCategory.experiencias-boho",
+          "_type": "reference"
+        },
+        "mainContent": [
+          {
+            "_key": "service-boho-spa-day",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "service-boho-spa-day-span",
+                "_type": "span",
+                "marks": [],
+                "text": "**Una experiencia integral que combina belleza, cuidado facial y relajación corporal en una misma propuesta.**\n\nEl Spa de Manos suma un momento de cuidado que incluye exfoliación desde las manos hasta los codos, preparación de las uñas, cuidado de cutículas y la posibilidad de elegir esmaltado tradicional o semipermanente.\n\nLa experiencia continúa con un masaje corporal sensorial que se integra con un spa facial hidratante. Ambos momentos se combinan de manera fluida para que el cuidado del rostro y la relajación corporal formen parte de una misma pausa, sin cortar el ritmo de la experiencia.\n\nEl cierre llega con Brunch Boho: infusiones a elección, frutas frescas, exprimido natural y bocados dulces y salados para prolongar un poco más el momento.\n\n**Para disfrutarla:**  \nRecomendamos disponer de aproximadamente 3 horas y media. Los servicios tienen una duración total cercana a las 2 horas y media, más el tiempo destinado al brunch.\n\n**Modalidad:**  \nIndividual.\n\n**Nota:**  \nEl retiro de trabajos anteriores no está incluido y, si fuera necesario, debe informarse al reservar para contemplar el tiempo adicional.\n\n**CTA:**  \nReservar Boho Spa Day\n\n---"
+              }
+            ]
+          }
+        ],
+        "landingEnabled": false,
+        "archived": false
+      },
+      "managedFields": [
+        "name",
+        "slug",
+        "category",
+        "mainContent",
+        "landingEnabled",
+        "archived"
+      ],
+      "references": [],
+      "missingFields": [
+        "shortDescription",
+        "duration",
+        "price",
+        "mainImage",
+        "seo"
+      ],
+      "warnings": [
+        "Landing deshabilitada; duración, precio, imagen y SEO individual quedan pendientes."
+      ],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "service.experiencia-summer",
+      "draftId": "drafts.service.experiencia-summer",
+      "_type": "service",
+      "source": [
+        "../MaterialSitio/contenido/04-experiencias-boho.md"
+      ],
+      "sourceSection": "Experiencia Summer",
+      "sourceHash": "859db6341b8ff3fbd85b3dcc370404193070b4f99fa9db9ff9f011b34e0fc1b3",
+      "status": "approved",
+      "data": {
+        "name": "Experiencia Summer",
+        "slug": {
+          "current": "experiencia-summer"
+        },
+        "category": {
+          "_ref": "serviceCategory.experiencias-boho",
+          "_type": "reference"
+        },
+        "mainContent": [
+          {
+            "_key": "service-experiencia-summer",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "service-experiencia-summer-span",
+                "_type": "span",
+                "marks": [],
+                "text": "**Un ritual integral de renovación pensado para que cuerpo y rostro formen parte de una misma experiencia.**\n\nEl recorrido combina una exfoliación corporal con enzimas frutales y una máscara nutritiva que prepara y acondiciona la piel, mientras la experiencia va dando paso naturalmente a un momento de mayor relajación.\n\nEl masaje corporal sensorial y el spa facial hidratante se integran dentro del ritual, alternando cuidado y descanso sin que cada técnica se perciba como un servicio aislado. El cuerpo y el rostro reciben atención dentro de una misma pausa, con una lógica continua y envolvente.\n\nEl Brunch Boho completa la experiencia como un último momento para quedarse, disfrutar algo rico y volver de a poco al ritmo cotidiano.\n\n**Para disfrutarla:**  \nRecomendamos disponer de aproximadamente 2 horas. Los servicios tienen una duración cercana a los 80 minutos, más el tiempo del brunch.\n\n**Modalidad:**  \nIndividual o compartida.\n\n**CTA:**  \nReservar Experiencia Summer\n\n---"
+              }
+            ]
+          }
+        ],
+        "landingEnabled": false,
+        "archived": false
+      },
+      "managedFields": [
+        "name",
+        "slug",
+        "category",
+        "mainContent",
+        "landingEnabled",
+        "archived"
+      ],
+      "references": [],
+      "missingFields": [
+        "shortDescription",
+        "duration",
+        "price",
+        "mainImage",
+        "seo"
+      ],
+      "warnings": [
+        "Landing deshabilitada; duración, precio, imagen y SEO individual quedan pendientes."
+      ],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "service.experiencia-armonia",
+      "draftId": "drafts.service.experiencia-armonia",
+      "_type": "service",
+      "source": [
+        "../MaterialSitio/contenido/04-experiencias-boho.md"
+      ],
+      "sourceSection": "Experiencia Armonía",
+      "sourceHash": "859db6341b8ff3fbd85b3dcc370404193070b4f99fa9db9ff9f011b34e0fc1b3",
+      "status": "approved",
+      "data": {
+        "name": "Experiencia Armonía",
+        "slug": {
+          "current": "experiencia-armonia"
+        },
+        "category": {
+          "_ref": "serviceCategory.experiencias-boho",
+          "_type": "reference"
+        },
+        "mainContent": [
+          {
+            "_key": "service-experiencia-armonia",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "service-experiencia-armonia-span",
+                "_type": "span",
+                "marks": [],
+                "text": "**Una experiencia creada para bajar el ritmo y dejar que la relajación avance de manera progresiva.**\n\nEl masaje corporal sensorial recorre el cuerpo con movimientos pensados para acompañar una relajación profunda y dar lugar a una pausa más consciente.\n\nDentro de esa misma experiencia, la reflexología podal suma un momento de atención específica sobre los pies, complementando el masaje y extendiendo la sensación de descanso sin romper el clima del ritual.\n\nEl recorrido termina con Brunch Boho, para prolongar la pausa y disfrutar el cierre sin apuro.\n\n**Para disfrutarla:**  \nRecomendamos disponer de aproximadamente 2 horas. Los servicios tienen una duración cercana a los 80 minutos, más el tiempo del brunch.\n\n**Modalidad:**  \nIndividual o compartida.\n\n**CTA:**  \nReservar Experiencia Armonía\n\n---"
+              }
+            ]
+          }
+        ],
+        "landingEnabled": false,
+        "archived": false
+      },
+      "managedFields": [
+        "name",
+        "slug",
+        "category",
+        "mainContent",
+        "landingEnabled",
+        "archived"
+      ],
+      "references": [],
+      "missingFields": [
+        "shortDescription",
+        "duration",
+        "price",
+        "mainImage",
+        "seo"
+      ],
+      "warnings": [
+        "Landing deshabilitada; duración, precio, imagen y SEO individual quedan pendientes."
+      ],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "service.experiencia-full-body",
+      "draftId": "drafts.service.experiencia-full-body",
+      "_type": "service",
+      "source": [
+        "../MaterialSitio/contenido/04-experiencias-boho.md"
+      ],
+      "sourceSection": "Experiencia Full Body",
+      "sourceHash": "859db6341b8ff3fbd85b3dcc370404193070b4f99fa9db9ff9f011b34e0fc1b3",
+      "status": "approved",
+      "data": {
+        "name": "Experiencia Full Body",
+        "slug": {
+          "current": "experiencia-full-body"
+        },
+        "category": {
+          "_ref": "serviceCategory.experiencias-boho",
+          "_type": "reference"
+        },
+        "mainContent": [
+          {
+            "_key": "service-experiencia-full-body",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "service-experiencia-full-body-span",
+                "_type": "span",
+                "marks": [],
+                "text": "**Una pausa completa donde el cuidado facial y la relajación corporal se encuentran en un mismo ritual.**\n\nEl masaje corporal sensorial construye el clima de la experiencia mientras el spa facial hidratante se incorpora como parte del recorrido, sumando cuidado, hidratación y frescura al rostro sin interrumpir el momento de relajación.\n\nLa combinación permite atender cuerpo y rostro dentro de una misma experiencia fluida, evitando la sensación de estar realizando tratamientos separados.\n\nAl finalizar, Brunch Boho propone quedarse un poco más y disfrutar el cierre antes de volver a la rutina.\n\n**Para disfrutarla:**  \nRecomendamos disponer de aproximadamente 2 horas. Los servicios tienen una duración cercana a los 80 minutos, más el tiempo del brunch.\n\n**Modalidad:**  \nIndividual o compartida.\n\n**CTA:**  \nReservar Experiencia Full Body\n\n---"
+              }
+            ]
+          }
+        ],
+        "landingEnabled": false,
+        "archived": false
+      },
+      "managedFields": [
+        "name",
+        "slug",
+        "category",
+        "mainContent",
+        "landingEnabled",
+        "archived"
+      ],
+      "references": [],
+      "missingFields": [
+        "shortDescription",
+        "duration",
+        "price",
+        "mainImage",
+        "seo"
+      ],
+      "warnings": [
+        "Landing deshabilitada; duración, precio, imagen y SEO individual quedan pendientes."
+      ],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "service.experiencia-felicidad",
+      "draftId": "drafts.service.experiencia-felicidad",
+      "_type": "service",
+      "source": [
+        "../MaterialSitio/contenido/04-experiencias-boho.md"
+      ],
+      "sourceSection": "Experiencia Felicidad",
+      "sourceHash": "859db6341b8ff3fbd85b3dcc370404193070b4f99fa9db9ff9f011b34e0fc1b3",
+      "status": "approved",
+      "data": {
+        "name": "Experiencia Felicidad",
+        "slug": {
+          "current": "experiencia-felicidad"
+        },
+        "category": {
+          "_ref": "serviceCategory.experiencias-boho",
+          "_type": "reference"
+        },
+        "mainContent": [
+          {
+            "_key": "service-experiencia-felicidad",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "service-experiencia-felicidad-span",
+                "_type": "span",
+                "marks": [],
+                "text": "**Un ritual corporal que combina renovación de la piel, relajación y disfrute en una experiencia continua.**\n\nLa exfoliación corporal con enzimas frutales inicia el cuidado de la piel y da paso a una máscara nutritiva que completa este primer momento del ritual.\n\nA partir de ahí, el masaje corporal sensorial acompaña el cambio de ritmo hacia una relajación más profunda, integrándose naturalmente con el trabajo corporal previo para que todo se perciba como una única experiencia.\n\nEl Brunch Boho cierra el recorrido y suma ese tiempo extra para disfrutar sin necesidad de salir inmediatamente de la pausa.\n\n**Para disfrutarla:**  \nRecomendamos disponer de aproximadamente 2 horas. Los servicios tienen una duración cercana a los 80 minutos, más el tiempo del brunch.\n\n**Modalidad:**  \nIndividual o compartida.\n\n**CTA:**  \nReservar Experiencia Felicidad\n\n---"
+              }
+            ]
+          }
+        ],
+        "landingEnabled": false,
+        "archived": false
+      },
+      "managedFields": [
+        "name",
+        "slug",
+        "category",
+        "mainContent",
+        "landingEnabled",
+        "archived"
+      ],
+      "references": [],
+      "missingFields": [
+        "shortDescription",
+        "duration",
+        "price",
+        "mainImage",
+        "seo"
+      ],
+      "warnings": [
+        "Landing deshabilitada; duración, precio, imagen y SEO individual quedan pendientes."
+      ],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "service.masaje-renovacion-integral",
+      "draftId": "drafts.service.masaje-renovacion-integral",
+      "_type": "service",
+      "source": [
+        "../MaterialSitio/contenido/05-masajes-bienestar.md"
+      ],
+      "sourceSection": "Masaje Renovación Integral",
+      "sourceHash": "00fd9853bbe7b463ba79a3af538bd29e3c822ef7b1ca3ad1019dc65620546dcf",
+      "status": "approved",
+      "data": {
+        "name": "Masaje Renovación Integral",
+        "slug": {
+          "current": "masaje-renovacion-integral"
+        },
+        "category": {
+          "_ref": "serviceCategory.masajes-bienestar",
+          "_type": "reference"
+        },
+        "mainContent": [
+          {
+            "_key": "service-masaje-renovacion-integral",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "service-masaje-renovacion-integral-span",
+                "_type": "span",
+                "marks": [],
+                "text": "**El más elegido de Boho, porque combina dos necesidades que muchas veces aparecen juntas: aliviar tensiones y relajarse.**\n\nIntegra maniobras descontracturantes y relajantes en una misma sesión. Se trabaja con mayor profundidad sobre las zonas que acumulan carga muscular, pero manteniendo un ritmo fluido y continuo.\n\nEse equilibrio es su principal diferencial: permite trabajar tensión física sin perder la sensación de bienestar y descanso durante la experiencia.\n\n**Ideal para** momentos de mucho estrés, contracturas leves o moderadas, cansancio físico o cuando buscás un masaje completo que alivie y relaje al mismo tiempo.\n\n**Duración:**  \n60 minutos\n\n**CTA:**  \nReservá tu turno\n\n---"
+              }
+            ]
+          }
+        ],
+        "landingEnabled": false,
+        "archived": false
+      },
+      "managedFields": [
+        "name",
+        "slug",
+        "category",
+        "mainContent",
+        "landingEnabled",
+        "archived"
+      ],
+      "references": [],
+      "missingFields": [
+        "shortDescription",
+        "duration",
+        "price",
+        "mainImage",
+        "seo"
+      ],
+      "warnings": [
+        "Landing deshabilitada; duración, precio, imagen y SEO individual quedan pendientes."
+      ],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "service.masaje-corporal-relajante",
+      "draftId": "drafts.service.masaje-corporal-relajante",
+      "_type": "service",
+      "source": [
+        "../MaterialSitio/contenido/05-masajes-bienestar.md"
+      ],
+      "sourceSection": "Masaje Corporal Relajante",
+      "sourceHash": "00fd9853bbe7b463ba79a3af538bd29e3c822ef7b1ca3ad1019dc65620546dcf",
+      "status": "approved",
+      "data": {
+        "name": "Masaje Corporal Relajante",
+        "slug": {
+          "current": "masaje-corporal-relajante"
+        },
+        "category": {
+          "_ref": "serviceCategory.masajes-bienestar",
+          "_type": "reference"
+        },
+        "mainContent": [
+          {
+            "_key": "service-masaje-corporal-relajante",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "service-masaje-corporal-relajante-span",
+                "_type": "span",
+                "marks": [],
+                "text": "**Una experiencia pensada para ayudar al cuerpo a bajar el nivel de activación y liberar el estrés acumulado.**\n\nSe realiza con movimientos suaves, continuos y envolventes, acompañando al cuerpo de forma progresiva hacia un estado de mayor calma.\n\nSu objetivo principal no es trabajar puntos específicos de tensión, sino generar una sensación global de descanso y ayudar a que el sistema nervioso salga del estado de alerta constante que muchas veces acompaña al estrés cotidiano.\n\n**Ideal para** períodos de estrés, cansancio mental, dificultad para aflojar el cuerpo o simplemente cuando necesitás bajar el ritmo.\n\n**Duración:**  \n60 minutos\n\n**CTA:**  \nReservá tu turno\n\n---"
+              }
+            ]
+          }
+        ],
+        "landingEnabled": false,
+        "archived": false
+      },
+      "managedFields": [
+        "name",
+        "slug",
+        "category",
+        "mainContent",
+        "landingEnabled",
+        "archived"
+      ],
+      "references": [],
+      "missingFields": [
+        "shortDescription",
+        "duration",
+        "price",
+        "mainImage",
+        "seo"
+      ],
+      "warnings": [
+        "Landing deshabilitada; duración, precio, imagen y SEO individual quedan pendientes."
+      ],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "service.reflexologia-podal",
+      "draftId": "drafts.service.reflexologia-podal",
+      "_type": "service",
+      "source": [
+        "../MaterialSitio/contenido/05-masajes-bienestar.md"
+      ],
+      "sourceSection": "Reflexología Podal",
+      "sourceHash": "00fd9853bbe7b463ba79a3af538bd29e3c822ef7b1ca3ad1019dc65620546dcf",
+      "status": "approved",
+      "data": {
+        "name": "Reflexología Podal",
+        "slug": {
+          "current": "reflexologia-podal"
+        },
+        "category": {
+          "_ref": "serviceCategory.masajes-bienestar",
+          "_type": "reference"
+        },
+        "mainContent": [
+          {
+            "_key": "service-reflexologia-podal",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "service-reflexologia-podal-span",
+                "_type": "span",
+                "marks": [],
+                "text": "**Una técnica terapéutica que trabaja sobre puntos reflejos de los pies vinculados con distintas zonas del cuerpo.**\n\nA través de presiones y maniobras específicas sobre esos puntos, la sesión propone un abordaje integral orientado al bienestar y al equilibrio general.\n\nNo es un masaje de pies convencional. La reflexología trabaja sobre un mapa de zonas reflejas y utiliza una técnica específica, por lo que la experiencia tiene una lógica y un objetivo diferentes al simple trabajo muscular o relajante de los pies.\n\n**Ideal para** quienes buscan una experiencia de bienestar diferente, un abordaje complementario o una pausa con una técnica más específica.\n\n**Duración:**  \n40 minutos\n\n**CTA:**  \nReservá tu turno\n\n---"
+              }
+            ]
+          }
+        ],
+        "landingEnabled": false,
+        "archived": false
+      },
+      "managedFields": [
+        "name",
+        "slug",
+        "category",
+        "mainContent",
+        "landingEnabled",
+        "archived"
+      ],
+      "references": [],
+      "missingFields": [
+        "shortDescription",
+        "duration",
+        "price",
+        "mainImage",
+        "seo"
+      ],
+      "warnings": [
+        "Landing deshabilitada; duración, precio, imagen y SEO individual quedan pendientes."
+      ],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "service.drenaje-linfatico-manual",
+      "draftId": "drafts.service.drenaje-linfatico-manual",
+      "_type": "service",
+      "source": [
+        "../MaterialSitio/contenido/05-masajes-bienestar.md"
+      ],
+      "sourceSection": "Drenaje Linfático Manual",
+      "sourceHash": "00fd9853bbe7b463ba79a3af538bd29e3c822ef7b1ca3ad1019dc65620546dcf",
+      "status": "approved",
+      "data": {
+        "name": "Drenaje Linfático Manual",
+        "slug": {
+          "current": "drenaje-linfatico-manual"
+        },
+        "category": {
+          "_ref": "serviceCategory.masajes-bienestar",
+          "_type": "reference"
+        },
+        "mainContent": [
+          {
+            "_key": "service-drenaje-linfatico-manual",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "service-drenaje-linfatico-manual-span",
+                "_type": "span",
+                "marks": [],
+                "text": "**Una técnica manual suave y rítmica pensada para acompañar al cuerpo cuando aparece sensación de pesadez, hinchazón o cansancio.**\n\nSe trabaja con movimientos lentos y precisos que siguen recorridos específicos del sistema linfático. A diferencia de un masaje tradicional, no busca trabajar la musculatura en profundidad ni generar presión intensa.\n\nLa experiencia es muy suave y pausada, y suele elegirse especialmente cuando se busca aliviar la sensación de piernas cansadas, acompañar procesos de desinflamación o sumar un momento de cuidado orientado a sentirse más liviano.\n\n**Ideal para** personas que sienten pesadez en las piernas, hinchazón o retención, o que buscan una propuesta suave de cuidado y bienestar para acompañar al cuerpo en procesos de renovación y detox.\n\n**Duración:**  \nentre 70 y 90 minutos, según las zonas a trabajar.\n\n**CTA:**  \nReservá tu turno\n\n---"
+              }
+            ]
+          }
+        ],
+        "landingEnabled": false,
+        "archived": false
+      },
+      "managedFields": [
+        "name",
+        "slug",
+        "category",
+        "mainContent",
+        "landingEnabled",
+        "archived"
+      ],
+      "references": [],
+      "missingFields": [
+        "shortDescription",
+        "duration",
+        "price",
+        "mainImage",
+        "seo"
+      ],
+      "warnings": [
+        "Landing deshabilitada; duración, precio, imagen y SEO individual quedan pendientes."
+      ],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "service.ritual-natural-glow",
+      "draftId": "drafts.service.ritual-natural-glow",
+      "_type": "service",
+      "source": [
+        "../MaterialSitio/contenido/06-cuidado-facial-corporal.md"
+      ],
+      "sourceSection": "Ritual Natural Glow",
+      "sourceHash": "adf7b4db0c2a27cbb244e91f5e729167df6681d76dace1428d371fa01e953701",
+      "status": "approved",
+      "data": {
+        "name": "Ritual Natural Glow",
+        "slug": {
+          "current": "ritual-natural-glow"
+        },
+        "category": {
+          "_ref": "serviceCategory.cuidado-facial-corporal",
+          "_type": "reference"
+        },
+        "mainContent": [],
+        "landingEnabled": false,
+        "archived": false
+      },
+      "managedFields": [
+        "name",
+        "slug",
+        "category",
+        "mainContent",
+        "landingEnabled",
+        "archived"
+      ],
+      "references": [],
+      "missingFields": [
+        "shortDescription",
+        "duration",
+        "price",
+        "mainImage",
+        "seo"
+      ],
+      "warnings": [
+        "Landing deshabilitada; duración, precio, imagen y SEO individual quedan pendientes."
+      ],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "service.limpieza-facial-boho",
+      "draftId": "drafts.service.limpieza-facial-boho",
+      "_type": "service",
+      "source": [
+        "../MaterialSitio/contenido/06-cuidado-facial-corporal.md"
+      ],
+      "sourceSection": "Limpieza Facial Boho",
+      "sourceHash": "adf7b4db0c2a27cbb244e91f5e729167df6681d76dace1428d371fa01e953701",
+      "status": "approved",
+      "data": {
+        "name": "Limpieza Facial Boho",
+        "slug": {
+          "current": "limpieza-facial-boho"
+        },
+        "category": {
+          "_ref": "serviceCategory.cuidado-facial-corporal",
+          "_type": "reference"
+        },
+        "mainContent": [],
+        "landingEnabled": false,
+        "archived": false
+      },
+      "managedFields": [
+        "name",
+        "slug",
+        "category",
+        "mainContent",
+        "landingEnabled",
+        "archived"
+      ],
+      "references": [],
+      "missingFields": [
+        "shortDescription",
+        "duration",
+        "price",
+        "mainImage",
+        "seo"
+      ],
+      "warnings": [
+        "Landing deshabilitada; duración, precio, imagen y SEO individual quedan pendientes."
+      ],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "service.ritual-pro-age",
+      "draftId": "drafts.service.ritual-pro-age",
+      "_type": "service",
+      "source": [
+        "../MaterialSitio/contenido/06-cuidado-facial-corporal.md"
+      ],
+      "sourceSection": "Ritual Pro Age",
+      "sourceHash": "adf7b4db0c2a27cbb244e91f5e729167df6681d76dace1428d371fa01e953701",
+      "status": "approved",
+      "data": {
+        "name": "Ritual Pro Age",
+        "slug": {
+          "current": "ritual-pro-age"
+        },
+        "category": {
+          "_ref": "serviceCategory.cuidado-facial-corporal",
+          "_type": "reference"
+        },
+        "mainContent": [],
+        "landingEnabled": false,
+        "archived": false
+      },
+      "managedFields": [
+        "name",
+        "slug",
+        "category",
+        "mainContent",
+        "landingEnabled",
+        "archived"
+      ],
+      "references": [],
+      "missingFields": [
+        "shortDescription",
+        "duration",
+        "price",
+        "mainImage",
+        "seo"
+      ],
+      "warnings": [
+        "Landing deshabilitada; duración, precio, imagen y SEO individual quedan pendientes."
+      ],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    },
+    {
+      "canonicalId": "service.manicura-japonesa",
+      "draftId": "drafts.service.manicura-japonesa",
+      "_type": "service",
+      "source": [
+        "../MaterialSitio/contenido/07-belleza-consciente.md"
+      ],
+      "sourceSection": "Manicura Japonesa",
+      "sourceHash": "c61a7552430701ee7af2dc8b2d90875a72dbf821796c3c3a8b0060f73d1f253f",
+      "status": "approved",
+      "data": {
+        "name": "Manicura Japonesa",
+        "slug": {
+          "current": "manicura-japonesa"
+        },
+        "category": {
+          "_ref": "serviceCategory.belleza-consciente",
+          "_type": "reference"
+        },
+        "mainContent": [],
+        "landingEnabled": false,
+        "archived": false
+      },
+      "managedFields": [
+        "name",
+        "slug",
+        "category",
+        "mainContent",
+        "landingEnabled",
+        "archived"
+      ],
+      "references": [],
+      "missingFields": [
+        "shortDescription",
+        "duration",
+        "price",
+        "mainImage",
+        "seo"
+      ],
+      "warnings": [
+        "Landing deshabilitada; duración, precio, imagen y SEO individual quedan pendientes."
+      ],
+      "blockingErrors": [],
+      "readyForImport": true,
+      "schemaValid": false,
+      "readyForPublish": false
+    }
+  ],
+  "sources": [
+    "../MaterialSitio/servicios/servicios-normalizados.md",
+    "../MaterialSitio/servicios/servicios-agendapro-origen.md",
+    "../MaterialSitio/servicios/pendientes-editoriales.md"
+  ],
+  "missing": [
+    "prices",
+    "durations where not editorially confirmed",
+    "images",
+    "individual SEO"
+  ]
+}

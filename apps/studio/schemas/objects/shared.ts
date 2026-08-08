@@ -92,7 +92,6 @@ export const link = defineType({
         { type: "servicesPage" },
         { type: "giftCardsPage" },
         { type: "corporatePage" },
-        { type: "contactPage" },
         { type: "faqPage" },
         { type: "legalPage" },
         { type: "service" },
@@ -395,11 +394,6 @@ export const contact = defineType({
       title: "URL pública de Google Maps",
       type: "url",
     }),
-    defineField({
-      name: "googleMapsEmbedUrl",
-      title: "URL de embed de Google Maps",
-      type: "url",
-    }),
   ],
 });
 export const organizationData = defineType({
@@ -418,7 +412,6 @@ export const organizationData = defineType({
       name: "logo",
       title: "Logo",
       type: "imageWithAlt",
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "foundingDate",
@@ -462,51 +455,6 @@ export const localBusinessData = defineType({
       type: "imageWithAlt",
     }),
   ],
-});
-export const contactVisibleBlocks = defineType({
-  name: "contactVisibleBlocks",
-  title: "Bloques visibles de contacto",
-  type: "object",
-  fields: [
-    "phone",
-    "whatsapp",
-    "email",
-    "address",
-    "hours",
-    "maps",
-    "form",
-  ].map((name) =>
-    defineField({
-      name,
-      title:
-        name === "whatsapp"
-          ? "WhatsApp"
-          : name.charAt(0).toUpperCase() + name.slice(1),
-      type: "boolean",
-      initialValue: true,
-    }),
-  ),
-});
-export const contactFormTexts = defineType({
-  name: "contactFormTexts",
-  title: "Textos del formulario",
-  type: "object",
-  fields: [
-    "title",
-    "description",
-    "nameLabel",
-    "emailLabel",
-    "messageLabel",
-    "submitLabel",
-    "successMessage",
-    "errorMessage",
-  ].map((name) =>
-    defineField({
-      name,
-      title: name,
-      type: name === "description" ? "text" : "string",
-    }),
-  ),
 });
 export const footerColumn = defineType({
   name: "footerColumn",
@@ -587,8 +535,6 @@ export const sharedObjects = [
   contact,
   organizationData,
   localBusinessData,
-  contactVisibleBlocks,
-  contactFormTexts,
   footerColumn,
   faqTopicGroup,
 ];

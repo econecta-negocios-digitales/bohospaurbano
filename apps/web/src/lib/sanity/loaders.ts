@@ -31,8 +31,6 @@ export const loadGiftCardsPage = (): Promise<ContentPage | null> =>
   loadSingleton<ContentPage>(singletonQueries.giftCardsPage);
 export const loadCorporatePage = (): Promise<ContentPage | null> =>
   loadSingleton<ContentPage>(singletonQueries.corporatePage);
-export const loadContactPage = (): Promise<ContentPage | null> =>
-  loadSingleton<ContentPage>(singletonQueries.contactPage);
 export const loadFaqPage = (): Promise<ContentPage | null> =>
   loadSingleton<ContentPage>(singletonQueries.faqPage);
 export const loadNavigation = (): Promise<Navigation | null> =>

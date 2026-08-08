@@ -7,7 +7,6 @@ const documents = [
   ["servicesPage", "servicesPage"],
   ["giftCardsPage", "giftCardsPage"],
   ["corporatePage", "corporatePage"],
-  ["contactPage", "contactPage"],
   ["faqPage", "faqPage"],
   ["navigation", "navigation"],
   ["footer", "footer"],

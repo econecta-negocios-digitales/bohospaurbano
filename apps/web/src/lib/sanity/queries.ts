@@ -37,10 +37,6 @@ export const singletonQueries = {
     "corporatePage",
     `_id, title, description, content${portableText}, experiences, cta${cta}, seo${seo}`,
   ),
-  contactPage: singleton(
-    "contactPage",
-    `_id, title, description, content${portableText}, visibleBlocks, formTexts, seo${seo}`,
-  ),
   faqPage: singleton(
     "faqPage",
     `_id, title, description, topics[]{key, label, description, order, visible, faqs}`,
@@ -67,7 +63,7 @@ export const singletonQueries = {
   ),
 } as const;
 
-const categoryProjection = `_id, name, "slug": slug.current, description, image${image}, seo${seo}, order`;
+const categoryProjection = `_id, name, "slug": slug.current, description, content${portableText}, cta${cta}, image${image}, seo${seo}, order`;
 const serviceProjection = `_id, name, "slug": slug.current, category->{_id, name, "slug": slug.current}, shortDescription, mainContent${portableText}, duration, price, showPrice, modality, maxPeople, coordinateByWhatsapp, primaryCta${cta}, secondaryCta${cta}, mainImage${image}, featured, order, landingEnabled, seo${seo}`;
 const giftCardProjection = `_id, name, "slug": slug.current, kind, relatedService->{_id, name, "slug": slug.current}, shortDescription, content${portableText}, image${image}, price, showPrice, modality, people, deliveryFormat, coordinateByWhatsapp, cta${cta}, featured, order`;
 const corporateProjection = `_id, name, description, content${portableText}, image${image}, benefits${portableText}, minPeople, maxPeople, modality, priceOrBudget, primaryCta${cta}, secondaryCta${cta}, featured, order, seo${seo}`;

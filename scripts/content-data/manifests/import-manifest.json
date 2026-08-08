@@ -1,0 +1,1207 @@
+{
+  "policy": "External manifest only; no import metadata is added to Sanity documents.",
+  "documents": [
+    {
+      "canonicalId": "siteSettings",
+      "draftId": "drafts.siteSettings",
+      "_type": "siteSettings",
+      "source": [
+        "../MaterialSitio/contenido/10-contacto.md",
+        "../MaterialSitio/contenido/00-lineamientos-generales.md"
+      ],
+      "sourceHash": "f271d8d65c08a5ed8d2893718a5a334cb79180c87bee1fb0851557048b339352",
+      "managedFields": [
+        "contact.address",
+        "contact.city",
+        "contact.country",
+        "organizationData.commercialName"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "provisional",
+      "warnings": [
+        "Operational data and images are pending."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "homePage",
+      "draftId": "drafts.homePage",
+      "_type": "homePage",
+      "source": [
+        "../MaterialSitio/contenido/01-home.md"
+      ],
+      "sourceHash": "cf640a6f927dfe126f1c23359207fcb96db0768108c34c495f2a775df3ab4ca6",
+      "managedFields": [
+        "experiences.description",
+        "categories.description",
+        "brunch.description",
+        "about",
+        "contactLocation"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "Imágenes, testimonios, SEO y enlaces operativos siguen pendientes."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "aboutPage",
+      "draftId": "drafts.aboutPage",
+      "_type": "aboutPage",
+      "source": [
+        "../MaterialSitio/contenido/02-nosotros.md"
+      ],
+      "sourceHash": "63b20e3258b1b4eea6b65ae0d27d4f089619cc108aee830eeb04c793fb0f9f45",
+      "managedFields": [
+        "title",
+        "intro"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "Equipo, imagen, CTA y SEO requieren validación final."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "servicesPage",
+      "draftId": "drafts.servicesPage",
+      "_type": "servicesPage",
+      "source": [
+        "../MaterialSitio/contenido/03-servicios.md"
+      ],
+      "sourceHash": "3e1a2173c04e0e3a49cffec8e5c1b9f3d0dc18e339d644cfa3c20b98a96fbabe",
+      "managedFields": [
+        "title",
+        "content",
+        "categories",
+        "featuredServices"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "SEO y CTA operativo quedan pendientes."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "giftCardsPage",
+      "draftId": "drafts.giftCardsPage",
+      "_type": "giftCardsPage",
+      "source": [
+        "../MaterialSitio/contenido/08-gift-cards.md"
+      ],
+      "sourceHash": "85a0f283cc85abe660d7431da08cac2cf2998a0a2bff6d05f8aae21ae0f93e7b",
+      "managedFields": [
+        "title",
+        "content",
+        "featuredGiftCards"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "SEO y CTA operativo quedan pendientes."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "corporatePage",
+      "draftId": "drafts.corporatePage",
+      "_type": "corporatePage",
+      "source": [
+        "../MaterialSitio/contenido/09-regalos-corporativos.md"
+      ],
+      "sourceHash": "685e2c70f164e601e33c4e734fc3cac7a556203f9902a7f34094148d49cbf5fa",
+      "managedFields": [
+        "title",
+        "content",
+        "experiences"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "SEO y CTA operativo quedan pendientes."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "faqPage",
+      "draftId": "drafts.faqPage",
+      "_type": "faqPage",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "managedFields": [
+        "title",
+        "description",
+        "topics"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "SEO queda pendiente."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "giftCardPolicy",
+      "draftId": "drafts.giftCardPolicy",
+      "_type": "giftCardPolicy",
+      "source": [
+        "../MaterialSitio/contenido/08-gift-cards.md"
+      ],
+      "sourceHash": "85a0f283cc85abe660d7431da08cac2cf2998a0a2bff6d05f8aae21ae0f93e7b",
+      "managedFields": [
+        "title",
+        "content"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "provisional",
+      "warnings": [
+        "Policy requires final editorial/legal review."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "navigation",
+      "draftId": "drafts.navigation",
+      "_type": "navigation",
+      "source": [],
+      "sourceHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "managedFields": [],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "pending",
+      "warnings": [
+        "No source file was found."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "footer",
+      "draftId": "drafts.footer",
+      "_type": "footer",
+      "source": [],
+      "sourceHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "managedFields": [],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "pending",
+      "warnings": [
+        "No source file was found."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "legalPage.privacy",
+      "draftId": "drafts.legalPage.privacy",
+      "_type": "legalPage",
+      "source": [
+        "../MaterialSitio/contenido/12-legales.md"
+      ],
+      "sourceHash": "08efc0b565fdbcdde3e83c2173741962851ef1c501e5a4bb0bad86d26c51e824",
+      "managedFields": [
+        "title",
+        "slug",
+        "content",
+        "seo"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "La fecha de actualización debe definirse antes de publicar."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "legalPage.terms",
+      "draftId": "drafts.legalPage.terms",
+      "_type": "legalPage",
+      "source": [
+        "../MaterialSitio/contenido/12-legales.md"
+      ],
+      "sourceHash": "08efc0b565fdbcdde3e83c2173741962851ef1c501e5a4bb0bad86d26c51e824",
+      "managedFields": [
+        "title",
+        "slug",
+        "content",
+        "seo"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "La fecha de actualización debe definirse antes de publicar."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "serviceCategory.experiencias-boho",
+      "draftId": "drafts.serviceCategory.experiencias-boho",
+      "_type": "serviceCategory",
+      "source": [
+        "../MaterialSitio/contenido/04-experiencias-boho.md"
+      ],
+      "sourceHash": "859db6341b8ff3fbd85b3dcc370404193070b4f99fa9db9ff9f011b34e0fc1b3",
+      "managedFields": [
+        "name",
+        "slug",
+        "description",
+        "content",
+        "order",
+        "archived"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "Image, SEO and CTA links are pending."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "serviceCategory.masajes-bienestar",
+      "draftId": "drafts.serviceCategory.masajes-bienestar",
+      "_type": "serviceCategory",
+      "source": [
+        "../MaterialSitio/contenido/05-masajes-bienestar.md"
+      ],
+      "sourceHash": "00fd9853bbe7b463ba79a3af538bd29e3c822ef7b1ca3ad1019dc65620546dcf",
+      "managedFields": [
+        "name",
+        "slug",
+        "description",
+        "content",
+        "order",
+        "archived"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "Image, SEO and CTA links are pending."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "serviceCategory.cuidado-facial-corporal",
+      "draftId": "drafts.serviceCategory.cuidado-facial-corporal",
+      "_type": "serviceCategory",
+      "source": [
+        "../MaterialSitio/contenido/06-cuidado-facial-corporal.md"
+      ],
+      "sourceHash": "adf7b4db0c2a27cbb244e91f5e729167df6681d76dace1428d371fa01e953701",
+      "managedFields": [
+        "name",
+        "slug",
+        "description",
+        "content",
+        "order",
+        "archived"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "Image, SEO and CTA links are pending."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "serviceCategory.belleza-consciente",
+      "draftId": "drafts.serviceCategory.belleza-consciente",
+      "_type": "serviceCategory",
+      "source": [
+        "../MaterialSitio/contenido/07-belleza-consciente.md"
+      ],
+      "sourceHash": "c61a7552430701ee7af2dc8b2d90875a72dbf821796c3c3a8b0060f73d1f253f",
+      "managedFields": [
+        "name",
+        "slug",
+        "description",
+        "content",
+        "order",
+        "archived"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "Image, SEO and CTA links are pending."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "service.boho-spa-day",
+      "draftId": "drafts.service.boho-spa-day",
+      "_type": "service",
+      "source": [
+        "../MaterialSitio/contenido/04-experiencias-boho.md"
+      ],
+      "sourceHash": "859db6341b8ff3fbd85b3dcc370404193070b4f99fa9db9ff9f011b34e0fc1b3",
+      "managedFields": [
+        "name",
+        "slug",
+        "category",
+        "mainContent",
+        "landingEnabled",
+        "archived"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "Landing deshabilitada; duración, precio, imagen y SEO individual quedan pendientes."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "service.experiencia-summer",
+      "draftId": "drafts.service.experiencia-summer",
+      "_type": "service",
+      "source": [
+        "../MaterialSitio/contenido/04-experiencias-boho.md"
+      ],
+      "sourceHash": "859db6341b8ff3fbd85b3dcc370404193070b4f99fa9db9ff9f011b34e0fc1b3",
+      "managedFields": [
+        "name",
+        "slug",
+        "category",
+        "mainContent",
+        "landingEnabled",
+        "archived"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "Landing deshabilitada; duración, precio, imagen y SEO individual quedan pendientes."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "service.experiencia-armonia",
+      "draftId": "drafts.service.experiencia-armonia",
+      "_type": "service",
+      "source": [
+        "../MaterialSitio/contenido/04-experiencias-boho.md"
+      ],
+      "sourceHash": "859db6341b8ff3fbd85b3dcc370404193070b4f99fa9db9ff9f011b34e0fc1b3",
+      "managedFields": [
+        "name",
+        "slug",
+        "category",
+        "mainContent",
+        "landingEnabled",
+        "archived"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "Landing deshabilitada; duración, precio, imagen y SEO individual quedan pendientes."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "service.experiencia-full-body",
+      "draftId": "drafts.service.experiencia-full-body",
+      "_type": "service",
+      "source": [
+        "../MaterialSitio/contenido/04-experiencias-boho.md"
+      ],
+      "sourceHash": "859db6341b8ff3fbd85b3dcc370404193070b4f99fa9db9ff9f011b34e0fc1b3",
+      "managedFields": [
+        "name",
+        "slug",
+        "category",
+        "mainContent",
+        "landingEnabled",
+        "archived"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "Landing deshabilitada; duración, precio, imagen y SEO individual quedan pendientes."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "service.experiencia-felicidad",
+      "draftId": "drafts.service.experiencia-felicidad",
+      "_type": "service",
+      "source": [
+        "../MaterialSitio/contenido/04-experiencias-boho.md"
+      ],
+      "sourceHash": "859db6341b8ff3fbd85b3dcc370404193070b4f99fa9db9ff9f011b34e0fc1b3",
+      "managedFields": [
+        "name",
+        "slug",
+        "category",
+        "mainContent",
+        "landingEnabled",
+        "archived"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "Landing deshabilitada; duración, precio, imagen y SEO individual quedan pendientes."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "service.masaje-renovacion-integral",
+      "draftId": "drafts.service.masaje-renovacion-integral",
+      "_type": "service",
+      "source": [
+        "../MaterialSitio/contenido/05-masajes-bienestar.md"
+      ],
+      "sourceHash": "00fd9853bbe7b463ba79a3af538bd29e3c822ef7b1ca3ad1019dc65620546dcf",
+      "managedFields": [
+        "name",
+        "slug",
+        "category",
+        "mainContent",
+        "landingEnabled",
+        "archived"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "Landing deshabilitada; duración, precio, imagen y SEO individual quedan pendientes."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "service.masaje-corporal-relajante",
+      "draftId": "drafts.service.masaje-corporal-relajante",
+      "_type": "service",
+      "source": [
+        "../MaterialSitio/contenido/05-masajes-bienestar.md"
+      ],
+      "sourceHash": "00fd9853bbe7b463ba79a3af538bd29e3c822ef7b1ca3ad1019dc65620546dcf",
+      "managedFields": [
+        "name",
+        "slug",
+        "category",
+        "mainContent",
+        "landingEnabled",
+        "archived"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "Landing deshabilitada; duración, precio, imagen y SEO individual quedan pendientes."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "service.reflexologia-podal",
+      "draftId": "drafts.service.reflexologia-podal",
+      "_type": "service",
+      "source": [
+        "../MaterialSitio/contenido/05-masajes-bienestar.md"
+      ],
+      "sourceHash": "00fd9853bbe7b463ba79a3af538bd29e3c822ef7b1ca3ad1019dc65620546dcf",
+      "managedFields": [
+        "name",
+        "slug",
+        "category",
+        "mainContent",
+        "landingEnabled",
+        "archived"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "Landing deshabilitada; duración, precio, imagen y SEO individual quedan pendientes."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "service.drenaje-linfatico-manual",
+      "draftId": "drafts.service.drenaje-linfatico-manual",
+      "_type": "service",
+      "source": [
+        "../MaterialSitio/contenido/05-masajes-bienestar.md"
+      ],
+      "sourceHash": "00fd9853bbe7b463ba79a3af538bd29e3c822ef7b1ca3ad1019dc65620546dcf",
+      "managedFields": [
+        "name",
+        "slug",
+        "category",
+        "mainContent",
+        "landingEnabled",
+        "archived"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "Landing deshabilitada; duración, precio, imagen y SEO individual quedan pendientes."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "service.ritual-natural-glow",
+      "draftId": "drafts.service.ritual-natural-glow",
+      "_type": "service",
+      "source": [
+        "../MaterialSitio/contenido/06-cuidado-facial-corporal.md"
+      ],
+      "sourceHash": "adf7b4db0c2a27cbb244e91f5e729167df6681d76dace1428d371fa01e953701",
+      "managedFields": [
+        "name",
+        "slug",
+        "category",
+        "mainContent",
+        "landingEnabled",
+        "archived"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "Landing deshabilitada; duración, precio, imagen y SEO individual quedan pendientes."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "service.limpieza-facial-boho",
+      "draftId": "drafts.service.limpieza-facial-boho",
+      "_type": "service",
+      "source": [
+        "../MaterialSitio/contenido/06-cuidado-facial-corporal.md"
+      ],
+      "sourceHash": "adf7b4db0c2a27cbb244e91f5e729167df6681d76dace1428d371fa01e953701",
+      "managedFields": [
+        "name",
+        "slug",
+        "category",
+        "mainContent",
+        "landingEnabled",
+        "archived"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "Landing deshabilitada; duración, precio, imagen y SEO individual quedan pendientes."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "service.ritual-pro-age",
+      "draftId": "drafts.service.ritual-pro-age",
+      "_type": "service",
+      "source": [
+        "../MaterialSitio/contenido/06-cuidado-facial-corporal.md"
+      ],
+      "sourceHash": "adf7b4db0c2a27cbb244e91f5e729167df6681d76dace1428d371fa01e953701",
+      "managedFields": [
+        "name",
+        "slug",
+        "category",
+        "mainContent",
+        "landingEnabled",
+        "archived"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "Landing deshabilitada; duración, precio, imagen y SEO individual quedan pendientes."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "service.manicura-japonesa",
+      "draftId": "drafts.service.manicura-japonesa",
+      "_type": "service",
+      "source": [
+        "../MaterialSitio/contenido/07-belleza-consciente.md"
+      ],
+      "sourceHash": "c61a7552430701ee7af2dc8b2d90875a72dbf821796c3c3a8b0060f73d1f253f",
+      "managedFields": [
+        "name",
+        "slug",
+        "category",
+        "mainContent",
+        "landingEnabled",
+        "archived"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "Landing deshabilitada; duración, precio, imagen y SEO individual quedan pendientes."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "giftCard.servicio",
+      "draftId": "drafts.giftCard.servicio",
+      "_type": "giftCard",
+      "source": [
+        "../MaterialSitio/contenido/08-gift-cards.md"
+      ],
+      "sourceHash": "85a0f283cc85abe660d7431da08cac2cf2998a0a2bff6d05f8aae21ae0f93e7b",
+      "managedFields": [
+        "name",
+        "slug",
+        "kind",
+        "shortDescription",
+        "content",
+        "deliveryFormat",
+        "coordinateByWhatsapp",
+        "showPrice",
+        "visible",
+        "archived"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "No se cargan precios ni imágenes."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "giftCard.experiencia-boho",
+      "draftId": "drafts.giftCard.experiencia-boho",
+      "_type": "giftCard",
+      "source": [
+        "../MaterialSitio/contenido/08-gift-cards.md"
+      ],
+      "sourceHash": "85a0f283cc85abe660d7431da08cac2cf2998a0a2bff6d05f8aae21ae0f93e7b",
+      "managedFields": [
+        "name",
+        "slug",
+        "kind",
+        "shortDescription",
+        "content",
+        "deliveryFormat",
+        "coordinateByWhatsapp",
+        "showPrice",
+        "visible",
+        "archived"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "No se cargan precios ni imágenes."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "giftCard.monto-abierto",
+      "draftId": "drafts.giftCard.monto-abierto",
+      "_type": "giftCard",
+      "source": [
+        "../MaterialSitio/contenido/08-gift-cards.md"
+      ],
+      "sourceHash": "85a0f283cc85abe660d7431da08cac2cf2998a0a2bff6d05f8aae21ae0f93e7b",
+      "managedFields": [
+        "name",
+        "slug",
+        "kind",
+        "shortDescription",
+        "content",
+        "deliveryFormat",
+        "coordinateByWhatsapp",
+        "showPrice",
+        "visible",
+        "archived"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "No se cargan precios ni imágenes."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "corporateExperience.experiencia-esencial",
+      "draftId": "drafts.corporateExperience.experiencia-esencial",
+      "_type": "corporateExperience",
+      "source": [
+        "../MaterialSitio/contenido/09-regalos-corporativos.md"
+      ],
+      "sourceHash": "685e2c70f164e601e33c4e734fc3cac7a556203f9902a7f34094148d49cbf5fa",
+      "managedFields": [
+        "name",
+        "description",
+        "content",
+        "archived"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "Precios, imágenes, SEO y condiciones comerciales adicionales quedan pendientes."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "corporateExperience.experiencia-plus",
+      "draftId": "drafts.corporateExperience.experiencia-plus",
+      "_type": "corporateExperience",
+      "source": [
+        "../MaterialSitio/contenido/09-regalos-corporativos.md"
+      ],
+      "sourceHash": "685e2c70f164e601e33c4e734fc3cac7a556203f9902a7f34094148d49cbf5fa",
+      "managedFields": [
+        "name",
+        "description",
+        "content",
+        "archived"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "Precios, imágenes, SEO y condiciones comerciales adicionales quedan pendientes."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "corporateExperience.boho-con-brunch",
+      "draftId": "drafts.corporateExperience.boho-con-brunch",
+      "_type": "corporateExperience",
+      "source": [
+        "../MaterialSitio/contenido/09-regalos-corporativos.md"
+      ],
+      "sourceHash": "685e2c70f164e601e33c4e734fc3cac7a556203f9902a7f34094148d49cbf5fa",
+      "managedFields": [
+        "name",
+        "description",
+        "content",
+        "archived"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [
+        "Precios, imágenes, SEO y condiciones comerciales adicionales quedan pendientes."
+      ],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "faq.reservas-1",
+      "draftId": "drafts.faq.reservas-1",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "faq.reservas-2",
+      "draftId": "drafts.faq.reservas-2",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "faq.reservas-3",
+      "draftId": "drafts.faq.reservas-3",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "faq.reservas-4",
+      "draftId": "drafts.faq.reservas-4",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "faq.servicios-y-tratamientos-5",
+      "draftId": "drafts.faq.servicios-y-tratamientos-5",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "faq.servicios-y-tratamientos-6",
+      "draftId": "drafts.faq.servicios-y-tratamientos-6",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "faq.servicios-y-tratamientos-7",
+      "draftId": "drafts.faq.servicios-y-tratamientos-7",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "faq.servicios-y-tratamientos-8",
+      "draftId": "drafts.faq.servicios-y-tratamientos-8",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "faq.experiencias-boho-9",
+      "draftId": "drafts.faq.experiencias-boho-9",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "faq.experiencias-boho-10",
+      "draftId": "drafts.faq.experiencias-boho-10",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "faq.experiencias-boho-11",
+      "draftId": "drafts.faq.experiencias-boho-11",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "faq.gift-cards-12",
+      "draftId": "drafts.faq.gift-cards-12",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "faq.gift-cards-13",
+      "draftId": "drafts.faq.gift-cards-13",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "faq.gift-cards-14",
+      "draftId": "drafts.faq.gift-cards-14",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "faq.gift-cards-15",
+      "draftId": "drafts.faq.gift-cards-15",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "faq.gift-cards-16",
+      "draftId": "drafts.faq.gift-cards-16",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "faq.antes-de-venir-17",
+      "draftId": "drafts.faq.antes-de-venir-17",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "faq.antes-de-venir-18",
+      "draftId": "drafts.faq.antes-de-venir-18",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [],
+      "conflicts": []
+    },
+    {
+      "canonicalId": "faq.antes-de-venir-19",
+      "draftId": "drafts.faq.antes-de-venir-19",
+      "_type": "faq",
+      "source": [
+        "../MaterialSitio/contenido/11-preguntas-frecuentes.md"
+      ],
+      "sourceHash": "0b583e6eb5ef142fd9fc729ccc1671a90b080942268fdf367035992bc99eb81d",
+      "managedFields": [
+        "question",
+        "answer",
+        "visible",
+        "archived",
+        "order"
+      ],
+      "lastComparedAt": null,
+      "lastImportedAt": null,
+      "status": "approved",
+      "warnings": [],
+      "conflicts": []
+    }
+  ]
+}

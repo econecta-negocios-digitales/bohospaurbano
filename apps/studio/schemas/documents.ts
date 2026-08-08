@@ -32,7 +32,12 @@ const seo = () =>
     name: "seo",
     title: "SEO",
     type: "seo",
-    validation: (Rule) => Rule.required(),
+    validation: (Rule) =>
+      Rule.custom((value, context) =>
+        context.document?._id?.startsWith("drafts.") || value
+          ? true
+          : "El SEO es obligatorio para publicar este documento.",
+      ),
   });
 const archived = () =>
   defineField({
@@ -83,6 +88,10 @@ const showPrice = () =>
     initialValue: false,
   });
 const pagePreview = { select: { title: "title" } };
+const draftOr = (message: string) => (Rule: any) =>
+  Rule.custom((value: unknown, context: { document?: { _id?: string } }) =>
+    context.document?._id?.startsWith("drafts.") || Boolean(value) || message,
+  );
 
 export const siteSettings = defineType({
   name: "siteSettings",
@@ -105,13 +114,17 @@ export const siteSettings = defineType({
       name: "organizationData",
       title: "Datos de la organización",
       type: "organizationData",
-      validation: (Rule) => Rule.required(),
+      validation: draftOr(
+        "Los datos de la organización son obligatorios para publicar.",
+      ),
     }),
     defineField({
       name: "localBusinessData",
       title: "Datos del negocio local",
       type: "localBusinessData",
-      validation: (Rule) => Rule.required(),
+      validation: draftOr(
+        "Los datos del negocio local son obligatorios para publicar.",
+      ),
     }),
   ],
   preview: { prepare: () => ({ title: "Configuración del sitio" }) },
@@ -216,22 +229,6 @@ export const corporatePage = page("corporatePage", "Regalos corporativos", [
   rich("content", "Contenido", true),
   refs("experiences", "Experiencias", ["corporateExperience"]),
   defineField({ name: "cta", title: "CTA", type: "cta" }),
-]);
-export const contactPage = page("contactPage", "Contacto", [
-  text("title", "Título", true),
-  defineField({ name: "description", title: "Descripción", type: "text" }),
-  rich("content", "Contenido", true),
-  defineField({
-    name: "visibleBlocks",
-    title: "Bloques visibles",
-    type: "contactVisibleBlocks",
-    validation: (Rule) => Rule.required(),
-  }),
-  defineField({
-    name: "formTexts",
-    title: "Textos del formulario",
-    type: "contactFormTexts",
-  }),
 ]);
 export const faqPage = page("faqPage", "Preguntas frecuentes", [
   text("title", "Título", true),
@@ -368,6 +365,8 @@ export const serviceCategory = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({ name: "description", title: "Descripción", type: "text" }),
+    rich("content", "Contenido editorial"),
+    defineField({ name: "cta", title: "CTA", type: "cta" }),
     defineField({ name: "image", title: "Imagen", type: "imageWithAlt" }),
     seo(),
     defineField({
@@ -866,7 +865,6 @@ export const faq = defineType({
       "servicesPage",
       "giftCardsPage",
       "corporatePage",
-      "contactPage",
       "faqPage",
     ]),
     defineField({
@@ -886,7 +884,6 @@ export const documents = [
   servicesPage,
   giftCardsPage,
   corporatePage,
-  contactPage,
   faqPage,
   navigation,
   footer,
