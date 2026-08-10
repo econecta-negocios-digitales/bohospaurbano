@@ -1,0 +1,9 @@
+---
+import type { Footer, SiteSettings } from "../lib/sanity/types";
+import { whatsappHref } from "../lib/site";
+interface Props { footer?: Footer | null; settings?: SiteSettings | null }
+const { footer, settings } = Astro.props;
+const socialLinks = settings?.socialLinks?.filter((social) => social.url) || [];
+const columns = footer?.columns?.filter((column) => column.visible !== false) || [];
+---
+<footer class="site-footer"><div class="footer-brand"><a class="brand" href="/" aria-label="Boho Spa Urbano, inicio"><img src="/brand/logo-boho-white.png" alt="Boho Spa Urbano" width="150" height="68" /></a><p>{settings?.contact?.address || "Santa Fe 157"}<br />{settings?.contact?.city || "Bahía Blanca"}</p><a class="footer-whatsapp" href={whatsappHref(settings)}>Consultar por WhatsApp</a></div><div class="footer-columns">{columns.map((column) => <div><p class="footer-label">{column.title}</p>{column.links?.map((link) => <a href={link.link?.externalUrl || "#"}>{link.label}</a>)}</div>)}{columns.length === 0 && <div><p class="footer-label">Explorar</p><a href="#categorias">Servicios</a><a href="#experiencias">Experiencias</a><a href="#gift-cards">Gift Cards</a></div>}<div><p class="footer-label">Legal</p><a href="/preguntas-frecuentes/">Preguntas Frecuentes</a><a href="/privacidad/">Privacidad</a><a href="/terminos-y-condiciones/">Términos y Condiciones</a></div><div>{socialLinks.length > 0 && <><p class="footer-label">Seguinos</p>{socialLinks.map((social) => <a href={social.url} target="_blank" rel="noreferrer">{social.label || social.network}</a>)}</>}</div></div><div class="footer-bottom"><span>© {new Date().getFullYear()} Boho Spa Urbano</span><span>Un refugio en la ciudad.</span></div></footer>

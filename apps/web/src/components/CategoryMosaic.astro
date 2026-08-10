@@ -1,0 +1,27 @@
+---
+import type { HomeBlock, ServiceCategory } from "../lib/sanity/types";
+import { imageAlt, localImages } from "../lib/site";
+import { sanityImageUrl } from "../lib/sanity";
+
+interface Props { block?: HomeBlock; categories: ServiceCategory[] }
+const { block, categories } = Astro.props;
+const fallbacks = [localImages.experiences, localImages.massage, localImages.facial, localImages.beauty];
+---
+
+<section class="section categories-section" id="categorias" aria-labelledby="categories-title">
+  <div class="section-heading section-heading-wide">
+    <div><p class="eyebrow">{block?.eyebrow || "Elegí cómo querés sentirte"}</p><h2 id="categories-title">Cuatro formas de entrar en pausa</h2></div>
+    <p>{block?.description || "Propuestas para regalarte un momento, cuidar tu cuerpo y disfrutar tu tiempo en Boho."}</p>
+  </div>
+  <div class="category-mosaic">
+    {categories.slice(0, 4).map((category, index) => {
+      const image = sanityImageUrl(category.image, { width: 1000, quality: 76 }) || fallbacks[index];
+      const slug = category._id.startsWith("fallback-") ? "#experiencias" : category.slug ? `/servicios/${category.slug}/` : "#experiencias";
+      return <a class={`category-tile category-tile-${index + 1}`} href={slug}>
+        <img src={image} alt={imageAlt(category.image, category.name)} width="1000" height="760" loading="lazy" />
+        <span class="category-shade"></span><span class="category-label"><small>Boho</small><strong>{category.name}</strong></span>
+      </a>;
+    })}
+  </div>
+  <div class="section-action"><a class="inline-link" href="#categorias">{block?.primaryCta?.label || "Ver todos los servicios"} <span aria-hidden="true">↗</span></a></div>
+</section>

@@ -1,0 +1,53 @@
+---
+import type { Navigation, SiteSettings } from "../lib/sanity/types";
+import { bookingHref } from "../lib/site";
+
+interface Props { navigation?: Navigation | null; settings?: SiteSettings | null }
+const { navigation, settings } = Astro.props;
+const fallbackItems = [
+  ["Servicios", "#categorias"],
+  ["Experiencias", "#experiencias"],
+  ["Gift Cards", "#gift-cards"],
+  ["Nosotros", "#por-que-boho"],
+];
+const items = navigation?.mainItems?.length
+  ? navigation.mainItems.map((item) => [item.label, item.link?.externalUrl || "#categorias"])
+  : fallbackItems;
+const booking = navigation?.primaryCta?.link?.externalUrl || bookingHref(settings);
+---
+
+<header class="site-header" data-site-header>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="Boho Spa Urbano, inicio">
+      <img src="/brand/logo-boho.png" alt="Boho Spa Urbano" width="150" height="68" />
+    </a>
+    <nav aria-label={navigation?.ariaLabel || "Navegación principal"}>
+      <ul class="nav-list">
+        {items.map(([label, href]) => <li><a href={href}>{label}</a></li>)}
+      </ul>
+    </nav>
+    <a class="header-cta" href={booking}>Reservá tu turno</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+      <span aria-hidden="true">☰</span><span class="sr-only">Abrir menú</span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
+    {items.map(([label, href]) => <a href={href}>{label}</a>)}
+    <a class="button button-primary" href={booking}>Reservá tu turno</a>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector<HTMLElement>("[data-site-header]");
+  const toggle = document.querySelector<HTMLButtonElement>("[data-menu-toggle]");
+  const menu = document.querySelector<HTMLElement>("[data-mobile-menu]");
+  toggle?.addEventListener("click", () => {
+    const open = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!open));
+    if (menu) menu.hidden = open;
+  });
+  const onScroll = () => header?.classList.toggle("is-scrolled", window.scrollY > 24);
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+</script>

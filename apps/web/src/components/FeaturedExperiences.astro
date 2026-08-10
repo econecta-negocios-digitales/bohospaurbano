@@ -1,0 +1,26 @@
+---
+import type { HomeBlock, Service } from "../lib/sanity/types";
+import { imageAlt, localImages } from "../lib/site";
+import { sanityImageUrl } from "../lib/sanity";
+
+interface Props { block?: HomeBlock; services: Service[] }
+const { block, services } = Astro.props;
+const items = services
+  .filter((service) => service.featured)
+  .sort((a, b) => Number(b.name.toLowerCase().includes("boho spa day")) - Number(a.name.toLowerCase().includes("boho spa day")))
+  .slice(0, 3);
+---
+
+<section class="section experiences-section" id="experiencias" aria-labelledby="experiences-title">
+  <div class="section-heading"><div><p class="eyebrow">{block?.eyebrow || "Experiencias Boho"}</p><h2 id="experiences-title">Experiencias que se disfrutan sin apuro</h2></div><p>{block?.description || "Recorridos integrales para regalarte una pausa completa o compartirla con alguien más."}</p></div>
+  {items.length > 0 && <div class="experience-list">
+    {items.map((service, index) => {
+      const image = sanityImageUrl(service.mainImage, { width: 1100, quality: 76 }) || [localImages.experiences, localImages.giftCard, localImages.whyBoho][index];
+      return <article class={`experience-item experience-item-${index + 1} ${index === 0 ? "experience-primary" : "experience-secondary"}`}>
+        <div class="image-frame"><img src={image} alt={imageAlt(service.mainImage, service.name)} width="1100" height="820" loading="lazy" /></div>
+        <div class="experience-copy"><p class="eyebrow">{service.category?.name || "Experiencia"}</p><h3>{service.name}</h3><p>{service.shortDescription}</p><a class="inline-link" href={service.slug ? `/servicios/${service.category?.slug || "experiencias-boho"}/${service.slug}/` : "#contacto"}>Conocé la experiencia <span aria-hidden="true">↗</span></a></div>
+      </article>;
+    })}
+    <div class="section-action"><a class="inline-link" href="#experiencias">{block?.primaryCta?.label || "Ver todas las Experiencias Boho"} <span aria-hidden="true">↗</span></a></div>
+  </div>}
+</section>

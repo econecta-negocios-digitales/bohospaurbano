@@ -1,0 +1,7 @@
+---
+import type { SiteSettings } from "../lib/sanity/types";
+import { whatsappHref } from "../lib/site";
+interface Props { settings?: SiteSettings | null }
+const { settings } = Astro.props;
+---
+<a class="floating-whatsapp" href={whatsappHref(settings)} aria-label="Consultar por WhatsApp" target={whatsappHref(settings).startsWith("http") ? "_blank" : undefined} rel="noreferrer"><span aria-hidden="true">◌</span><span>WhatsApp</span></a>

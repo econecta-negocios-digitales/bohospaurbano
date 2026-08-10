@@ -76,6 +76,19 @@ export type HomePage = {
   seo?: Seo;
 };
 
+export type HomeBlock = {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  content?: PortableTextBlock[];
+  image?: ImageWithAlt;
+  primaryCta?: Cta;
+  secondaryCta?: Cta;
+  tertiaryCta?: Cta;
+  variant?: string;
+  visible?: boolean;
+};
+
 export type ContentPage = {
   _id: string;
   title?: string;

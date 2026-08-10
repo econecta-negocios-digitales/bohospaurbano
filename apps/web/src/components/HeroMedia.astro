@@ -1,0 +1,25 @@
+---
+import type { HomeBlock, SiteSettings } from "../lib/sanity/types";
+import { imageAlt, localImages, bookingHref } from "../lib/site";
+import { sanityImageUrl } from "../lib/sanity";
+
+interface Props { block?: HomeBlock; settings?: SiteSettings | null }
+const { block, settings } = Astro.props;
+const image = sanityImageUrl(block?.image, { width: 1800, quality: 78 }) || localImages.hero;
+const title = block?.title || "Un refugio profundo en el corazón de la ciudad.";
+const description = block?.description || "Bienestar boutique y rituales de calma personalizada en Bahía Blanca.";
+---
+
+<section class="hero" id="inicio" aria-labelledby="hero-title">
+  <img class="hero-image" src={image} alt={imageAlt(block?.image, "Espacio cálido de Boho Spa Urbano con camilla, toallas y ambientación")} width="1800" height="1200" fetchpriority="high" />
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="eyebrow">{block?.eyebrow || "Tu pausa necesaria"}</p>
+    <h1 id="hero-title">{title}</h1>
+    <p class="hero-copy">{description}</p>
+    <div class="cta-row">
+      <a class="button button-primary" href={bookingHref(settings)}>{block?.primaryCta?.label || "Reservá tu turno"}</a>
+      <a class="button button-light" href="#por-que-boho">{block?.secondaryCta?.label || "Descubrí Boho"}</a>
+    </div>
+  </div>
+</section>
