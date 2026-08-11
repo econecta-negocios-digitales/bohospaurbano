@@ -18,7 +18,7 @@ const items = services
       const image = sanityImageUrl(service.mainImage, { width: 1100, quality: 76 }) || [localImages.experiences, localImages.giftCard, localImages.whyBoho][index];
       return <article class={`experience-item experience-item-${index + 1} ${index === 0 ? "experience-primary" : "experience-secondary"}`}>
         <div class="image-frame"><img src={image} alt={imageAlt(service.mainImage, service.name)} width="1100" height="820" loading="lazy" /></div>
-        <div class="experience-copy"><p class="eyebrow">{service.category?.name || "Experiencia"}</p><h3>{service.name}</h3><p>{service.shortDescription}</p><a class="inline-link" href={service.slug ? `/servicios/${service.category?.slug || "experiencias-boho"}/${service.slug}/` : "#contacto"}>Conocé la experiencia <span aria-hidden="true">↗</span></a></div>
+        <div class="experience-copy"><p class="eyebrow">{service.category?.name || "Experiencia"}</p><h3>{service.name}</h3><p>{service.shortDescription}</p><a class="inline-link" href="/servicios/">Conocé la experiencia <span aria-hidden="true">↗</span></a></div>
       </article>;
     })}
     <div class="section-action"><a class="inline-link" href="#experiencias">{block?.primaryCta?.label || "Ver todas las Experiencias Boho"} <span aria-hidden="true">↗</span></a></div>

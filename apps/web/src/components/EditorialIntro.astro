@@ -1,12 +1,12 @@
 ---
 import type { HomeBlock } from "../lib/sanity/types";
-import { imageAlt, localImages, portableTextToString } from "../lib/site";
+import { imageAlt, localImages, parseHomeAboutContent } from "../lib/site";
 import { sanityImageUrl } from "../lib/sanity";
 
 interface Props { block?: HomeBlock }
 const { block } = Astro.props;
 const image = sanityImageUrl(block?.image, { width: 1000, quality: 78 }) || localImages.intro;
-const copy = block?.description || portableTextToString(block?.content) || "Un espacio íntimo para bajar el ritmo, recibir atención personalizada y volver a vos.";
+const copy = parseHomeAboutContent(block?.content).mainText || block?.description || "Un espacio íntimo para bajar el ritmo, recibir atención personalizada y volver a vos.";
 ---
 
 <section class="section intro-section" id="propuesta" aria-labelledby="intro-title">

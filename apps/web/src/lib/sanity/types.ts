@@ -93,7 +93,13 @@ export type ContentPage = {
   _id: string;
   title?: string;
   description?: string;
+  intro?: PortableTextBlock[];
   content?: PortableTextBlock[];
+  image?: ImageWithAlt;
+  teamMembers?: TeamMember[];
+  categories?: ServiceCategory[];
+  featuredServices?: Service[];
+  cta?: Cta;
   seo?: Seo;
 };
 

@@ -1,0 +1,87 @@
+---
+import '../../styles/global.css';
+import SiteHeader from '../../components/SiteHeader.astro';
+import InternalPageHero from '../../components/InternalPageHero.astro';
+import ContactReservation from '../../components/ContactReservation.astro';
+import ConversionClose from '../../components/ConversionClose.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import FloatingWhatsApp from '../../components/FloatingWhatsApp.astro';
+import { loadFooter, loadNavigation, loadServicesPage, loadSiteSettings } from '../../lib/sanity';
+import { editorialField, editorialSections } from '../../lib/site';
+import { sanityImageUrl } from '../../lib/sanity';
+import { imageAlt, localImages } from '../../lib/site';
+
+const [page, settings, navigation, footer] = await Promise.all([
+  loadServicesPage(),
+  loadSiteSettings(),
+  loadNavigation(),
+  loadFooter(),
+]);
+const source = page?.content;
+const sections = editorialSections(source);
+const categorySections = sections.filter((section) => section.level === 3).slice(0, 4);
+const categories = page?.categories || [];
+const featuredServices = page?.featuredServices || [];
+const title = editorialField(source, 'Título') || page?.title || 'Servicios';
+const description = editorialField(source, 'Texto') || page?.description;
+const eyebrow = editorialField(source, 'Antetítulo') || 'Nuestros servicios';
+const seoTitle = page?.seo?.title || 'Servicios de spa, masajes y bienestar en Bahía Blanca | Boho';
+const seoDescription = page?.seo?.description || 'Experiencias de spa, masajes, tratamientos faciales y corporales, belleza consciente y servicios especiales en Bahía Blanca.';
+const categoryFallbacks = [localImages.experiences, localImages.massage, localImages.facial, '/images/internal/servicios-cuidado.webp'];
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={seoDescription} />
+    <title>{seoTitle}</title>
+    <link rel="icon" href="/brand/favicon.ico" sizes="any" />
+    <link rel="icon" href="/brand/favicon-512.png" type="image/png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <SiteHeader navigation={navigation} settings={settings} />
+    <main id="contenido">
+      <InternalPageHero eyebrow={eyebrow} title={title} description={description} fallbackImage="/images/internal/servicios-ambiente.webp" />
+      <section class="section services-philosophy" aria-labelledby="services-philosophy-title">
+        <div class="editorial-grid services-philosophy-grid">
+          <div class="services-philosophy-copy">
+            <p class="eyebrow">Una experiencia pensada para vos</p>
+            <h2 id="services-philosophy-title">No trabajamos desde fórmulas rígidas</h2>
+            {sections.find((section) => section.heading.includes('Una experiencia'))?.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+          </div>
+          <div class="image-frame services-philosophy-media"><img src="/images/internal/servicios-detalle.webp" alt="Detalle cálido de productos y ambientación de Boho" width="1000" height="1200" loading="lazy" /></div>
+        </div>
+      </section>
+      <section class="section services-categories" id="categorias" aria-labelledby="services-categories-title">
+        <div class="section-heading"><div><p class="eyebrow">Elegí cómo querés sentirte</p><h2 id="services-categories-title">Cuatro formas de entrar en pausa</h2></div></div>
+        <div class="services-category-list">
+          {categories.slice(0, 4).map((category, index) => {
+            const section = categorySections.find((item) => item.heading.toLowerCase() === category.name.toLowerCase());
+            const href = '#contacto';
+            const image = sanityImageUrl(category.image, { width: 1000, quality: 76 }) || categoryFallbacks[index];
+            return <article class={`service-category-row service-category-row-${(index % 4) + 1}`}>
+              <a href={href} class="service-category-media image-frame"><img src={image} alt={imageAlt(category.image, category.name)} width="1000" height="760" loading="lazy" /></a>
+              <div class="service-category-copy"><p class="eyebrow">0{index + 1}</p><h3>{category.name}</h3>{section?.paragraphs.map((paragraph) => <p>{paragraph}</p>)}<a class="inline-link" href={href}>Ver {category.name} <span aria-hidden="true">↗</span></a></div>
+            </article>;
+          })}
+        </div>
+      </section>
+      <section class="section services-featured" aria-labelledby="services-featured-title">
+        <div class="section-heading"><div><p class="eyebrow">Algunas formas de vivir Boho</p><h2 id="services-featured-title">Podés empezar por acá</h2></div><p>Propuestas que representan distintas formas de disfrutar el cuidado, el bienestar y una pausa sin apuro.</p></div>
+        <div class="services-featured-list">
+          {featuredServices.slice(0, 5).map((service, index) => <article class={`service-featured-item service-featured-item-${(index % 3) + 1}`}><p class="eyebrow">{service.category?.name || 'Propuesta Boho'}</p><h3>{service.name}</h3><p>{service.shortDescription}</p></article>)}
+        </div>
+      </section>
+      <ContactReservation settings={settings} />
+      <ConversionClose settings={settings} />
+    </main>
+    <SiteFooter footer={footer} settings={settings} />
+    <FloatingWhatsApp settings={settings} />
+  </body>
+</html>

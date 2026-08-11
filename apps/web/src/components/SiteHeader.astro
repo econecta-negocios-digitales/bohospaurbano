@@ -1,17 +1,13 @@
 ---
 import type { Navigation, SiteSettings } from "../lib/sanity/types";
-import { bookingHref } from "../lib/site";
+import { bookingHref, currentPhaseRoute } from "../lib/site";
 
 interface Props { navigation?: Navigation | null; settings?: SiteSettings | null }
 const { navigation, settings } = Astro.props;
-const fallbackItems = [
-  ["Servicios", "#categorias"],
-  ["Experiencias", "#experiencias"],
-  ["Gift Cards", "#gift-cards"],
-  ["Nosotros", "#por-que-boho"],
-];
+const isHome = Astro.url.pathname === "/";
+const fallbackItems = ["Servicios", "Experiencias", "Gift Cards", "Nosotros"].map((label) => [label, currentPhaseRoute(label, isHome)]);
 const items = navigation?.mainItems?.length
-  ? navigation.mainItems.map((item) => [item.label, item.link?.externalUrl || "#categorias"])
+  ? navigation.mainItems.map((item) => [item.label, item.link?.externalUrl || currentPhaseRoute(item.label, isHome)])
   : fallbackItems;
 const booking = navigation?.primaryCta?.link?.externalUrl || bookingHref(settings);
 ---

@@ -1,0 +1,27 @@
+---
+import type { ImageWithAlt } from "../lib/sanity/types";
+import { imageAlt, localImages } from "../lib/site";
+import { sanityImageUrl } from "../lib/sanity";
+
+interface Props {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  image?: ImageWithAlt;
+  fallbackImage?: string;
+}
+
+const { eyebrow, title, description, image, fallbackImage = localImages.intro } = Astro.props;
+const imageUrl = sanityImageUrl(image, { width: 1500, quality: 78 }) || fallbackImage;
+---
+
+<section class="internal-hero" aria-labelledby="internal-hero-title">
+  <div class="internal-hero-copy">
+    {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+    <h1 id="internal-hero-title">{title}</h1>
+    {description && <p>{description}</p>}
+  </div>
+  <div class="internal-hero-media image-frame">
+    <img src={imageUrl} alt={imageAlt(image, "Ambiente cálido de Boho Spa Urbano")} width="1500" height="900" fetchpriority="high" />
+  </div>
+</section>

@@ -1,0 +1,38 @@
+---
+import type { EditorialSection } from "../lib/site";
+
+interface Props {
+  story?: EditorialSection;
+  knowledge?: EditorialSection;
+  practices: EditorialSection[];
+  practicesTitle?: string;
+}
+
+const { story, knowledge, practices, practicesTitle } = Astro.props;
+---
+
+{story && <section class="about-editorial-block about-story" aria-labelledby="about-story-title">
+  <div class="about-editorial-media image-frame"><img src="/images/internal/nosotros-escena-3.webp" alt="Cabina preparada con toallas y luz cálida en Boho" width="1200" height="900" loading="lazy" /></div>
+  <div class="about-editorial-copy"><h2 id="about-story-title">{story.heading}</h2>{story.paragraphs.map((paragraph) => <p>{paragraph}</p>)}</div>
+</section>}
+
+{knowledge && <section class="about-editorial-block about-knowledge" aria-labelledby="about-knowledge-title">
+  <div class="about-editorial-copy"><h2 id="about-knowledge-title">{knowledge.heading}</h2>{knowledge.paragraphs.map((paragraph) => <p>{paragraph}</p>)}</div>
+  <div class="about-editorial-media image-frame"><img src="/images/internal/nosotros-escena-4.webp" alt="Preparación manual de un producto para un protocolo en Boho" width="1200" height="900" loading="lazy" /></div>
+</section>}
+
+<section class="about-practices" aria-labelledby="about-practices-title">
+  <div class="about-practices-heading"><h2 id="about-practices-title">{practicesTitle}</h2></div>
+  <div class="about-practice-composition about-practice-composition-a">
+    <div class="about-practice-media image-frame"><img src="/images/internal/nosotros-escena-5.webp" alt="Experiencia de descanso y encuentro en Boho" width="1400" height="900" loading="lazy" /></div>
+    <div class="about-practice-pair">{practices.slice(0, 2).map((practice, index) => <article class="about-practice-copy"><p class="eyebrow">0{index + 1}</p><h3>{practice.heading}</h3>{practice.paragraphs.map((paragraph) => <p>{paragraph}</p>)}</article>)}</div>
+  </div>
+  <div class="about-practice-composition about-practice-composition-b">
+    <div class="about-practice-pair">{practices.slice(2, 4).map((practice, index) => <article class="about-practice-copy"><p class="eyebrow">0{index + 3}</p><h3>{practice.heading}</h3>{practice.paragraphs.map((paragraph) => <p>{paragraph}</p>)}</article>)}</div>
+    <div class="about-practice-media image-frame"><img src="/images/internal/nosotros-escena-6b.webp" alt="Productos de cuidado ordenados en el espacio de Boho" width="1400" height="900" loading="lazy" /></div>
+  </div>
+  {practices[4] && <div class="about-practice-composition about-practice-composition-c">
+    <div class="about-practice-copy"><p class="eyebrow">05</p><h3>{practices[4].heading}</h3>{practices[4].paragraphs.map((paragraph) => <p>{paragraph}</p>)}</div>
+    <div class="about-practice-media image-frame"><img src="/images/internal/nosotros-escena-2.webp" alt="Ritual preparado con flores, aceites y luz cálida en Boho" width="1400" height="900" loading="lazy" /></div>
+  </div>}
+</section>

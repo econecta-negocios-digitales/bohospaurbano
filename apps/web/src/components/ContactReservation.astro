@@ -3,11 +3,9 @@ import type { HomeBlock, SiteSettings } from "../lib/sanity/types";
 import { bookingHref, whatsappHref } from "../lib/site";
 
 interface Props { block?: HomeBlock; settings?: SiteSettings | null }
-const { block, settings } = Astro.props;
+const { settings } = Astro.props;
 const contact = settings?.contact || {};
-const address = typeof contact.address === "string" ? contact.address : "Santa Fe 157";
-const city = typeof contact.city === "string" ? contact.city : "Bahía Blanca";
 const maps = typeof contact.googleMapsUrl === "string" ? contact.googleMapsUrl : "";
 ---
 
-<section class="contact-section" id="contacto" aria-labelledby="contact-title"><div class="contact-ambient" aria-hidden="true"></div><div class="contact-copy"><p class="eyebrow">{block?.eyebrow || "Tu momento empieza acá"}</p><h2 id="contact-title">{block?.title || `Estamos en ${address}, ${city}`}</h2><p>{block?.description || "Trabajamos con reserva previa para preparar cada experiencia de manera personalizada."}</p><div class="cta-row"><a class="button button-primary" href={bookingHref(settings)}>Reservá tu turno</a><a class="button button-secondary" href={whatsappHref(settings)}>Escribir por WhatsApp</a>{maps && <a class="button button-text" href={maps} target="_blank" rel="noreferrer">Cómo llegar ↗</a>}</div></div></section>
+<section class="contact-section" id="contacto" aria-labelledby="contact-title"><div class="contact-ambient" aria-hidden="true"></div><div class="contact-copy"><p class="eyebrow">Tu momento empieza acá</p><h2 id="contact-title">Estamos en Santa Fe 157, Bahía Blanca</h2><p>Trabajamos con reserva previa para preparar cada experiencia de manera personalizada.<br /><br />Podés elegir tu servicio en nuestra agenda o escribirnos por WhatsApp para recibir orientación.</p><div class="cta-row"><a class="button button-primary" href={bookingHref(settings)}>Reservá tu turno</a><a class="button button-secondary" href={whatsappHref(settings)}>Escribir por WhatsApp</a>{maps && <a class="button button-text" href={maps} target="_blank" rel="noreferrer">Cómo llegar</a>}</div></div></section>
