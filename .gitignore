@@ -9,3 +9,4 @@ apps/web/.env
 apps/studio/.env
 *.log
 .DS_Store
+qa-*.png
