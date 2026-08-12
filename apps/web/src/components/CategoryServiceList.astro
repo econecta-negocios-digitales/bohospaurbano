@@ -1,0 +1,23 @@
+---
+import type { CategoryServiceView } from "../lib/categoryPresentation";
+
+interface Props {
+  services: CategoryServiceView[];
+  variant?: "standard" | "featured";
+}
+
+const { services, variant = "standard" } = Astro.props;
+---
+
+<div class={`category-service-list category-service-list-${variant}`}>
+  {services.map((service, index) => (
+    <article class="category-service-item">
+      <div class="category-service-index">0{index + 1}</div>
+      <div class="category-service-copy">
+        <h3>{service.name}</h3>
+        {service.description && <p class="category-service-lead">{service.description}</p>}
+        {service.detail && <p>{service.detail}</p>}
+      </div>
+    </article>
+  ))}
+</div>

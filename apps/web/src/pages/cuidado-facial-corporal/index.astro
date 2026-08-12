@@ -1,0 +1,61 @@
+---
+import '../../styles/global.css';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import FloatingWhatsApp from '../../components/FloatingWhatsApp.astro';
+import InternalPageHero from '../../components/InternalPageHero.astro';
+import ContactReservation from '../../components/ContactReservation.astro';
+import ConversionClose from '../../components/ConversionClose.astro';
+import CategoryServiceList from '../../components/CategoryServiceList.astro';
+import { whatsappHref } from '../../lib/site';
+import { categoryField, sectionByHeading, sectionTitle, servicesForCategory, technicalCategoryDescription, technicalCategoryTitle } from '../../lib/categoryPresentation';
+import { loadCategories, loadServices, loadFooter, loadNavigation, loadSiteSettings } from '../../lib/sanity';
+
+const [categories, services, settings, navigation, footer] = await Promise.all([
+  loadCategories(), loadServices(), loadSiteSettings(), loadNavigation(), loadFooter(),
+]);
+const category = categories.find((item) => item.slug === 'cuidado-facial-corporal');
+if (!category) return Astro.redirect('/servicios/');
+const introSection = sectionByHeading(category, /^contenido$/i);
+const serviceSection = sectionByHeading(category, /servicios recuperados/i);
+const categoryServices = servicesForCategory(category, services);
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={technicalCategoryDescription(category)} />
+    <title>{technicalCategoryTitle(category)}</title>
+    <link rel="icon" href="/brand/favicon.ico" sizes="any" />
+    <link rel="icon" href="/brand/favicon-512.png" type="image/png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <SiteHeader navigation={navigation} settings={settings} />
+    <main id="contenido">
+      <InternalPageHero eyebrow={categoryField(category, 'Antetítulo') || category.name} title={categoryField(category, 'Título de portada') || category.name} description={category.description || ''} fallbackImage="/images/categories/facial-natural.webp" />
+      <section class="section facial-intro" aria-labelledby="facial-intro-title">
+        <div class="facial-intro-copy"><p class="eyebrow">{category.name}</p><h2 id="facial-intro-title">{sectionTitle(introSection) || introSection?.heading}</h2>{introSection?.paragraphs.map((paragraph) => <p>{paragraph}</p>)}</div>
+        <div class="facial-intro-side"><div class="image-frame facial-intro-media"><img src="/images/categories/facial-eleccion.webp" alt="Tratamiento facial personalizado en Boho" width="960" height="720" loading="lazy" /></div><div class="facial-intro-notes"><span>Observación</span><span>Productos seleccionados</span><span>Técnicas manuales</span><span>Protocolos no invasivos</span></div></div>
+      </section>
+      <section class="section facial-services" aria-labelledby="facial-services-title">
+        <div class="section-heading"><div><p class="eyebrow">{category.name}</p><h2 id="facial-services-title">{categoryField(category, 'Título de servicios', /servicios recuperados/i) || serviceSection?.heading}</h2></div></div>
+        <div class="facial-services-visual image-frame"><img src="/images/categories/experiencias-ritual.webp" alt="Ritual facial realizado en gabinete Boho" width="960" height="1200" loading="lazy" /></div>
+        <CategoryServiceList services={categoryServices} variant="featured" />
+      </section>
+      <section class="section facial-sensory" aria-labelledby="facial-sensory-title">
+        <div class="image-frame"><img src="/images/categories/facial-protocolo.webp" alt="Preparación de un protocolo facial en Boho" width="960" height="720" loading="lazy" /></div>
+        <div class="facial-sensory-copy"><p class="eyebrow">{category.name}</p><h2 id="facial-sensory-title">{categoryField(category, 'Título de protocolos')}</h2><p>{categoryField(category, 'Texto de protocolos')}</p><a class="button button-secondary" href={whatsappHref()} target="_blank" rel="noopener noreferrer">{categoryField(category, 'CTA de protocolos')}</a></div>
+      </section>
+      <ContactReservation settings={settings} />
+      <ConversionClose settings={settings} />
+    </main>
+    <SiteFooter footer={footer} settings={settings} />
+    <FloatingWhatsApp settings={settings} />
+  </body>
+</html>

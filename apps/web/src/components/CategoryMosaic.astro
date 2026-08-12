@@ -1,6 +1,6 @@
 ---
 import type { HomeBlock, ServiceCategory } from "../lib/sanity/types";
-import { imageAlt, localImages } from "../lib/site";
+import { imageAlt, localImages, publicRoutes, routeForLabel } from "../lib/site";
 import { sanityImageUrl } from "../lib/sanity";
 
 interface Props { block?: HomeBlock; categories: ServiceCategory[] }
@@ -15,12 +15,12 @@ const fallbacks = [localImages.experiences, localImages.massage, localImages.fac
   <div class="category-mosaic">
     {categories.slice(0, 4).map((category, index) => {
       const image = sanityImageUrl(category.image, { width: 1000, quality: 76 }) || fallbacks[index];
-      const slug = "/servicios/#categorias";
+      const slug = routeForLabel(category.name) || "/servicios/#categorias";
       return <a class={`category-tile category-tile-${index + 1}`} href={slug}>
         <img src={image} alt={imageAlt(category.image, category.name)} width="1000" height="760" loading="lazy" />
         <span class="category-shade"></span><span class="category-label"><small>Boho</small><strong>{category.name}</strong></span>
       </a>;
     })}
   </div>
-  <div class="section-action"><a class="inline-link" href="#categorias">{block?.primaryCta?.label || "Ver todos los servicios"} <span aria-hidden="true">↗</span></a></div>
+  <div class="section-action"><a class="inline-link" href={publicRoutes.servicios}>{block?.primaryCta?.label || "Ver todos los servicios"} <span aria-hidden="true">↗</span></a></div>
 </section>

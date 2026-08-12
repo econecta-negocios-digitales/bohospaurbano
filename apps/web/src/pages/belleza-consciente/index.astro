@@ -1,0 +1,60 @@
+---
+import '../../styles/global.css';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import FloatingWhatsApp from '../../components/FloatingWhatsApp.astro';
+import InternalPageHero from '../../components/InternalPageHero.astro';
+import ContactReservation from '../../components/ContactReservation.astro';
+import ConversionClose from '../../components/ConversionClose.astro';
+import CategoryServiceList from '../../components/CategoryServiceList.astro';
+import { bookingHref } from '../../lib/site';
+import { categoryField, sectionByHeading, sectionTitle, servicesForCategory, technicalCategoryDescription, technicalCategoryTitle } from '../../lib/categoryPresentation';
+import { loadCategories, loadServices, loadFooter, loadNavigation, loadSiteSettings } from '../../lib/sanity';
+
+const [categories, services, settings, navigation, footer] = await Promise.all([
+  loadCategories(), loadServices(), loadSiteSettings(), loadNavigation(), loadFooter(),
+]);
+const category = categories.find((item) => item.slug === 'belleza-consciente');
+if (!category) return Astro.redirect('/servicios/');
+const introSection = sectionByHeading(category, /nuestra manera de trabajar/i);
+const highlightSection = sectionByHeading(category, /manos y pies como parte/i);
+const philosophySection = sectionByHeading(category, /filosofía que atraviesa/i);
+const categoryServices = servicesForCategory(category, services);
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={technicalCategoryDescription(category)} />
+    <title>{technicalCategoryTitle(category)}</title>
+    <link rel="icon" href="/brand/favicon.ico" sizes="any" />
+    <link rel="icon" href="/brand/favicon-512.png" type="image/png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <SiteHeader navigation={navigation} settings={settings} />
+    <main id="contenido">
+      <InternalPageHero eyebrow={categoryField(category, 'Antetítulo') || category.name} title={categoryField(category, 'Título de portada') || category.name} description={category.description || ''} fallbackImage="/images/categories/manicura-japonesa.webp" />
+      <section class="section beauty-intro" aria-labelledby="beauty-intro-title">
+        <div class="beauty-intro-heading"><p class="eyebrow">{introSection?.heading}</p><h2 id="beauty-intro-title">{sectionTitle(introSection) || introSection?.heading}</h2></div>
+        <div class="beauty-intro-copy">{introSection?.paragraphs.map((paragraph) => <p>{paragraph}</p>)}</div>
+      </section>
+      <section class="section beauty-highlight" aria-labelledby="beauty-highlight-title">
+        <div class="beauty-highlight-copy"><p class="eyebrow">{highlightSection?.heading}</p><h2 id="beauty-highlight-title">{categoryField(category, 'Título de manicura') || highlightSection?.heading}</h2>{highlightSection?.paragraphs.map((paragraph) => <p>{paragraph}</p>)}<CategoryServiceList services={categoryServices} variant="featured" /></div>
+        <div class="image-frame beauty-highlight-media"><img src="/images/categories/manicura-japonesa.webp" alt="Manicura manual y cuidado natural de uñas" width="960" height="1200" /></div>
+      </section>
+      <section class="section beauty-philosophy" aria-labelledby="beauty-philosophy-title">
+        <p class="eyebrow">{philosophySection?.heading}</p><h2 id="beauty-philosophy-title">{sectionTitle(philosophySection) || philosophySection?.heading}</h2>{philosophySection?.paragraphs.map((paragraph) => <p>{paragraph}</p>)}<a class="button button-secondary" href={bookingHref()} target="_blank" rel="noopener noreferrer">{categoryField(category, 'CTA de filosofía')}</a>
+      </section>
+      <ContactReservation settings={settings} />
+      <ConversionClose settings={settings} />
+    </main>
+    <SiteFooter footer={footer} settings={settings} />
+    <FloatingWhatsApp settings={settings} />
+  </body>
+</html>

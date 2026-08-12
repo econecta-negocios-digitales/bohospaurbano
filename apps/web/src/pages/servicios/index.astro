@@ -9,7 +9,7 @@ import FloatingWhatsApp from '../../components/FloatingWhatsApp.astro';
 import { loadFooter, loadNavigation, loadServicesPage, loadSiteSettings } from '../../lib/sanity';
 import { editorialField, editorialSections } from '../../lib/site';
 import { sanityImageUrl } from '../../lib/sanity';
-import { imageAlt, localImages } from '../../lib/site';
+import { imageAlt, localImages, routeForLabel } from '../../lib/site';
 
 const [page, settings, navigation, footer] = await Promise.all([
   loadServicesPage(),
@@ -63,7 +63,7 @@ const categoryFallbacks = [localImages.experiences, localImages.massage, localIm
         <div class="services-category-list">
           {categories.slice(0, 4).map((category, index) => {
             const section = categorySections.find((item) => item.heading.toLowerCase() === category.name.toLowerCase());
-            const href = '#contacto';
+            const href = routeForLabel(category.name) || '#contacto';
             const image = sanityImageUrl(category.image, { width: 1000, quality: 76 }) || categoryFallbacks[index];
             return <article class={`service-category-row service-category-row-${(index % 4) + 1}`}>
               <a href={href} class="service-category-media image-frame"><img src={image} alt={imageAlt(category.image, category.name)} width="1000" height="760" loading="lazy" /></a>

@@ -26,3 +26,4 @@ No publicar, editar documentos, migrar contenido ni cambiar schemas salvo instru
 - El WhatsApp oficial está centralizado en `apps/web/src/lib/site.ts`: número `5492916412343`, URL `https://wa.me/5492916412343`. No hardcodear valores divergentes.
 - Experiencia Summer es permanente. No agregar lógica estacional, fechas automáticas, ocultamiento por estación ni disponibilidad estacional.
 - Las rutas futuras pueden existir en configuración interna, pero no deben renderizarse como links navegables hasta que sus páginas existan.
+- CTAs: toda acción explícita de reservar, agendar o elegir turno debe dirigir a la agenda oficial de AgendaPro mediante la configuración central de `apps/web/src/lib/site.ts`; las acciones de consulta, contacto u orientación deben dirigir al WhatsApp oficial centralizado allí.

@@ -181,3 +181,90 @@ h3 { font-size:clamp(2rem,2.7vw,2.75rem); }
 @media (min-width:801px) { .gift-section { padding:clamp(1.25rem,3vw,2.5rem); } .gift-image { min-height:0; aspect-ratio:1; } .gift-copy { padding:clamp(2rem,4.5vw,4.5rem); gap:1.25rem; } }
 @media (max-width:800px) { h1 { font-size:clamp(2.65rem,12vw,3rem); } h2 { font-size:clamp(2.25rem,10vw,2.5rem); } .header-inner nav,.header-cta { display:none; } .menu-toggle { display:block; } .mobile-menu { display:grid; gap:1rem; padding:1.5rem 1.25rem 2rem; background:var(--cream); color:var(--ink); } .mobile-menu a:not(.button) { padding:.55rem 0; border-bottom:1px solid var(--line); font-size:.78rem; text-transform:uppercase; letter-spacing:.12em; } .hero { min-height:720px; } .hero-content { text-align:left; justify-items:start; } .hero-copy { max-width:30rem; } .section-heading,.section-heading-wide { display:grid; align-items:start; gap:1.5rem; margin-bottom:2.5rem; } .intro-grid,.why-grid { display:flex; flex-direction:column; align-items:stretch; } .intro-grid .image-frame,.why-grid .image-frame,.why-copy { width:100%; } .intro-copy,.why-copy { gap:1.25rem; } .category-mosaic { grid-template-columns:1fr; gap:.8rem; } .category-tile { min-height:66vw; } .category-tile-2,.category-tile-4 { transform:none; } .experience-list { grid-template-columns:1fr; gap:3.5rem; } .experience-primary { grid-column:auto; } .experience-item,.experience-item:nth-child(even),.experience-primary { display:flex; flex-direction:column; align-items:stretch; gap:1.5rem; } .experience-item:nth-child(even) .image-frame,.experience-item:nth-child(even) .experience-copy { order:initial; } .experience-item .image-frame,.experience-secondary .image-frame { aspect-ratio:1.1; } .experience-secondary h3 { font-size:2rem; } .gift-section,.contact-section { grid-template-columns:1fr; margin-inline:1.25rem; padding:0; } .gift-image { min-height:20rem; } .gift-copy { padding:2.5rem 1.5rem 3rem; } .contact-ambient { min-height:18rem; } .contact-copy { padding:2.5rem 1.5rem 3rem; } .reviews-grid { grid-template-columns:1fr; } .review { min-height:14rem; } .footer-brand { display:grid; gap:1rem; } .footer-brand .brand img { width:9.5rem; } .footer-whatsapp { margin-left:0; } .footer-columns { grid-template-columns:repeat(2,1fr); padding-block:2rem; } .footer-bottom { display:grid; gap:.3rem; } .floating-whatsapp { right:.75rem; bottom:.75rem; width:2.9rem; height:2.9rem; padding:0; justify-content:center; gap:0; } .floating-whatsapp span:last-child { display:none; } .floating-whatsapp span:first-child { font-size:1.2rem; } }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition-duration:.01ms !important; animation-duration:.01ms !important; } }
+
+.category-journey-intro { background:var(--cream); }
+.category-journey-grid { max-width:1280px; margin:auto; display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(2rem,7vw,7rem); align-items:center; }
+.category-journey-copy { max-width:38rem; display:grid; gap:1.2rem; }
+.category-journey-copy p:not(.eyebrow),.category-shared-copy > p:not(.eyebrow),.facial-intro-copy > p:not(.eyebrow),.beauty-intro-copy p,.beauty-philosophy > p:not(.eyebrow) { color:var(--muted); }
+.category-journey-media { aspect-ratio:4/5; }
+.category-experiences { background:var(--cream-deep); }
+.experience-featured-editorial { max-width:1280px; margin:0 auto clamp(3rem,7vw,6rem); display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(2rem,6vw,6rem); align-items:center; }
+.experience-featured-editorial .image-frame { aspect-ratio:4/5; }
+.experience-featured-copy { display:grid; gap:1.15rem; max-width:40rem; }
+.experience-featured-copy > p:not(.eyebrow),.experience-note { color:var(--muted); }
+.experience-note { padding-top:1rem; border-top:1px solid var(--line); font-size:.85rem; }
+.category-visual-inset { max-width:1280px; margin:0 auto clamp(2rem,5vw,4rem); aspect-ratio:2.4; overflow:hidden; }
+.category-visual-inset img { width:100%; height:100%; object-fit:cover; }
+.category-service-list { max-width:1280px; margin:auto; display:grid; gap:1px; background:var(--line); }
+.category-service-item { display:grid; grid-template-columns:5rem 1fr; gap:1.5rem; padding:clamp(1.5rem,4vw,3rem); background:var(--cream); }
+.category-service-list-featured .category-service-item:nth-child(odd) { background:var(--stone); }
+.category-service-list-featured .category-service-item:nth-child(even) { background:var(--moss); color:var(--cream); }
+.category-service-list-featured .category-service-item:nth-child(even) .category-service-lead,.category-service-list-featured .category-service-item:nth-child(even) p:not(.category-service-lead) { color:rgba(255,248,242,.78); }
+.category-service-index { color:var(--terracotta); font-size:.75rem; letter-spacing:.12em; }
+.category-service-copy { display:grid; gap:.8rem; max-width:52rem; }
+.category-service-copy h3 { font-size:clamp(1.65rem,2.5vw,2.5rem); }
+.category-service-copy p { color:var(--muted); }
+.category-service-copy .category-service-lead { font-size:1.05rem; color:var(--ink); }
+.category-service-list-featured .category-service-item:nth-child(even) .category-service-lead { color:var(--cream); }
+.category-shared { max-width:1400px; margin:auto; display:grid; grid-template-columns:1.1fr .9fr; align-items:stretch; padding-inline:clamp(1.25rem,5vw,4rem); background:var(--stone); }
+.category-shared-copy { padding:clamp(2rem,7vw,7rem) clamp(0rem,4vw,4rem) clamp(2rem,7vw,7rem) 0; align-self:center; display:grid; gap:1.3rem; }
+.category-shared-media { min-height:32rem; }
+.category-shared-media img { width:100%; height:100%; object-fit:cover; }
+.massage-intro { background:var(--stone); }
+.massage-intro-layout { max-width:1280px; margin:auto; display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(2rem,7vw,7rem); align-items:center; }
+.massage-intro-detail { max-width:1280px; margin:auto; display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,7vw,7rem); color:var(--muted); }
+.massage-intro-media { aspect-ratio:4/5; }
+.massage-intro-media img { width:100%; height:100%; object-fit:cover; }
+.massage-detail-line { grid-column:1 / -1; display:flex; flex-wrap:wrap; gap:1rem 3rem; padding-top:1rem; border-top:1px solid var(--line); color:var(--moss); font-size:.72rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; }
+.massage-services { background:var(--cream); }
+.massage-featured { max-width:1280px; margin:0 auto clamp(3rem,7vw,6rem); display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(2rem,7vw,7rem); align-items:center; }
+.massage-featured-copy { display:grid; gap:1.15rem; max-width:42rem; }
+.massage-featured-copy p:not(.eyebrow) { color:var(--muted); }
+.massage-featured .image-frame { aspect-ratio:4/5; }
+.massage-service-visuals { max-width:1280px; margin:clamp(3rem,6vw,5rem) auto 0; display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; }
+.massage-service-visuals figure { margin:0; display:grid; gap:.8rem; }
+.massage-service-visuals img { width:100%; aspect-ratio:1.2; object-fit:cover; }
+.massage-service-visuals figcaption { color:var(--moss); font-size:.72rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; }
+.massage-orientation { background:var(--cream-deep); display:grid; grid-template-columns:1.2fr .8fr; gap:clamp(2rem,8vw,8rem); align-items:center; }
+.massage-orientation-copy { max-width:42rem; display:grid; gap:1.2rem; }
+.massage-orientation-copy > p:not(.eyebrow) { color:var(--muted); }
+.massage-orientation-notes { min-height:16rem; display:grid; align-content:center; gap:1rem; padding:2rem; border-left:1px solid var(--line); color:var(--moss); font:500 clamp(1.5rem,3vw,2.5rem)/1.1 "Playfair Display",serif; }
+.facial-intro { background:var(--cream-deep); display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(2rem,7vw,7rem); align-items:center; }
+.facial-intro-copy { max-width:42rem; display:grid; gap:1.15rem; }
+.facial-intro-notes { display:grid; gap:1rem; padding:2rem; border-left:1px solid var(--line); color:var(--moss); font-size:.75rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; }
+.facial-intro-side { display:grid; gap:1.5rem; }
+.facial-intro-media { aspect-ratio:4/3; }
+.facial-intro-media img { width:100%; height:100%; object-fit:cover; }
+.facial-services { background:var(--stone); }
+.facial-services-visual { max-width:34rem; margin:0 0 clamp(2rem,5vw,4rem) auto; aspect-ratio:4/5; }
+.facial-services-visual img { width:100%; height:100%; object-fit:cover; }
+.facial-sensory { max-width:1400px; margin:auto; display:grid; grid-template-columns:.8fr 1.2fr; gap:clamp(2rem,7vw,7rem); align-items:center; background:var(--cream); }
+.facial-sensory .image-frame { aspect-ratio:4/5; }
+.facial-sensory-copy { max-width:42rem; display:grid; gap:1.2rem; }
+.facial-sensory-copy > p:not(.eyebrow) { color:var(--muted); }
+.beauty-intro { display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(2rem,8vw,8rem); background:var(--stone); }
+.beauty-intro-heading { max-width:30rem; display:grid; align-content:start; gap:1.2rem; }
+.beauty-intro-copy { max-width:42rem; display:grid; gap:1.2rem; }
+.beauty-highlight { max-width:1400px; margin:auto; display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(2rem,7vw,7rem); align-items:center; background:var(--cream); }
+.beauty-highlight-copy { display:grid; gap:1.1rem; }
+.beauty-highlight-copy > p:not(.eyebrow) { color:var(--muted); }
+.beauty-highlight-media { aspect-ratio:4/5; }
+.beauty-highlight .category-service-list { margin-top:1.2rem; }
+.beauty-philosophy { background:var(--moss); color:var(--cream); display:grid; justify-items:start; gap:1.2rem; }
+.beauty-philosophy .eyebrow { color:var(--sand); }
+.beauty-philosophy h2 { max-width:42rem; }
+.beauty-philosophy > p:not(.eyebrow) { max-width:42rem; color:rgba(255,248,242,.78); }
+
+@media (max-width:800px) {
+  .category-journey-grid,.experience-featured-editorial,.category-shared,.massage-intro-layout,.massage-intro-detail,.massage-featured,.massage-orientation,.facial-intro,.facial-sensory,.beauty-intro,.beauty-highlight { display:flex; flex-direction:column; align-items:stretch; gap:2rem; }
+  .category-journey-media,.category-shared-media,.facial-sensory .image-frame,.beauty-highlight-media { aspect-ratio:1.1; min-height:0; }
+  .category-shared { margin-inline:1.25rem; padding-inline:0; }
+  .category-shared-copy { padding:2.5rem 1.5rem 0; }
+  .massage-detail-line { display:grid; }
+  .massage-orientation-notes,.facial-intro-notes { border-left:0; border-top:1px solid var(--line); padding-inline:0; }
+  .category-visual-inset { aspect-ratio:1.35; }
+  .massage-service-visuals { grid-template-columns:1fr; }
+  .facial-services-visual { max-width:none; margin-inline:0; }
+  .category-service-item { grid-template-columns:2.5rem 1fr; gap:1rem; }
+  .beauty-highlight-copy { padding-inline:0; }
+}

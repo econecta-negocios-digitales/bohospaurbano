@@ -124,6 +124,7 @@ export type ServiceCategory = {
   name: string;
   slug?: string;
   description?: string;
+  content?: PortableTextBlock[];
   image?: ImageWithAlt;
   seo?: Seo;
   order?: number;

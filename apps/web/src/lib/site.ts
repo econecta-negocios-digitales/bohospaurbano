@@ -14,11 +14,15 @@ export const localImages = {
 
 export const BOHO_WHATSAPP_NUMBER = "5492916412343";
 export const BOHO_WHATSAPP_URL = `https://wa.me/${BOHO_WHATSAPP_NUMBER}`;
+export const BOHO_BOOKING_URL = "https://bohospaurbano.site.agendapro.com/ar/sucursal/412054";
 
 export const publicRoutes = {
   servicios: "/servicios/",
   experiencias: "/experiencias-boho/",
   "experiencias boho": "/experiencias-boho/",
+  "masajes & bienestar": "/masajes-bienestar/",
+  "cuidado facial & corporal": "/cuidado-facial-corporal/",
+  "belleza consciente": "/belleza-consciente/",
   "gift cards": "/gift-cards/",
   nosotros: "/nosotros/",
 } as const;
@@ -30,6 +34,10 @@ export function routeForLabel(label: string | undefined, home = false): string |
     const homeAnchors: Record<string, string> = {
       servicios: "/servicios/",
       experiencias: "#experiencias",
+      "experiencias boho": "/experiencias-boho/",
+      "masajes & bienestar": "/masajes-bienestar/",
+      "cuidado facial & corporal": "/cuidado-facial-corporal/",
+      "belleza consciente": "/belleza-consciente/",
       "gift cards": "#gift-cards",
       nosotros: "/nosotros/",
     };
@@ -40,15 +48,15 @@ export function routeForLabel(label: string | undefined, home = false): string |
 
 export function currentPhaseRoute(label: string | undefined, home = false): string {
   const route = routeForLabel(label, home);
-  if (home || route === "/servicios/" || route === "/nosotros/") return route || "#contacto";
+  if (home || route === "/servicios/" || route === "/nosotros/" || route === "/experiencias-boho/" || route === "/masajes-bienestar/" || route === "/cuidado-facial-corporal/" || route === "/belleza-consciente/") return route || "#contacto";
   return "#contacto";
 }
 
 export function hrefForCta(cta: Cta | undefined, fallback: string): string {
   if (!cta?.link) return fallback;
-  if (cta.link.externalUrl) return cta.link.externalUrl;
   if (cta.link.type === "whatsapp") return whatsappHref();
   if (cta.link.type === "booking") return bookingHref();
+  if (cta.link.externalUrl) return cta.link.externalUrl;
   return fallback;
 }
 
@@ -56,9 +64,12 @@ export function whatsappHref(_settings?: SiteSettings | null): string {
   return BOHO_WHATSAPP_URL;
 }
 
-export function bookingHref(settings?: SiteSettings | null): string {
-  const value = settings?.contact?.bookingUrl;
-  return typeof value === "string" && value.trim() ? value : "#contacto";
+export function bookingHref(_settings?: SiteSettings | null): string {
+  return BOHO_BOOKING_URL;
+}
+
+export function experienceHref(_slug?: string): string {
+  return publicRoutes.experiencias;
 }
 
 export function imageAlt(image: ImageWithAlt | undefined, fallback: string) {

@@ -60,5 +60,5 @@ export const sanityEnv: SanityEnv = {
     ),
   ),
   perspective: useDrafts ? "drafts" : "published",
-  token: useDrafts ? token : undefined,
+  token: token?.trim() || undefined,
 };

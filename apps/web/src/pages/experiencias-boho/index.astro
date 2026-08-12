@@ -1,0 +1,73 @@
+---
+import '../../styles/global.css';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import FloatingWhatsApp from '../../components/FloatingWhatsApp.astro';
+import InternalPageHero from '../../components/InternalPageHero.astro';
+import ContactReservation from '../../components/ContactReservation.astro';
+import ConversionClose from '../../components/ConversionClose.astro';
+import CategoryServiceList from '../../components/CategoryServiceList.astro';
+import { whatsappHref } from '../../lib/site';
+import { categoryField, sectionByHeading, sectionEyebrow, sectionTitle, servicesForCategory, technicalCategoryDescription, technicalCategoryTitle } from '../../lib/categoryPresentation';
+import { loadCategories, loadServices, loadFooter, loadNavigation, loadSiteSettings } from '../../lib/sanity';
+
+const [categories, services, settings, navigation, footer] = await Promise.all([
+  loadCategories(), loadServices(), loadSiteSettings(), loadNavigation(), loadFooter(),
+]);
+const category = categories.find((item) => item.slug === 'experiencias-boho');
+if (!category) return Astro.redirect('/servicios/');
+const introSection = sectionByHeading(category, /más que una suma/i);
+const serviceSection = sectionByHeading(category, /^experiencias$/i);
+const sharedSection = sectionByHeading(category, /individuales o compartidas/i);
+const categoryServices = servicesForCategory(category, services);
+const featured = categoryServices[0]!;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={technicalCategoryDescription(category)} />
+    <title>{technicalCategoryTitle(category)}</title>
+    <link rel="icon" href="/brand/favicon.ico" sizes="any" />
+    <link rel="icon" href="/brand/favicon-512.png" type="image/png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <SiteHeader navigation={navigation} settings={settings} />
+    <main id="contenido">
+      <InternalPageHero eyebrow={categoryField(category, 'Antetítulo') || category.name} title={categoryField(category, 'Título de portada') || category.name} description={category.description || ''} fallbackImage="/images/categories/experiencias-lounge.webp" />
+      <section class="section category-journey-intro" aria-labelledby="experiences-intro-title">
+        <div class="category-journey-grid">
+          <div class="category-journey-copy">
+            <p class="eyebrow">{introSection?.heading}</p>
+            <h2 id="experiences-intro-title">{sectionTitle(introSection) || introSection?.heading}</h2>
+            {introSection?.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+          </div>
+          <div class="image-frame category-journey-media"><img src="/images/categories/experiencias-continuidad.webp" alt="Masaje corporal dentro de una experiencia Boho" width="960" height="720" /></div>
+        </div>
+      </section>
+      <section class="section category-experiences" aria-labelledby="experiences-list-title">
+        <div class="section-heading"><div><p class="eyebrow">{sectionEyebrow(serviceSection, serviceSection?.heading || category.name)}</p><h2 id="experiences-list-title">{sectionTitle(serviceSection) || serviceSection?.heading}</h2></div>{serviceSection?.paragraphs[0] && <p>{serviceSection.paragraphs[0]}</p>}</div>
+        <article class="experience-featured-editorial">
+          <div class="image-frame"><img src="/images/categories/experiencias-ritual.webp" alt="Ritual integral de Boho Spa Urbano" width="960" height="1200" /></div>
+          <div class="experience-featured-copy"><p class="eyebrow">01 · {serviceSection?.heading || category.name}</p><h3>{featured.name}</h3><p class="category-service-lead">{featured.description}</p>{featured.detail && <p>{featured.detail}</p>}</div>
+        </article>
+        <div class="category-visual-inset" aria-hidden="true"><img src="/images/categories/experiencias-ritmo.webp" alt="" width="960" height="720" loading="lazy" /></div>
+        <CategoryServiceList services={categoryServices.slice(1)} variant="featured" />
+      </section>
+      <section class="section category-shared" aria-labelledby="shared-title">
+        <div class="category-shared-copy"><p class="eyebrow">{sharedSection?.heading}</p><h2 id="shared-title">{sectionTitle(sharedSection) || sharedSection?.heading}</h2>{sharedSection?.paragraphs.map((paragraph) => <p>{paragraph}</p>)}{sharedSection?.fields.cta && <a class="button button-secondary" href={whatsappHref()} target="_blank" rel="noopener noreferrer">{sharedSection.fields.cta}</a>}</div>
+        <div class="image-frame category-shared-media"><img src="/images/categories/experiencias-brunch.webp" alt="Pausa compartida con brunch en el lounge de Boho" width="1200" height="900" /></div>
+      </section>
+      <ContactReservation settings={settings} />
+      <ConversionClose settings={settings} />
+    </main>
+    <SiteFooter footer={footer} settings={settings} />
+    <FloatingWhatsApp settings={settings} />
+  </body>
+</html>

@@ -18,7 +18,7 @@ const description = block?.description || "Bienestar boutique y rituales de calm
     <h1 id="hero-title">{title}</h1>
     <p class="hero-copy">{description}</p>
     <div class="cta-row">
-      <a class="button button-primary" href={bookingHref(settings)}>{block?.primaryCta?.label || "Reservá tu turno"}</a>
+      <a class="button button-primary" href={bookingHref(settings)} target="_blank" rel="noopener noreferrer">{block?.primaryCta?.label || "Reservá tu turno"}</a>
       <a class="button button-light" href="#por-que-boho">{block?.secondaryCta?.label || "Descubrí Boho"}</a>
     </div>
   </div>

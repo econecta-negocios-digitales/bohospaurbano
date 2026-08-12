@@ -4,4 +4,4 @@ import { whatsappHref } from "../lib/site";
 interface Props { settings?: SiteSettings | null }
 const { settings } = Astro.props;
 ---
-<section class="conversion-section"><p class="eyebrow">¿Necesitás orientación?</p><h2>Encontramos el momento adecuado para vos.</h2><a class="button button-primary" href={whatsappHref(settings)}>Hablar por WhatsApp</a></section>
+<section class="conversion-section"><p class="eyebrow">¿Necesitás orientación?</p><h2>Encontramos el momento adecuado para vos.</h2><a class="button button-primary" href={whatsappHref(settings)} target="_blank" rel="noopener noreferrer">Hablar por WhatsApp</a></section>
