@@ -18,6 +18,7 @@ const refs = (name: string, title: string, types: string[]) =>
   defineField({
     name,
     title,
+    description: "Elegí y ordená los elementos que aparecen en esta página.",
     type: "array",
     of: types.map((type) =>
       defineArrayMember({
@@ -95,95 +96,125 @@ const draftOr = (message: string) => (Rule: any) =>
 
 export const siteSettings = defineType({
   name: "siteSettings",
-  title: "Configuración del sitio",
+  title: "Datos de Boho",
   type: "document",
+  groups: [
+    { name: "business", title: "Negocio" },
+    { name: "contact", title: "Contacto y reservas" },
+    { name: "social", title: "Redes" },
+  ],
   fields: [
     defineField({
       name: "contact",
-      title: "Contacto",
+      title: "Contacto y reservas",
       type: "contact",
+      group: "contact",
+      description: "Datos que se usan para contacto, ubicación y agenda.",
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "socialLinks",
       title: "Redes sociales",
       type: "array",
+      group: "social",
       of: [defineArrayMember({ type: "socialLink" })],
     }),
     defineField({
       name: "organizationData",
-      title: "Datos de la organización",
+      title: "Datos del negocio",
       type: "organizationData",
+      group: "business",
       validation: draftOr(
         "Los datos de la organización son obligatorios para publicar.",
       ),
     }),
     defineField({
       name: "localBusinessData",
-      title: "Datos del negocio local",
+      title: "Información local",
       type: "localBusinessData",
+      group: "business",
       validation: draftOr(
         "Los datos del negocio local son obligatorios para publicar.",
       ),
     }),
   ],
-  preview: { prepare: () => ({ title: "Configuración del sitio" }) },
+  preview: { prepare: () => ({ title: "Datos de Boho" }) },
 });
 
 export const homePage = defineType({
   name: "homePage",
   title: "Inicio",
   type: "document",
+  groups: [
+    { name: "main", title: "Principal" },
+    { name: "content", title: "Contenido" },
+    { name: "seo", title: "SEO" },
+  ],
   fields: [
     defineField({
       name: "hero",
       title: "1. Hero",
       type: "homeHero",
+      group: "main",
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "experiences",
       title: "2. Experiencias Boho",
       type: "homeExperiences",
+      group: "content",
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "giftCards",
       title: "3. Gift Cards",
       type: "homeGiftCards",
+      group: "content",
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "categories",
       title: "4. Categorías de servicios",
       type: "homeCategories",
+      group: "content",
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "brunch",
       title: "5. Brunch",
       type: "homeBrunch",
+      group: "content",
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "about",
       title: "6. Historia de Boho",
       type: "homeAbout",
+      group: "main",
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "testimonials",
       title: "7. Testimonios",
       type: "homeTestimonials",
+      group: "content",
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "contactLocation",
       title: "8. Contacto y ubicación",
       type: "homeContactLocation",
+      group: "content",
       validation: (Rule) => Rule.required(),
     }),
-    seo(),
+    defineField({
+      name: "conversionClose",
+      title: "9. Cierre de conversión",
+      description: "Copy comercial visible al final de Inicio. Los destinos de reserva y WhatsApp se resuelven con la configuración central del sitio.",
+      type: "homeConversionClose",
+      group: "content",
+    }),
+    { ...seo(), group: "seo" },
   ],
   preview: { prepare: () => ({ title: "Inicio" }) },
 });
@@ -201,27 +232,27 @@ const page = (
     preview: pagePreview,
   });
 export const aboutPage = page("aboutPage", "Nosotros", [
-  text("title", "Título", true),
-  rich("intro", "Introducción", true),
+  text("title", "Título principal de Nosotros", true),
+  rich("intro", "Contenido de introducción", true),
   defineField({ name: "image", title: "Imagen", type: "imageWithAlt" }),
   defineField({ name: "video", title: "Video", type: "video" }),
   refs("teamMembers", "Equipo", ["teamMember"]),
   defineField({ name: "cta", title: "CTA", type: "cta" }),
 ]);
 export const servicesPage = page("servicesPage", "Servicios", [
-  text("title", "Título", true),
-  defineField({ name: "description", title: "Descripción", type: "text" }),
-  rich("content", "Contenido", true),
+  text("title", "Título principal de Servicios", true),
+  defineField({ name: "description", title: "Texto debajo del título", type: "text" }),
+  rich("content", "Contenido editorial de Servicios", true),
   refs("categories", "Categorías", ["serviceCategory"]),
   refs("featuredServices", "Servicios destacados", ["service"]),
   defineField({ name: "cta", title: "CTA", type: "cta" }),
 ]);
 export const giftCardsPage = page("giftCardsPage", "Gift Cards", [
-  text("title", "Título", true),
-  defineField({ name: "description", title: "Descripción", type: "text" }),
-  rich("content", "Contenido", true),
-  refs("featuredGiftCards", "Gift Cards destacadas", ["giftCard"]),
-  defineField({ name: "cta", title: "CTA", type: "cta" }),
+  text("title", "Título principal de Gift Cards", true),
+  defineField({ name: "description", title: "Texto debajo del título", type: "text" }),
+  rich("content", "Contenido editorial de Gift Cards", true),
+  refs("featuredGiftCards", "Gift Cards que aparecen primero", ["giftCard"]),
+  defineField({ name: "cta", title: "Botón de Gift Cards", type: "cta" }),
 ]);
 export const corporatePage = page("corporatePage", "Regalos corporativos", [
   text("title", "Título", true),

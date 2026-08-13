@@ -30,7 +30,7 @@ export const structure: StructureResolver = (S) =>
                 S,
                 "siteSettings",
                 "siteSettings",
-                "Configuración del sitio",
+                "Datos de Boho",
               ),
               documentItem(S, "navigation", "navigation", "Navegación"),
               documentItem(S, "footer", "footer", "Pie de página"),
@@ -124,10 +124,6 @@ export const structure: StructureResolver = (S) =>
                 .child(S.documentTypeList("faq").title("Preguntas frecuentes")),
             ]),
         ),
-      documentItem(
-        S,
-        "giftCardPolicy",
-        "giftCardPolicy",
-        "Política general de Gift Cards",
-      ),
+      S.divider(),
+      documentItem(S, "giftCardPolicy", "giftCardPolicy", "Política general de Gift Cards"),
     ]);

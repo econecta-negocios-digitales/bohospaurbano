@@ -1,0 +1,25 @@
+---
+export const prerender = false;
+
+import { perspectiveCookieName } from "@sanity/preview-url-secret/constants";
+import HomeComposition from "../../components/HomeComposition.astro";
+import { loadHomeView } from "../../lib/homeView";
+import { createPreviewSanityClient } from "../../lib/sanity/client";
+import SiteLayout from "../../layouts/SiteLayout.astro";
+
+const perspectiveCookie = Astro.cookies.get(perspectiveCookieName)?.value;
+if (!perspectiveCookie) {
+  return new Response("Preview mode required", { status: 401 });
+}
+
+const token = import.meta.env.SANITY_API_READ_TOKEN ?? import.meta.env.SANITY_AUTH_TOKEN;
+if (!token) {
+  return new Response("Preview server is not configured", { status: 500 });
+}
+
+const view = await loadHomeView(createPreviewSanityClient(token, perspectiveCookie));
+---
+
+<SiteLayout title="Vista previa | Boho Spa Urbano" noindex>
+    <HomeComposition view={view} preview />
+</SiteLayout>

@@ -1,9 +1,11 @@
 import { esESLocale } from "@sanity/locale-es-es";
 import { defineConfig } from "sanity";
+import { presentationTool } from "sanity/presentation";
 import { structureTool } from "sanity/structure";
 
 import { schemaTypes } from "./schemas";
 import { structure } from "./schemas/structure";
+import { presentationResolve } from "./presentation-resolve";
 
 const protectedTypes = new Set([
   "siteSettings",
@@ -45,7 +47,22 @@ export default defineConfig({
   releases: { enabled: false },
   scheduledPublishing: { enabled: false },
   scheduledDrafts: { enabled: false },
-  plugins: [structureTool({ structure }), esESLocale()],
+  plugins: [
+    structureTool({ structure }),
+    presentationTool({
+      title: "Vista previa",
+      previewUrl: {
+        initial: `${(process.env.SANITY_STUDIO_PREVIEW_URL ?? "http://localhost:4321").replace(/\/$/, "")}/preview/`,
+        previewMode: {
+          enable: "/api/draft-mode/enable",
+          disable: "/api/draft-mode/disable",
+        },
+      },
+      allowOrigins: ["http://localhost:4321"],
+      resolve: presentationResolve,
+    }),
+    esESLocale(),
+  ],
   document: {
     actions: (previous, context) =>
       protectedTypes.has(context.schemaType)

@@ -1,4 +1,4 @@
-import { defineField, defineType } from "sanity";
+import { defineArrayMember, defineField, defineType } from "sanity";
 
 const base = (
   name: string,
@@ -11,25 +11,25 @@ const base = (
     title,
     type: "object",
     fields: [
-      defineField({ name: "eyebrow", title: "Antetítulo", type: "string" }),
+      defineField({ name: "eyebrow", title: "Texto pequeño sobre el título", type: "string" }),
       defineField({
         name: "title",
-        title: "Título",
+        title: "Título de esta sección",
         type: "string",
         validation: (Rule) => Rule.required(),
       }),
-      defineField({ name: "description", title: "Descripción", type: "text" }),
+      defineField({ name: "description", title: "Texto debajo del título", type: "text" }),
       defineField({
         name: "content",
-        title: "Contenido enriquecido",
+        title: "Contenido editorial de la sección",
         type: "portableText",
       }),
       defineField({ name: "image", title: "Imagen", type: "imageWithAlt" }),
       defineField({ name: "video", title: "Video externo", type: "video" }),
-      defineField({ name: "primaryCta", title: "CTA principal", type: "cta" }),
+      defineField({ name: "primaryCta", title: "Botón principal", type: "cta" }),
       defineField({
         name: "secondaryCta",
-        title: "CTA secundario",
+        title: "Botón secundario",
         type: "cta",
       }),
       defineField({
@@ -40,7 +40,7 @@ const base = (
       }),
       defineField({
         name: "variant",
-        title: "Variante visual",
+        title: "Composición de la sección",
         type: "string",
         options: { list: variants },
         validation: (Rule) => Rule.required(),
@@ -57,6 +57,14 @@ export const homeHero = base("homeHero", "Hero del inicio", [
 export const homeExperiences = base("homeExperiences", "Experiencias Boho", [
   { title: "Tarjetas", value: "cards" },
   { title: "Destacada y tarjetas", value: "featureAndCards" },
+], [
+  defineField({
+    name: "featuredServices",
+    title: "Experiencias destacadas",
+    description: "Elegí y ordená los servicios que aparecen en esta sección de Inicio.",
+    type: "array",
+    of: [defineArrayMember({ type: "reference", to: [{ type: "service" }] })],
+  }),
 ]);
 export const homeGiftCards = base("homeGiftCards", "Gift Cards", [
   { title: "Tarjetas", value: "cards" },
@@ -93,6 +101,17 @@ export const homeContactLocation = base(
   ],
   [defineField({ name: "tertiaryCta", title: "CTA terciario", type: "cta" })],
 );
+export const homeConversionClose = defineType({
+  name: "homeConversionClose",
+  title: "Cierre de conversión",
+  type: "object",
+  fields: [
+    defineField({ name: "eyebrow", title: "Antetítulo", type: "string" }),
+    defineField({ name: "title", title: "Título", type: "string" }),
+    defineField({ name: "description", title: "Descripción", type: "text" }),
+    defineField({ name: "primaryCta", title: "CTA principal", type: "cta" }),
+  ],
+});
 export const homeObjects = [
   homeHero,
   homeExperiences,
@@ -102,4 +121,5 @@ export const homeObjects = [
   homeAbout,
   homeTestimonials,
   homeContactLocation,
+  homeConversionClose,
 ];

@@ -84,7 +84,8 @@ export const link = defineType({
     }),
     defineField({
       name: "internalReference",
-      title: "Referencia interna",
+      title: "Destino dentro del sitio",
+      description: "Elegí la página de Boho a la que lleva este enlace.",
       type: "reference",
       to: [
         { type: "homePage" },
@@ -109,7 +110,7 @@ export const link = defineType({
     }),
     defineField({
       name: "externalUrl",
-      title: "URL externa",
+      title: "Destino externo",
       type: "url",
       hidden: (context) =>
         (context.parent as { type?: string } | undefined)?.type !== "external",
@@ -131,19 +132,19 @@ export const cta = defineType({
   fields: [
     defineField({
       name: "label",
-      title: "Texto",
+      title: "Texto visible del botón o enlace",
       type: "string",
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "link",
-      title: "Enlace",
+      title: "Destino",
       type: "link",
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "style",
-      title: "Estilo",
+      title: "Apariencia",
       type: "string",
       options: {
         list: [
