@@ -40,11 +40,11 @@ const categoryServices = servicesForCategory(category, services);
     <main id="contenido">
       <InternalPageHero eyebrow={categoryField(category, 'Antetítulo') || category.name} title={categoryField(category, 'Título de portada') || category.name} description={category.description || ''} fallbackImage="/images/categories/facial-natural.webp" />
       <section class="section facial-intro" aria-labelledby="facial-intro-title">
-        <div class="facial-intro-copy"><p class="eyebrow">{category.name}</p><h2 id="facial-intro-title">{sectionTitle(introSection) || introSection?.heading}</h2>{introSection?.paragraphs.map((paragraph) => <p>{paragraph}</p>)}</div>
+        <div class="facial-intro-copy"><p class="eyebrow">{category.name}</p><h2 id="facial-intro-title">{categoryField(category, 'Título', /contacto y reserva/i) || sectionTitle(introSection) || introSection?.heading}</h2>{introSection?.paragraphs.map((paragraph) => <p>{paragraph}</p>)}</div>
         <div class="facial-intro-side"><div class="image-frame facial-intro-media"><img src="/images/categories/facial-eleccion.webp" alt="Tratamiento facial personalizado en Boho" width="960" height="720" loading="lazy" /></div><div class="facial-intro-notes"><span>Observación</span><span>Productos seleccionados</span><span>Técnicas manuales</span><span>Protocolos no invasivos</span></div></div>
       </section>
       <section class="section facial-services" aria-labelledby="facial-services-title">
-        <div class="section-heading"><div><p class="eyebrow">{category.name}</p><h2 id="facial-services-title">{categoryField(category, 'Título de servicios', /servicios recuperados/i) || serviceSection?.heading}</h2></div></div>
+        <div class="section-heading"><div><p class="eyebrow">{category.name}</p><h2 id="facial-services-title">{categoryField(category, 'Título de servicios') || serviceSection?.heading}</h2></div></div>
         <div class="facial-services-visual image-frame"><img src="/images/categories/experiencias-ritual.webp" alt="Ritual facial realizado en gabinete Boho" width="960" height="1200" loading="lazy" /></div>
         <CategoryServiceList services={categoryServices} variant="featured" />
       </section>

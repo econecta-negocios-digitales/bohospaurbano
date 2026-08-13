@@ -1,74 +1,11 @@
 ---
-import '../styles/global.css';
-import SiteHeader from '../components/SiteHeader.astro';
-import HeroMedia from '../components/HeroMedia.astro';
-import EditorialIntro from '../components/EditorialIntro.astro';
-import CategoryMosaic from '../components/CategoryMosaic.astro';
-import FeaturedExperiences from '../components/FeaturedExperiences.astro';
-import GiftCardFeature from '../components/GiftCardFeature.astro';
-import WhyBoho from '../components/WhyBoho.astro';
-import GoogleReviews from '../components/GoogleReviews.astro';
-import ContactReservation from '../components/ContactReservation.astro';
-import ConversionClose from '../components/ConversionClose.astro';
-import SiteFooter from '../components/SiteFooter.astro';
-import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
-import { loadCategories, loadFeaturedGiftCards, loadFeaturedServices, loadFooter, loadHomePage, loadNavigation, loadSiteSettings, loadTestimonials } from '../lib/sanity';
-import type { HomeBlock, Service, ServiceCategory } from '../lib/sanity/types';
+import HomeComposition from "../components/HomeComposition.astro";
+import { loadHomeView } from "../lib/homeView";
+import SiteLayout from "../layouts/SiteLayout.astro";
 
-const [home, settings, navigation, footer, categories, featuredServices, featuredGiftCards, testimonials] = await Promise.all([
-  loadHomePage(), loadSiteSettings(), loadNavigation(), loadFooter(), loadCategories(), loadFeaturedServices(), loadFeaturedGiftCards(), loadTestimonials(),
-]);
-const block = (value: unknown) => value as HomeBlock | undefined;
-const fallbackCategories: ServiceCategory[] = [
-  { _id: 'fallback-experiencias', name: 'Experiencias Boho', slug: 'experiencias-boho', order: 1 },
-  { _id: 'fallback-masajes', name: 'Masajes & Bienestar', slug: 'masajes-bienestar', order: 2 },
-  { _id: 'fallback-facial', name: 'Cuidado Facial & Corporal', slug: 'cuidado-facial-corporal', order: 3 },
-  { _id: 'fallback-belleza', name: 'Belleza Consciente', slug: 'belleza-consciente', order: 4 },
-];
-const categoryData = categories.length ? categories : fallbackCategories;
-const localExperiencePreview: Service[] = [
-  { _id: 'preview-boho-spa-day', name: 'Boho Spa Day', shortDescription: 'Una experiencia integral que combina belleza, cuidado facial y relajación corporal en una misma propuesta.', featured: true, order: 1 },
-  { _id: 'preview-summer', name: 'Experiencia Summer', shortDescription: 'Un ritual integral de renovación para que cuerpo y rostro formen parte de una misma experiencia.', featured: true, order: 2 },
-  { _id: 'preview-armonia', name: 'Experiencia Armonía', shortDescription: 'Una experiencia creada para bajar el ritmo y dejar que la relajación avance de manera progresiva.', featured: true, order: 3 },
-];
-const experienceData = featuredServices.length ? featuredServices : localExperiencePreview;
-const giftBlock = { ...(block(home?.giftCards) || {}) };
-if (featuredGiftCards.length) {
-  const first = featuredGiftCards[0];
-  if (!giftBlock.image && first?.image) giftBlock.image = first.image;
-}
-const title = home?.seo?.title || 'Boho Spa Urbano | Bienestar boutique en Bahía Blanca';
-const description = home?.seo?.description || 'Masajes, experiencias de spa, tratamientos faciales y corporales y Gift Cards en Santa Fe 157, Bahía Blanca.';
+const view = await loadHomeView();
 ---
 
-<!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="description" content={description} />
-    <title>{title}</title>
-    <link rel="icon" href="/brand/favicon.ico" sizes="any" />
-    <link rel="icon" href="/brand/favicon-512.png" type="image/png" sizes="512x512" />
-    <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
-  </head>
-  <body>
-    <SiteHeader navigation={navigation} settings={settings} />
-    <main id="contenido">
-      <HeroMedia block={block(home?.hero)} settings={settings} />
-      <EditorialIntro block={block(home?.about)} />
-      <CategoryMosaic block={block(home?.categories)} categories={categoryData} />
-      <FeaturedExperiences block={block(home?.experiences)} services={experienceData} />
-      <GiftCardFeature block={giftBlock} settings={settings} />
-      <WhyBoho block={block(home?.about)} />
-      <GoogleReviews testimonials={testimonials} />
-      <ContactReservation block={block(home?.contactLocation)} settings={settings} />
-      <ConversionClose settings={settings} />
-    </main>
-    <SiteFooter footer={footer} settings={settings} />
-    <FloatingWhatsApp settings={settings} />
-  </body>
-</html>
+<SiteLayout title={view.title} description={view.description}>
+  <HomeComposition view={view} />
+</SiteLayout>

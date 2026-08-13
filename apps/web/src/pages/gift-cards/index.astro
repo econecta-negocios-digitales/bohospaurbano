@@ -1,0 +1,56 @@
+---
+import '../../styles/global.css';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import FloatingWhatsApp from '../../components/FloatingWhatsApp.astro';
+import InternalPageHero from '../../components/InternalPageHero.astro';
+import ContactReservation from '../../components/ContactReservation.astro';
+import ConversionClose from '../../components/ConversionClose.astro';
+import { loadFooter, loadGiftCardsPage, loadNavigation, loadSiteSettings } from '../../lib/sanity';
+import { editorialSections } from '../../lib/site';
+import { whatsappHref } from '../../lib/site';
+
+const [page, navigation, footer, settings] = await Promise.all([
+  loadGiftCardsPage(), loadNavigation(), loadFooter(), loadSiteSettings(),
+]);
+if (!page) return Astro.redirect('/servicios/');
+const sections = editorialSections(page.content);
+const heading = sections.find((section) => section.heading.toLowerCase() === 'encabezado');
+const publicSections = sections.filter((section) => !['encabezado', 'contacto y reserva'].includes(section.heading.toLowerCase()));
+const ctaLabels = new Set(['Elegí tu Gift Card', 'Consultar por WhatsApp', 'Elegir un servicio', 'Ver Experiencias Boho', 'Armar un regalo compartido', 'Pedir mi Gift Card', 'Consultar antes de comprar', 'Ver Regalos Corporativos', 'Consultar propuesta']);
+const clean = (paragraphs: string[]) => paragraphs.filter((paragraph) => !ctaLabels.has(paragraph));
+const headerParagraphs = heading?.paragraphs || [];
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={page.description || 'Gift Cards de Boho Spa Urbano.'} />
+    <title>{page.title || 'Gift Cards | Boho Spa Urbano'}</title>
+    <link rel="icon" href="/brand/favicon.ico" sizes="any" />
+    <link rel="icon" href="/brand/favicon-512.png" type="image/png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <SiteHeader navigation={navigation} settings={settings} />
+    <main id="contenido">
+      <InternalPageHero eyebrow={headerParagraphs[0] || 'Gift Cards Boho'} title={headerParagraphs[1] || page.title || 'Regalá un momento para disfrutar'} description={headerParagraphs.slice(2, -2).join(' ')} fallbackImage="/images/home/gift-card.webp" />
+      <section class="section editorial-page-sections">
+        <div class="section-heading"><div><p class="eyebrow">Gift Cards Boho</p><h2>Elegí cómo regalar bienestar</h2></div><p>Una experiencia, un servicio o un monto abierto para que cada persona pueda elegir cómo disfrutar su momento.</p></div>
+        <div class="editorial-page-grid">
+          {publicSections.map((section) => <article class="editorial-page-card"><p class="eyebrow">{section.heading.replace(/^\d+\.\s*/, '')}</p><h2>{clean(section.paragraphs)[0] || section.heading.replace(/^\d+\.\s*/, '')}</h2>{clean(section.paragraphs).slice(1).map((paragraph) => <p>{paragraph}</p>)}</article>)}
+        </div>
+      </section>
+      <section class="section gift-card-terms"><div class="gift-card-terms-copy"><p class="eyebrow">Información importante</p><h2>Un regalo personal y fácil de coordinar</h2><ul><li>Las Gift Cards por monto se gestionan por WhatsApp.</li><li>La entrega puede ser digital por WhatsApp o física para retirar en Boho.</li><li>Las propuestas para dos o más personas se coordinan por WhatsApp.</li></ul><a class="button button-primary" href={whatsappHref()} target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a><a class="inline-link" href="/regalos-corporativos/">¿Buscás una propuesta para tu empresa? <span aria-hidden="true">↗</span></a></div><div class="image-frame gift-card-terms-media"><img src="/images/home/gift-card.webp" alt="Gift Card Boho preparada para regalar" width="1200" height="900" loading="lazy" /></div></section>
+      <ContactReservation settings={settings} />
+      <ConversionClose settings={settings} />
+    </main>
+    <SiteFooter footer={footer} settings={settings} />
+    <FloatingWhatsApp settings={settings} />
+  </body>
+</html>

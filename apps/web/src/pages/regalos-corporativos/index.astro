@@ -1,0 +1,55 @@
+---
+import '../../styles/global.css';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import FloatingWhatsApp from '../../components/FloatingWhatsApp.astro';
+import InternalPageHero from '../../components/InternalPageHero.astro';
+import ContactReservation from '../../components/ContactReservation.astro';
+import ConversionClose from '../../components/ConversionClose.astro';
+import { loadCorporatePage, loadFooter, loadNavigation, loadSiteSettings } from '../../lib/sanity';
+import { editorialSections, whatsappHref } from '../../lib/site';
+
+const [page, navigation, footer, settings] = await Promise.all([
+  loadCorporatePage(), loadNavigation(), loadFooter(), loadSiteSettings(),
+]);
+if (!page) return Astro.redirect('/servicios/');
+const sections = editorialSections(page.content);
+const heading = sections.find((section) => section.heading.toLowerCase() === 'encabezado');
+const publicSections = sections.filter((section) => !['encabezado', 'contacto y reserva'].includes(section.heading.toLowerCase()));
+const ctaLabels = new Set(['Solicitar propuesta', 'Consultar opciones', 'Más información']);
+const clean = (paragraphs: string[]) => paragraphs.filter((paragraph) => !ctaLabels.has(paragraph));
+const headerParagraphs = heading?.paragraphs || [];
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={page.description || 'Regalos y experiencias corporativas de Boho Spa Urbano.'} />
+    <title>{page.title || 'Regalos corporativos | Boho Spa Urbano'}</title>
+    <link rel="icon" href="/brand/favicon.ico" sizes="any" />
+    <link rel="icon" href="/brand/favicon-512.png" type="image/png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <SiteHeader navigation={navigation} settings={settings} />
+    <main id="contenido">
+      <InternalPageHero eyebrow={headerParagraphs[0] || 'Regalos corporativos'} title={headerParagraphs[1] || page.title || 'Una forma simple de reconocer a tu equipo'} description={headerParagraphs.slice(2).join(' ')} fallbackImage="/images/home/brunch-boho.webp" />
+      <section class="section editorial-page-sections">
+        <div class="section-heading"><div><p class="eyebrow">Regalos corporativos</p><h2>Propuestas claras para empresas y equipos</h2></div><p>Coordinamos regalos, experiencias y propuestas a medida para que la gestión sea simple.</p></div>
+        <div class="editorial-page-grid">
+          {publicSections.map((section) => <article class="editorial-page-card"><p class="eyebrow">{section.heading.replace(/^\d+\.\s*/, '')}</p><h2>{clean(section.paragraphs)[0] || section.heading.replace(/^\d+\.\s*/, '')}</h2>{clean(section.paragraphs).slice(1).map((paragraph) => <p>{paragraph}</p>)}</article>)}
+        </div>
+      </section>
+      <section class="section corporate-close"><div><p class="eyebrow">Convenio Corporativo</p><h2>Un beneficio permanente para tu equipo</h2><p>La propuesta contempla un 15% de beneficio sobre los servicios regulares de Boho, sin acumulación con promociones.</p><ul><li>La empresa entrega previamente el listado de personas habilitadas con DNI.</li><li>Los medios de pago son efectivo, débito o transferencia.</li><li>La vigencia es indefinida hasta que Boho o la empresa decidan discontinuarlo.</li><li>No se entregan reportes de utilización a la empresa.</li></ul><p>Consultanos por WhatsApp para definir la propuesta y la coordinación.</p><a class="button button-primary" href={whatsappHref()} target="_blank" rel="noopener noreferrer">Solicitar propuesta</a></div><div class="image-frame"><img src="/images/home/brunch-boho.webp" alt="Experiencia compartida de Boho para equipos" width="1200" height="900" loading="lazy" /></div></section>
+      <ContactReservation settings={settings} />
+      <ConversionClose settings={settings} />
+    </main>
+    <SiteFooter footer={footer} settings={settings} />
+    <FloatingWhatsApp settings={settings} />
+  </body>
+</html>

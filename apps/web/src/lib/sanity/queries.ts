@@ -25,7 +25,7 @@ export const singletonQueries = {
   homePage: singleton(
     "homePage",
     `
-    _id, hero, experiences, giftCards, categories, brunch, about, testimonials, contactLocation, seo${seo}
+    _id, hero, experiences{..., featuredServices[]->{${serviceProjection}}}, giftCards, categories, brunch, about, testimonials, contactLocation, conversionClose, seo${seo}
   `,
   ),
   aboutPage: singleton(
@@ -50,11 +50,11 @@ export const singletonQueries = {
   ),
   navigation: singleton(
     "navigation",
-    `_id, mainItems${cta}, primaryCta${cta}, visible, ariaLabel`,
+    `_id, mainItems[]${cta}, primaryCta${cta}, visible, ariaLabel`,
   ),
   footer: singleton(
     "footer",
-    `_id, columns[]{title, links${cta}, visible}, showSocialLinks, socialPlacement, legalLinks${cta}`,
+    `_id, columns[]{title, links[]${cta}, visible}, showSocialLinks, socialPlacement, legalLinks[]${cta}`,
   ),
   giftCardPolicy: singleton(
     "giftCardPolicy",

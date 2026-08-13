@@ -1,11 +1,12 @@
 ---
 import type { HomeBlock, SiteSettings } from "../lib/sanity/types";
-import { bookingHref, whatsappHref } from "../lib/site";
+import { bookingHref, whatsappHref, portableTextToString, hrefForCta } from "../lib/site";
 
 interface Props { block?: HomeBlock; settings?: SiteSettings | null }
-const { settings } = Astro.props;
+const { block, settings } = Astro.props;
 const contact = settings?.contact || {};
 const maps = typeof contact.googleMapsUrl === "string" ? contact.googleMapsUrl : "";
+const copy = portableTextToString(block?.content);
 ---
 
-<section class="contact-section" id="contacto" aria-labelledby="contact-title"><div class="contact-ambient" aria-hidden="true"></div><div class="contact-copy"><p class="eyebrow">Tu momento empieza acá</p><h2 id="contact-title">Estamos en Santa Fe 157, Bahía Blanca</h2><p>Trabajamos con reserva previa para preparar cada experiencia de manera personalizada.<br /><br />Podés elegir tu servicio en nuestra agenda o escribirnos por WhatsApp para recibir orientación.</p><div class="cta-row"><a class="button button-primary" href={bookingHref(settings)} target="_blank" rel="noopener noreferrer">Reservá tu turno</a><a class="button button-secondary" href={whatsappHref(settings)} target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a>{maps && <a class="button button-text" href={maps} target="_blank" rel="noopener noreferrer">Cómo llegar</a>}</div></div></section>
+<section class="contact-section" id="contacto" aria-labelledby="contact-title"><div class="contact-ambient" aria-hidden="true"></div><div class="contact-copy"><p class="eyebrow">{block?.eyebrow || "Tu momento empieza acá"}</p><h2 id="contact-title">{block?.title || `Estamos en ${contact.address || "Santa Fe 157"}, ${contact.city || "Bahía Blanca"}`}</h2><p>{block?.description || copy || "Trabajamos con reserva previa para preparar cada experiencia de manera personalizada. Podés elegir tu servicio en nuestra agenda o escribirnos por WhatsApp para recibir orientación."}</p><div class="cta-row"><a class="button button-primary" href={hrefForCta(block?.primaryCta, bookingHref(settings))} target="_blank" rel="noopener noreferrer">{block?.primaryCta?.label || "Reservá tu turno"}</a><a class="button button-secondary" href={hrefForCta(block?.secondaryCta, whatsappHref(settings))} target="_blank" rel="noopener noreferrer">{block?.secondaryCta?.label || "Escribir por WhatsApp"}</a>{(maps || block?.tertiaryCta) && <a class="button button-text" href={hrefForCta(block?.tertiaryCta, maps || "#contacto")} target="_blank" rel="noopener noreferrer">{block?.tertiaryCta?.label || "Cómo llegar"}</a>}</div></div></section>

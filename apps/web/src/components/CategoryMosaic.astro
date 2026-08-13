@@ -10,7 +10,7 @@ const fallbacks = [localImages.experiences, localImages.massage, localImages.fac
 
 <section class="section categories-section" id="categorias" aria-labelledby="categories-title">
   <div class="section-heading section-heading-wide">
-    <div><p class="eyebrow">{block?.eyebrow || "Elegí cómo querés sentirte"}</p><h2 id="categories-title">Cuatro formas de entrar en pausa</h2></div>
+    <div><p class="eyebrow">{block?.eyebrow || "Elegí cómo querés sentirte"}</p><h2 id="categories-title">{block?.title || "Cuatro formas de entrar en pausa"}</h2></div>
   </div>
   <div class="category-mosaic">
     {categories.slice(0, 4).map((category, index) => {

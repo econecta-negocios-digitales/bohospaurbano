@@ -8,7 +8,6 @@ export const localImages = {
   facial: "/images/home/facial.webp",
   beauty: "/images/home/beauty.webp",
   giftCard: "/images/home/gift-card.webp",
-  whyBoho: "/images/home/why-detail.webp",
   ambience: "/images/home/contact-ambience.webp",
 } as const;
 
@@ -25,6 +24,7 @@ export const publicRoutes = {
   "belleza consciente": "/belleza-consciente/",
   "gift cards": "/gift-cards/",
   nosotros: "/nosotros/",
+  "regalos corporativos": "/regalos-corporativos/",
 } as const;
 
 export function routeForLabel(label: string | undefined, home = false): string | undefined {
@@ -33,13 +33,14 @@ export function routeForLabel(label: string | undefined, home = false): string |
   if (home) {
     const homeAnchors: Record<string, string> = {
       servicios: "/servicios/",
-      experiencias: "#experiencias",
+      experiencias: "/experiencias-boho/",
       "experiencias boho": "/experiencias-boho/",
       "masajes & bienestar": "/masajes-bienestar/",
       "cuidado facial & corporal": "/cuidado-facial-corporal/",
       "belleza consciente": "/belleza-consciente/",
-      "gift cards": "#gift-cards",
+      "gift cards": "/gift-cards/",
       nosotros: "/nosotros/",
+      "regalos corporativos": "/regalos-corporativos/",
     };
     return homeAnchors[key];
   }
@@ -48,7 +49,7 @@ export function routeForLabel(label: string | undefined, home = false): string |
 
 export function currentPhaseRoute(label: string | undefined, home = false): string {
   const route = routeForLabel(label, home);
-  if (home || route === "/servicios/" || route === "/nosotros/" || route === "/experiencias-boho/" || route === "/masajes-bienestar/" || route === "/cuidado-facial-corporal/" || route === "/belleza-consciente/") return route || "#contacto";
+  if (home || route === "/servicios/" || route === "/nosotros/" || route === "/experiencias-boho/" || route === "/masajes-bienestar/" || route === "/cuidado-facial-corporal/" || route === "/belleza-consciente/" || route === "/gift-cards/" || route === "/regalos-corporativos/") return route || "#contacto";
   return "#contacto";
 }
 
@@ -61,11 +62,13 @@ export function hrefForCta(cta: Cta | undefined, fallback: string): string {
 }
 
 export function whatsappHref(_settings?: SiteSettings | null): string {
-  return BOHO_WHATSAPP_URL;
+  const value = _settings?.contact?.whatsapp;
+  return typeof value === "string" && value.startsWith("https://wa.me/") ? value : BOHO_WHATSAPP_URL;
 }
 
 export function bookingHref(_settings?: SiteSettings | null): string {
-  return BOHO_BOOKING_URL;
+  const value = _settings?.contact?.bookingUrl;
+  return typeof value === "string" && value.startsWith("https://") ? value : BOHO_BOOKING_URL;
 }
 
 export function experienceHref(_slug?: string): string {

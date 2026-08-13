@@ -1,7 +1,7 @@
 ---
-import type { SiteSettings } from "../lib/sanity/types";
-import { whatsappHref } from "../lib/site";
-interface Props { settings?: SiteSettings | null }
-const { settings } = Astro.props;
+import type { HomeBlock, SiteSettings } from "../lib/sanity/types";
+import { hrefForCta, whatsappHref } from "../lib/site";
+interface Props { block?: HomeBlock; settings?: SiteSettings | null }
+const { block, settings } = Astro.props;
 ---
-<section class="conversion-section"><p class="eyebrow">¿Necesitás orientación?</p><h2>Encontramos el momento adecuado para vos.</h2><a class="button button-primary" href={whatsappHref(settings)} target="_blank" rel="noopener noreferrer">Hablar por WhatsApp</a></section>
+<section class="conversion-section"><p class="eyebrow">{block?.eyebrow || "¿Necesitás orientación?"}</p><h2>{block?.title || "Encontramos el momento adecuado para vos."}</h2>{block?.description && <p>{block.description}</p>}<a class="button button-primary" href={hrefForCta(block?.primaryCta, whatsappHref(settings))} target="_blank" rel="noopener noreferrer">{block?.primaryCta?.label || "Hablar por WhatsApp"}</a></section>

@@ -73,6 +73,7 @@ export type HomePage = {
   about?: Record<string, unknown>;
   testimonials?: Record<string, unknown>;
   contactLocation?: Record<string, unknown>;
+  conversionClose?: Record<string, unknown>;
   seo?: Seo;
 };
 
@@ -87,6 +88,7 @@ export type HomeBlock = {
   tertiaryCta?: Cta;
   variant?: string;
   visible?: boolean;
+  featuredServices?: Service[];
 };
 
 export type ContentPage = {

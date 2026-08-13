@@ -1,0 +1,39 @@
+---
+import HeroMedia from "./HeroMedia.astro";
+import EditorialIntro from "./EditorialIntro.astro";
+import CategoryMosaic from "./CategoryMosaic.astro";
+import FeaturedExperiences from "./FeaturedExperiences.astro";
+import GiftCardFeature from "./GiftCardFeature.astro";
+import GoogleReviews from "./GoogleReviews.astro";
+import ContactReservation from "./ContactReservation.astro";
+import ConversionClose from "./ConversionClose.astro";
+import SiteHeader from "./SiteHeader.astro";
+import SiteFooter from "./SiteFooter.astro";
+import FloatingWhatsApp from "./FloatingWhatsApp.astro";
+import SanityVisualEditing from "./SanityVisualEditing.astro";
+import type { HomeView } from "../lib/homeView";
+import type { HomeBlock } from "../lib/sanity/types";
+
+interface Props {
+  view: HomeView;
+  preview?: boolean;
+}
+
+const { view, preview = false } = Astro.props;
+const block = (value: unknown) => value as HomeBlock | undefined;
+---
+
+{preview && <SanityVisualEditing enabled />}
+<SiteHeader navigation={view.navigation} settings={view.settings} />
+<main id="contenido">
+  <HeroMedia block={block(view.home?.hero)} settings={view.settings} />
+  <EditorialIntro block={block(view.home?.about)} />
+  <CategoryMosaic block={block(view.home?.categories)} categories={view.categoryData} />
+  <FeaturedExperiences block={view.homeExperienceBlock} services={view.selectedExperienceData} />
+  <GiftCardFeature block={view.giftBlock} settings={view.settings} />
+  <GoogleReviews testimonials={view.testimonials} />
+  <ContactReservation block={block(view.home?.contactLocation)} settings={view.settings} />
+  <ConversionClose block={block(view.home?.conversionClose)} settings={view.settings} />
+</main>
+<SiteFooter footer={view.footer} settings={view.settings} />
+<FloatingWhatsApp settings={view.settings} />

@@ -1,0 +1,11 @@
+---
+import { VisualEditing } from "@sanity/astro/visual-editing";
+
+interface Props {
+  enabled?: boolean;
+}
+
+const { enabled = false } = Astro.props;
+---
+
+<VisualEditing enabled={enabled} zIndex={1000} />
