@@ -198,7 +198,6 @@ export const homePage = defineType({
       title: "7. Testimonios",
       type: "homeTestimonials",
       group: "content",
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "contactLocation",

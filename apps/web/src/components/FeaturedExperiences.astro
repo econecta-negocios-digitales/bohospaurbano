@@ -5,8 +5,8 @@ import { sanityImageUrl } from "../lib/sanity";
 
 interface Props { block?: HomeBlock; services: Service[] }
 const { block, services } = Astro.props;
-const items = services
-  .filter((service) => service.featured)
+const hasExplicitSelection = Boolean(block?.featuredServices?.length);
+const items = (hasExplicitSelection ? services : services.filter((service) => service.featured))
   .sort((a, b) => Number(b.name.toLowerCase().includes("boho spa day")) - Number(a.name.toLowerCase().includes("boho spa day")))
   .slice(0, 3);
 ---
