@@ -1,0 +1,75 @@
+---
+interface Props {
+  mapsKey?: string;
+  mapId?: string;
+}
+
+const { mapsKey, mapId } = Astro.props;
+const placeId = "ChIJYRc0Q7C97ZURDQMSJV4RzbE";
+const mapsUrl = "https://www.google.com/maps/search/?api=1&query=Boho%20Spa%20Urbano&query_place_id=ChIJYRc0Q7C97ZURDQMSJV4RzbE";
+---
+
+<section class="footer-location" aria-labelledby="footer-location-title">
+  <div class="footer-location-copy">
+    <p class="footer-label">Dónde encontrarnos</p>
+    <h2 id="footer-location-title">Boho Spa Urbano</h2>
+    <p>Santa Fe 157<br />Bahía Blanca, Buenos Aires</p>
+    <a class="footer-map-link" href={mapsUrl} target="_blank" rel="noopener noreferrer">Ver ubicación en Google Maps <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="footer-map-shell" data-google-map data-place-id={placeId} data-map-key={mapsKey} data-map-id={mapId}>
+    <div class="footer-map-fallback">
+      <p>Santa Fe 157<br />Bahía Blanca</p>
+      <a href={mapsUrl} target="_blank" rel="noopener noreferrer">Abrir en Google Maps ↗</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  // @ts-nocheck
+  const mapShell = document.querySelector("[data-google-map]");
+  const mapsKey = mapShell?.getAttribute("data-map-key");
+  const mapId = mapShell?.getAttribute("data-map-id");
+  const placeId = mapShell?.getAttribute("data-place-id");
+
+  if (mapShell && mapsKey && mapId && placeId) {
+    const loadGoogleMaps = () => new Promise((resolve, reject) => {
+      if (window.google?.maps?.importLibrary) {
+        resolve(window.google.maps);
+        return;
+      }
+      const callbackName = "__bohoGoogleMapsReady";
+      window[callbackName] = () => resolve(window.google.maps);
+      const script = document.createElement("script");
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(mapsKey)}&loading=async&callback=${callbackName}`;
+      script.async = true;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
+
+    loadGoogleMaps().then(async (maps) => {
+      const [{ Map }, { AdvancedMarkerElement }, { Geocoder }] = await Promise.all([
+        maps.importLibrary("maps"),
+        maps.importLibrary("marker"),
+        maps.importLibrary("geocoding"),
+      ]);
+      const { results } = await new Geocoder().geocode({ placeId });
+      const location = results?.[0]?.geometry?.location;
+      if (!location) return;
+      const map = new Map(mapShell, {
+        center: location,
+        zoom: 16,
+        mapId,
+        disableDefaultUI: true,
+        zoomControl: true,
+        gestureHandling: "cooperative",
+      });
+      const markerContent = document.createElement("div");
+      markerContent.className = "footer-map-marker";
+      markerContent.innerHTML = '<img src="/brand/favicon-512.png" alt="" />';
+      new AdvancedMarkerElement({ map, position: location, content: markerContent, title: "Boho Spa Urbano" });
+      mapShell.querySelector(".footer-map-fallback")?.setAttribute("hidden", "true");
+    }).catch(() => {
+      // The fallback remains visible when Maps cannot load.
+    });
+  }
+</script>
