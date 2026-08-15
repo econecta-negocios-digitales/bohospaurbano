@@ -53,9 +53,18 @@ flushParagraph();
 flushList();
 
 const escapeHtml = (value: string) => value.replace(/[&<>"']/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[character] || character);
-const inlineHtml = (value: string) => escapeHtml(value)
-  .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-  .replace(/(https:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>');
+const inlineHtml = (value: string) => {
+  const links: string[] = [];
+  const tokenized = escapeHtml(value).replace(/\[([^\]]+)\]\((https:\/\/[^)\s]+)\)/g, (_, label, url) => {
+    const token = `__LEGAL_LINK_${links.length}__`;
+    links.push(`<a href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`);
+    return token;
+  });
+  const html = tokenized
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/(https:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>');
+  return links.reduce((result, link, index) => result.replace(`__LEGAL_LINK_${index}__`, link), html);
+};
 const updatedAt = page.updatedAt ? new Intl.DateTimeFormat("es-AR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${page.updatedAt}T00:00:00Z`)) : "";
 ---
 
