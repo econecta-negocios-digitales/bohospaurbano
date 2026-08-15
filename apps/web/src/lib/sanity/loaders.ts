@@ -9,6 +9,7 @@ import type {
   Footer,
   GiftCard,
   HomePage,
+  LegalPage,
   Navigation,
   Promotion,
   Service,
@@ -37,6 +38,10 @@ export const loadCorporatePage = (client?: SanityClient): Promise<ContentPage | 
   loadSingleton<ContentPage>(singletonQueries.corporatePage, client);
 export const loadFaqPage = (client?: SanityClient): Promise<ContentPage | null> =>
   loadSingleton<ContentPage>(singletonQueries.faqPage, client);
+export const loadPrivacyPage = (client?: SanityClient): Promise<LegalPage | null> =>
+  loadSingleton<LegalPage>(singletonQueries.privacy, client);
+export const loadTermsPage = (client?: SanityClient): Promise<LegalPage | null> =>
+  loadSingleton<LegalPage>(singletonQueries.terms, client);
 export const loadNavigation = (client?: SanityClient): Promise<Navigation | null> =>
   loadSingleton<Navigation>(singletonQueries.navigation, client);
 export const loadFooter = (client?: SanityClient): Promise<Footer | null> =>

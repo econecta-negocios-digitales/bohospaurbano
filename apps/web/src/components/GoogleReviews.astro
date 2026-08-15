@@ -1,11 +1,154 @@
 ---
-import type { Testimonial } from "../lib/sanity/types";
-
-interface Props { testimonials: Testimonial[] }
-const { testimonials } = Astro.props;
 ---
 
-{testimonials.length > 0 && <section class="section reviews-section" id="opiniones" aria-labelledby="reviews-title">
-  <div class="section-heading"><div><p class="eyebrow">Experiencias reales</p><h2 id="reviews-title">Lo que se llevan de Boho.</h2></div><p>Reseñas compartidas por personas que ya hicieron una pausa con nosotras.</p></div>
-  <div class="reviews-grid">{testimonials.slice(0, 3).map((review) => <figure class="review"><div class="stars" aria-label="5 estrellas">★★★★★</div><blockquote>“{review.text}”</blockquote><figcaption>{review.publicName}{review.date && <time datetime={review.date}> · {review.date}</time>}</figcaption></figure>)}</div>
-</section>}
+<div class="google-reviews-sentinel" data-google-reviews-sentinel aria-hidden="true"></div>
+<section class="section google-reviews-section" data-google-reviews hidden aria-labelledby="google-reviews-title">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Lo que dicen de Boho</p>
+      <h2 id="google-reviews-title">Experiencias que también quedan en quienes nos visitan</h2>
+    </div>
+    <div class="google-reviews-summary" data-google-summary></div>
+  </div>
+  <div class="google-reviews-grid" data-google-reviews-list></div>
+  <p class="google-reviews-order">Google Maps ordena estas reseñas por relevancia. Mostramos las tres primeras disponibles.</p>
+  <div class="google-reviews-attribution">
+    <span>Google Maps</span>
+    <span data-google-attributions></span>
+  </div>
+  <a class="inline-link" data-google-reviews-link target="_blank" rel="noopener noreferrer">Ver todas las reseñas en Google Maps <span aria-hidden="true">↗</span></a>
+</section>
+
+<script>
+  type GoogleReview = {
+    authorName?: string;
+    authorUri?: string;
+    rating?: number;
+    text?: string;
+    relativeDate?: string;
+    reviewUri?: string;
+    flagContentUri?: string;
+  };
+  type GoogleReviewsResponse = {
+    rating?: number;
+    userRatingCount?: number;
+    googleMapsUri?: string;
+    reviewsUri?: string;
+    attributions?: Array<{ displayName?: string; uri?: string }>;
+    reviews?: GoogleReview[];
+  };
+
+  const sentinel = document.querySelector<HTMLElement>("[data-google-reviews-sentinel]");
+  const section = document.querySelector<HTMLElement>("[data-google-reviews]");
+  if (sentinel && section) {
+    let requested = false;
+    const summary = section.querySelector<HTMLElement>("[data-google-summary]");
+    const list = section.querySelector<HTMLElement>("[data-google-reviews-list]");
+    const reviewsLink = section.querySelector<HTMLAnchorElement>("[data-google-reviews-link]");
+    const attributions = section.querySelector<HTMLElement>("[data-google-attributions]");
+
+    const stars = (rating = 0) => {
+      const rounded = Math.max(0, Math.min(5, Math.round(rating)));
+      return `${"★".repeat(rounded)}${"☆".repeat(5 - rounded)}`;
+    };
+
+    const appendText = (parent: HTMLElement, text: string | undefined) => {
+      if (text) parent.append(document.createTextNode(text));
+    };
+
+    const render = (data: GoogleReviewsResponse) => {
+      const reviews = Array.isArray(data.reviews) ? data.reviews.slice(0, 3) : [];
+      if (!reviews.length || !list || !summary || !reviewsLink) return;
+      const rating = typeof data.rating === "number" ? data.rating : 0;
+      const formattedRating = rating.toLocaleString("es-AR", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+      summary.replaceChildren();
+      const starsValue = document.createElement("span");
+      starsValue.className = "google-reviews-stars";
+      starsValue.setAttribute("aria-label", `${rating.toLocaleString("es-AR", { maximumFractionDigits: 1 })} sobre 5 estrellas`);
+      starsValue.textContent = "★★★★★";
+      const ratingValue = document.createElement("strong");
+      ratingValue.className = "google-reviews-rating";
+      ratingValue.textContent = formattedRating;
+      const ratingCount = document.createElement("span");
+      ratingCount.className = "google-reviews-count";
+      ratingCount.textContent = `${data.userRatingCount ?? 0} reseñas`;
+      summary.append(starsValue, ratingValue, ratingCount);
+
+      reviews.forEach((review) => {
+        const card = document.createElement("article");
+        card.className = "google-review-card";
+        const author = document.createElement("div");
+        author.className = "google-review-author";
+        const authorCopy = document.createElement("div");
+        const authorName = review.authorUri ? document.createElement("a") : document.createElement("span");
+        authorName.textContent = review.authorName || "Persona visitante";
+        if (authorName instanceof HTMLAnchorElement) {
+          authorName.href = review.authorUri || "";
+          authorName.target = "_blank";
+          authorName.rel = "noopener noreferrer";
+        }
+        authorCopy.append(authorName);
+        const metadata = document.createElement("p");
+        metadata.className = "google-review-meta";
+        metadata.append(document.createTextNode(`${stars(review.rating)} · ${review.relativeDate || ""}`));
+        authorCopy.append(metadata);
+        author.append(authorCopy);
+        card.append(author);
+
+        const quote = document.createElement("blockquote");
+        appendText(quote, review.text);
+        card.append(quote);
+
+        if (review.reviewUri) {
+          const source = document.createElement("a");
+          source.className = "google-review-source";
+          source.href = review.reviewUri;
+          source.target = "_blank";
+          source.rel = "noopener noreferrer";
+          source.textContent = "Ver reseña en Google Maps ↗";
+          card.append(source);
+        }
+        list.append(card);
+      });
+
+      const destination = data.reviewsUri || data.googleMapsUri;
+      if (destination) reviewsLink.href = destination;
+      else reviewsLink.remove();
+      if (attributions && data.attributions?.length) {
+        data.attributions.forEach((attribution, index) => {
+          if (index > 0) attributions.append(document.createTextNode(" · "));
+          if (attribution.uri) {
+            const link = document.createElement("a");
+            link.href = attribution.uri;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            link.textContent = attribution.displayName || "Atribución";
+            attributions.append(link);
+          } else appendText(attributions, attribution.displayName);
+        });
+      }
+      section.hidden = false;
+    };
+
+    const requestReviews = async () => {
+      if (requested) return;
+      requested = true;
+      try {
+        const response = await fetch("/api/google-reviews", { cache: "no-store", credentials: "same-origin" });
+        if (!response.ok) return;
+        const data = await response.json() as GoogleReviewsResponse;
+        render(data);
+      } catch {
+        // The section remains hidden when the external service is unavailable.
+      }
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        observer.disconnect();
+        void requestReviews();
+      }
+    }, { rootMargin: "240px 0px" });
+    observer.observe(sentinel);
+  }
+</script>

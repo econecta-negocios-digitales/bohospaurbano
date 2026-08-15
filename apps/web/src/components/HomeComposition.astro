@@ -2,7 +2,6 @@
 import HeroMedia from "./HeroMedia.astro";
 import EditorialIntro from "./EditorialIntro.astro";
 import CategoryMosaic from "./CategoryMosaic.astro";
-import FeaturedExperiences from "./FeaturedExperiences.astro";
 import GiftCardFeature from "./GiftCardFeature.astro";
 import GoogleReviews from "./GoogleReviews.astro";
 import ContactReservation from "./ContactReservation.astro";
@@ -29,9 +28,8 @@ const block = (value: unknown) => value as HomeBlock | undefined;
   <HeroMedia block={block(view.home?.hero)} settings={view.settings} />
   <EditorialIntro block={block(view.home?.about)} />
   <CategoryMosaic block={block(view.home?.categories)} categories={view.categoryData} />
-  <FeaturedExperiences block={view.homeExperienceBlock} services={view.selectedExperienceData} />
   <GiftCardFeature block={view.giftBlock} settings={view.settings} />
-  <GoogleReviews testimonials={view.testimonials} />
+  <GoogleReviews />
   <ContactReservation block={block(view.home?.contactLocation)} settings={view.settings} />
   <ConversionClose block={block(view.home?.conversionClose)} settings={view.settings} />
 </main>

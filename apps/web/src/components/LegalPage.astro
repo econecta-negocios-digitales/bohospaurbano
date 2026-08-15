@@ -1,0 +1,79 @@
+---
+import type { LegalPage as LegalPageData } from "../lib/sanity/types";
+import { portableTextToString } from "../lib/site";
+import SiteFooter from "./SiteFooter.astro";
+import SiteHeader from "./SiteHeader.astro";
+import FloatingWhatsApp from "./FloatingWhatsApp.astro";
+import type { Footer, Navigation, SiteSettings } from "../lib/sanity/types";
+
+interface Props {
+  page: LegalPageData;
+  navigation?: Navigation | null;
+  footer?: Footer | null;
+  settings?: SiteSettings | null;
+}
+
+const { page, navigation, footer, settings } = Astro.props;
+const source = portableTextToString(page.content).replace(/\r/g, "").trim();
+const sections: Array<{ level: 2 | 3; heading: string; blocks: Array<{ type: "paragraph" | "list"; text?: string; items?: string[] }> }> = [];
+let current: (typeof sections)[number] | undefined;
+let paragraph: string[] = [];
+let list: string[] = [];
+
+const flushParagraph = () => {
+  if (paragraph.length && current) current.blocks.push({ type: "paragraph", text: paragraph.join(" ").replace(/\s+/g, " ").trim() });
+  paragraph = [];
+};
+const flushList = () => {
+  if (list.length && current) current.blocks.push({ type: "list", items: [...list] });
+  list = [];
+};
+
+for (const rawLine of source.split("\n")) {
+  const line = rawLine.trim();
+  const heading = line.match(/^(##|###)\s+(.+)$/);
+  if (heading) {
+    flushParagraph();
+    flushList();
+    const nextSection: (typeof sections)[number] = { level: heading[1] === "##" ? 2 : 3, heading: heading[2] || "", blocks: [] };
+    current = nextSection;
+    sections.push(nextSection);
+  } else if (line.startsWith("- ")) {
+    flushParagraph();
+    list.push(line.slice(2).trim());
+  } else if (!line || line === "---") {
+    flushParagraph();
+    flushList();
+  } else {
+    flushList();
+    paragraph.push(line);
+  }
+}
+flushParagraph();
+flushList();
+
+const escapeHtml = (value: string) => value.replace(/[&<>"']/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[character] || character);
+const inlineHtml = (value: string) => escapeHtml(value)
+  .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+  .replace(/(https:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>');
+const updatedAt = page.updatedAt ? new Intl.DateTimeFormat("es-AR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${page.updatedAt}T00:00:00Z`)) : "";
+---
+
+<SiteHeader navigation={navigation} settings={settings} />
+<main id="contenido" class="legal-page">
+  <header class="legal-page-header">
+    <p class="eyebrow">Boho Spa Urbano</p>
+    <h1>{page.title}</h1>
+    {updatedAt && <p class="legal-page-date">Última actualización: {updatedAt}</p>}
+  </header>
+  <div class="legal-content">
+    {sections.map((section) => <section class="legal-section">
+      {section.level === 2 ? <h2>{section.heading}</h2> : <h3>{section.heading}</h3>}
+      {section.blocks.map((block) => block.type === "list"
+        ? <ul>{block.items?.map((item) => <li set:html={inlineHtml(item)} />)}</ul>
+        : <p set:html={inlineHtml(block.text || "")} />)}
+    </section>)}
+  </div>
+</main>
+<SiteFooter footer={footer} settings={settings} />
+<FloatingWhatsApp settings={settings} />

@@ -8,7 +8,6 @@ import {
   loadHomePage,
   loadNavigation,
   loadSiteSettings,
-  loadTestimonials,
 } from "./sanity";
 import type { HomeBlock, Service, ServiceCategory } from "./sanity/types";
 
@@ -20,7 +19,6 @@ export type HomeView = {
   categoryData: ServiceCategory[];
   selectedExperienceData: Service[];
   featuredGiftCards: Awaited<ReturnType<typeof loadFeaturedGiftCards>>;
-  testimonials: Awaited<ReturnType<typeof loadTestimonials>>;
   homeExperienceBlock: HomeBlock | undefined;
   giftBlock: HomeBlock;
   title: string;
@@ -37,9 +35,9 @@ const fallbackCategories: ServiceCategory[] = [
 const block = (value: unknown) => value as HomeBlock | undefined;
 
 export const loadHomeView = async (client?: SanityClient): Promise<HomeView> => {
-  const [home, settings, navigation, footer, categories, featuredServices, featuredGiftCards, testimonials] = await Promise.all([
+  const [home, settings, navigation, footer, categories, featuredServices, featuredGiftCards] = await Promise.all([
     loadHomePage(client), loadSiteSettings(client), loadNavigation(client), loadFooter(client),
-    loadCategories(client), loadFeaturedServices(client), loadFeaturedGiftCards(client), loadTestimonials(client),
+    loadCategories(client), loadFeaturedServices(client), loadFeaturedGiftCards(client),
   ]);
   const categoryData = categories.length ? categories : fallbackCategories;
   const homeExperienceBlock = block(home?.experiences);
@@ -53,7 +51,7 @@ export const loadHomeView = async (client?: SanityClient): Promise<HomeView> => 
   }
   return {
     home, settings, navigation, footer, categoryData, selectedExperienceData,
-    featuredGiftCards, testimonials, homeExperienceBlock, giftBlock,
+    featuredGiftCards, homeExperienceBlock, giftBlock,
     title: home?.seo?.title || "Boho Spa Urbano | Bienestar boutique en Bahía Blanca",
     description: home?.seo?.description || "Masajes, experiencias de spa, tratamientos faciales y corporales y Gift Cards en Santa Fe 157, Bahía Blanca.",
   };

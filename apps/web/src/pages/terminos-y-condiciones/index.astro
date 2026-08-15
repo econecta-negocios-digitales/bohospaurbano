@@ -1,0 +1,12 @@
+---
+import LegalPage from "../../components/LegalPage.astro";
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import { loadFooter, loadNavigation, loadSiteSettings, loadTermsPage } from "../../lib/sanity";
+
+const [page, navigation, footer, settings] = await Promise.all([loadTermsPage(), loadNavigation(), loadFooter(), loadSiteSettings()]);
+if (!page) return Astro.redirect("/");
+---
+
+<SiteLayout title={page.seo?.title || page.title || "Términos y Condiciones | Boho Spa Urbano"} description={page.seo?.description}>
+  <LegalPage page={page} navigation={navigation} footer={footer} settings={settings} />
+</SiteLayout>

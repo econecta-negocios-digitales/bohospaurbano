@@ -93,12 +93,36 @@ h3 { font-size:clamp(2rem,2.7vw,2.75rem); }
 .gift-whatsapp { color:var(--sand); font-size:.73rem; font-weight:600; letter-spacing:.06em; }
 .detail-list { list-style:none; padding:1rem 0 0; margin:0; border-top:1px solid var(--line); display:grid; gap:.8rem; color:var(--moss); font-size:.8rem; text-transform:uppercase; letter-spacing:.08em; }
 .detail-list li::before { content:"—"; color:var(--terracotta); margin-right:.8rem; }
-.reviews-section { background:var(--stone); }
-.reviews-grid { max-width:1280px; margin:auto; display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
-.review { min-height:17rem; padding:2rem; background:var(--cream); display:flex; flex-direction:column; justify-content:space-between; }
-.stars { color:var(--terracotta); letter-spacing:.15em; }
-.review blockquote { font:500 clamp(1.35rem,2vw,1.8rem)/1.25 "Playfair Display",serif; }
-.review figcaption { font-size:.75rem; color:var(--muted); }
+.google-reviews-sentinel { width:100%; height:1px; pointer-events:none; }
+.google-reviews-section { background:var(--stone); }
+.google-reviews-section[hidden] { display:none; }
+.google-reviews-summary { display:flex; align-items:baseline; gap:.65rem; color:var(--terracotta); font-size:.85rem; white-space:nowrap; }
+.google-reviews-stars { color:var(--terracotta); font-size:.9rem; letter-spacing:.12em; }
+.google-reviews-summary strong { color:var(--ink); font-size:1.15rem; letter-spacing:0; }
+.google-reviews-count { color:var(--muted); font-size:.76rem; letter-spacing:.02em; }
+.google-reviews-grid { max-width:1280px; margin:auto; display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+.google-review-card { height:19rem; min-height:0; max-height:19rem; padding:1.6rem; background:var(--cream); border:1px solid rgba(43,28,19,.08); display:flex; flex-direction:column; gap:1rem; overflow:hidden; }
+.google-review-author { min-height:0; font-size:.82rem; font-weight:600; }
+.google-review-author a { color:var(--ink); text-decoration:none; }
+.google-review-meta { margin:.25rem 0 0; color:var(--terracotta); font-size:.72rem; letter-spacing:.08em; }
+.google-review-card blockquote { flex:1; min-height:0; margin:0; padding-right:.55rem; overflow-y:auto; scrollbar-color:var(--terracotta) transparent; scrollbar-width:thin; font:500 clamp(1rem,1.2vw,1.2rem)/1.55 "Playfair Display",serif; }
+.google-review-source,.google-reviews-section > .inline-link { color:var(--moss); font-size:.72rem; font-weight:600; letter-spacing:.04em; }
+.google-reviews-section > .inline-link { display:block; max-width:1280px; margin:0 auto; }
+.google-reviews-order { max-width:1280px; margin:1.5rem auto .75rem; color:var(--muted); font-size:.72rem; }
+.google-reviews-attribution { max-width:1280px; margin:0 auto 1rem; color:var(--muted); font-size:.72rem; font-weight:600; letter-spacing:.04em; }
+.google-reviews-attribution a { color:inherit; }
+.legal-page { max-width:1280px; margin:auto; padding:clamp(7rem,12vw,10rem) clamp(1.25rem,5vw,4rem) 7rem; }
+.legal-page-header { max-width:48rem; margin-bottom:clamp(3rem,7vw,6rem); }
+.legal-page-header h1 { max-width:40rem; }
+.legal-page-date { color:var(--muted); font-size:.75rem; letter-spacing:.06em; }
+.legal-content { max-width:58rem; display:grid; gap:1px; }
+.legal-section { padding:clamp(2rem,5vw,4rem); background:var(--cream-deep); }
+.legal-section:nth-child(even) { background:var(--stone); }
+.legal-section h2 { margin-bottom:1.5rem; }
+.legal-section h3 { margin:1.5rem 0 .8rem; font-size:1.35rem; }
+.legal-section p { max-width:48rem; margin:.8rem 0; color:var(--muted); line-height:1.7; }
+.legal-section ul { margin:1rem 0; padding-left:1.25rem; color:var(--muted); line-height:1.7; }
+.legal-section a { color:var(--moss); overflow-wrap:anywhere; }
 .contact-section { max-width:1400px; margin:auto; display:grid; grid-template-columns:.9fr 1.1fr; min-height:32rem; background:var(--cream-deep); }
 .contact-ambient { min-height:20rem; background:linear-gradient(135deg,rgba(100,93,30,.18),rgba(176,125,98,.15)),url('/images/home/contact-ambience.webp') center/cover; }
 .contact-copy { padding:clamp(2rem,7vw,7rem); display:grid; gap:1.5rem; align-content:center; }
@@ -185,7 +209,7 @@ h3 { font-size:clamp(2rem,2.7vw,2.75rem); }
 .service-featured-item:nth-child(2n) p:not(.eyebrow) { color:rgba(255,248,242,.78); }
 @media (max-width:800px) { .internal-hero { padding-top:7.5rem; grid-template-columns:1fr; gap:2rem; } .internal-hero-copy { padding-bottom:0; } .internal-hero-media { aspect-ratio:1.15; } .editorial-content { padding-bottom:4rem; } .editorial-content-section,.editorial-content-section:nth-child(odd) { margin:0; padding:2.5rem 1.5rem; } .services-philosophy-grid { display:flex; flex-direction:column; } .services-philosophy-media { order:-1; aspect-ratio:1.15; } .service-category-row,.service-category-row:nth-child(even) { display:flex; flex-direction:column; align-items:stretch; gap:1.5rem; } .service-category-row:nth-child(even) .service-category-media { order:initial; } .service-category-media { aspect-ratio:1.1; } .services-featured-list { grid-template-columns:1fr; background:none; gap:.8rem; } .service-featured-item { min-height:auto; padding:1.6rem; } }
 @media (min-width:801px) { .gift-section { padding:clamp(1.25rem,3vw,2.5rem); } .gift-image { min-height:0; aspect-ratio:1; } .gift-copy { padding:clamp(2rem,4.5vw,4.5rem); gap:1.25rem; } }
-@media (max-width:800px) { h1 { font-size:clamp(2.65rem,12vw,3rem); } h2 { font-size:clamp(2.25rem,10vw,2.5rem); } .header-inner nav,.header-cta { display:none; } .menu-toggle { display:block; } .mobile-menu { display:grid; gap:1rem; padding:1.5rem 1.25rem 2rem; background:var(--cream); color:var(--ink); } .mobile-menu a:not(.button) { padding:.55rem 0; border-bottom:1px solid var(--line); font-size:.78rem; text-transform:uppercase; letter-spacing:.12em; } .hero { min-height:720px; } .hero-content { text-align:left; justify-items:start; } .hero-copy { max-width:30rem; } .section-heading,.section-heading-wide { display:grid; align-items:start; gap:1.5rem; margin-bottom:2.5rem; } .intro-grid { display:flex; flex-direction:column; align-items:stretch; } .intro-grid .image-frame { width:100%; } .intro-copy { gap:1.25rem; } .category-mosaic { grid-template-columns:1fr; gap:.8rem; } .category-tile { min-height:66vw; } .category-tile-2,.category-tile-4 { transform:none; } .experience-list { grid-template-columns:1fr; gap:3.5rem; } .experience-primary { grid-column:auto; } .experience-item,.experience-item:nth-child(even),.experience-primary { display:flex; flex-direction:column; align-items:stretch; gap:1.5rem; } .experience-item:nth-child(even) .image-frame,.experience-item:nth-child(even) .experience-copy { order:initial; } .experience-item .image-frame,.experience-secondary .image-frame { aspect-ratio:1.1; } .experience-secondary h3 { font-size:2rem; } .gift-section,.contact-section { grid-template-columns:1fr; margin-inline:1.25rem; padding:0; } .gift-image { min-height:20rem; } .gift-copy { padding:2.5rem 1.5rem 3rem; } .contact-ambient { min-height:18rem; } .contact-copy { padding:2.5rem 1.5rem; } .reviews-grid { grid-template-columns:1fr; } .review { min-height:14rem; } .footer-brand { display:grid; gap:1rem; } .footer-brand .brand img { width:9.5rem; } .footer-whatsapp { margin-left:0; } .footer-columns { grid-template-columns:repeat(2,1fr); padding-block:2rem; } .footer-bottom { display:grid; gap:.3rem; } .floating-whatsapp { right:.75rem; bottom:.75rem; width:2.9rem; height:2.9rem; padding:0; justify-content:center; gap:0; } .floating-whatsapp span:last-child { display:none; } .floating-whatsapp span:first-child { font-size:1.2rem; } }
+@media (max-width:800px) { h1 { font-size:clamp(2.65rem,12vw,3rem); } h2 { font-size:clamp(2.25rem,10vw,2.5rem); } .header-inner nav,.header-cta { display:none; } .menu-toggle { display:block; } .mobile-menu { display:grid; gap:1rem; padding:1.5rem 1.25rem 2rem; background:var(--cream); color:var(--ink); } .mobile-menu a:not(.button) { padding:.55rem 0; border-bottom:1px solid var(--line); font-size:.78rem; text-transform:uppercase; letter-spacing:.12em; } .hero { min-height:720px; } .hero-content { text-align:left; justify-items:start; } .hero-copy { max-width:30rem; } .section-heading,.section-heading-wide { display:grid; align-items:start; gap:1.5rem; margin-bottom:2.5rem; } .intro-grid { display:flex; flex-direction:column; align-items:stretch; } .intro-grid .image-frame { width:100%; } .intro-copy { gap:1.25rem; } .category-mosaic { grid-template-columns:1fr; gap:.8rem; } .category-tile { min-height:66vw; } .category-tile-2,.category-tile-4 { transform:none; } .gift-section,.contact-section { grid-template-columns:1fr; margin-inline:1.25rem; padding:0; } .gift-image { min-height:20rem; } .gift-copy { padding:2.5rem 1.5rem 3rem; } .contact-ambient { min-height:18rem; } .contact-copy { padding:2.5rem 1.5rem; } .google-reviews-grid { grid-auto-flow:column; grid-auto-columns:minmax(82%,1fr); grid-template-columns:none; overflow-x:auto; overscroll-behavior-inline:contain; padding:0 1.25rem 1rem; scroll-snap-type:x mandatory; scrollbar-width:thin; } .google-review-card { height:17rem; min-height:0; max-height:17rem; scroll-snap-align:start; padding:1.35rem; } .google-reviews-order,.google-reviews-attribution { margin-inline:1.25rem; } .google-reviews-section > .inline-link { margin-inline:1.25rem; } .google-reviews-summary { white-space:normal; flex-wrap:wrap; row-gap:.2rem; } .legal-page { padding-top:7rem; padding-bottom:4rem; } .legal-section { padding:2rem 1.5rem; } .footer-brand { display:grid; gap:1rem; } .footer-brand .brand img { width:9.5rem; } .footer-whatsapp { margin-left:0; } .footer-columns { grid-template-columns:repeat(2,1fr); padding-block:2rem; } .footer-bottom { display:grid; gap:.3rem; } .floating-whatsapp { right:.75rem; bottom:.75rem; width:2.9rem; height:2.9rem; padding:0; justify-content:center; gap:0; } .floating-whatsapp span:last-child { display:none; } .floating-whatsapp span:first-child { font-size:1.2rem; } }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition-duration:.01ms !important; animation-duration:.01ms !important; } }
 
 .category-journey-intro { background:var(--cream); }

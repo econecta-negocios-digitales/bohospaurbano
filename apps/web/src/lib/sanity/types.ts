@@ -35,6 +35,15 @@ export type Seo = {
   noIndex?: boolean;
 };
 
+export type LegalPage = {
+  _id: string;
+  title?: string;
+  slug?: { current?: string };
+  content?: PortableTextBlock[];
+  updatedAt?: string;
+  seo?: Seo;
+};
+
 export type Cta = {
   label: string;
   style?: "primary" | "secondary" | "text";

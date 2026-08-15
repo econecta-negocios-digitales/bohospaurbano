@@ -25,6 +25,9 @@ export const publicRoutes = {
   "gift cards": "/gift-cards/",
   nosotros: "/nosotros/",
   "regalos corporativos": "/regalos-corporativos/",
+  privacidad: "/privacidad/",
+  "términos y condiciones": "/terminos-y-condiciones/",
+  "terminos y condiciones": "/terminos-y-condiciones/",
 } as const;
 
 export function routeForLabel(label: string | undefined, home = false): string | undefined {
@@ -49,7 +52,7 @@ export function routeForLabel(label: string | undefined, home = false): string |
 
 export function currentPhaseRoute(label: string | undefined, home = false): string {
   const route = routeForLabel(label, home);
-  if (home || route === "/servicios/" || route === "/nosotros/" || route === "/experiencias-boho/" || route === "/masajes-bienestar/" || route === "/cuidado-facial-corporal/" || route === "/belleza-consciente/" || route === "/gift-cards/" || route === "/regalos-corporativos/") return route || "#contacto";
+  if (home || route === "/servicios/" || route === "/nosotros/" || route === "/experiencias-boho/" || route === "/masajes-bienestar/" || route === "/cuidado-facial-corporal/" || route === "/belleza-consciente/" || route === "/gift-cards/" || route === "/regalos-corporativos/" || route === "/privacidad/" || route === "/terminos-y-condiciones/") return route || "#contacto";
   return "#contacto";
 }
 
@@ -58,6 +61,9 @@ export function hrefForCta(cta: Cta | undefined, fallback: string): string {
   if (cta.link.type === "whatsapp") return whatsappHref();
   if (cta.link.type === "booking") return bookingHref();
   if (cta.link.externalUrl) return cta.link.externalUrl;
+  const internalReference = cta.link.internalReference?._ref;
+  if (internalReference === "legalPage.privacy") return "/privacidad/";
+  if (internalReference === "legalPage.terms") return "/terminos-y-condiciones/";
   return fallback;
 }
 
