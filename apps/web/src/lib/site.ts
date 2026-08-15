@@ -177,7 +177,10 @@ export function editorialSections(value: unknown): EditorialSection[] {
       flushParagraph();
       continue;
     }
-    paragraph.push(line.replace(/^\*\*(.+?)\*\*$/, "$1"));
+    paragraph.push(line
+      .replace(/^\*\*(.+?)\*\*$/, "$1")
+      .replace(/\*\*(.+?)\*\*/g, "$1")
+      .replace(/`(.+?)`/g, "$1"));
   }
   flushParagraph();
   return sections;
