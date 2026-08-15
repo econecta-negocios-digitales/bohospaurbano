@@ -107,7 +107,7 @@ h3 { font-size:clamp(2rem,2.7vw,2.75rem); }
 .google-review-meta { margin:.25rem 0 0; color:var(--terracotta); font-size:.72rem; letter-spacing:.08em; }
 .google-review-card blockquote { flex:1; min-height:0; margin:0; padding-right:.55rem; overflow-y:auto; scrollbar-color:var(--terracotta) transparent; scrollbar-width:thin; font:500 clamp(1rem,1.2vw,1.2rem)/1.55 "Playfair Display",serif; }
 .google-review-source,.google-reviews-section > .inline-link { color:var(--moss); font-size:.72rem; font-weight:600; letter-spacing:.04em; }
-.google-reviews-section > .inline-link { display:block; max-width:1280px; margin:0 auto; }
+.google-reviews-section > .inline-link { display:block; width:auto; max-width:1280px; margin:0 auto; }
 .google-reviews-order { max-width:1280px; margin:1.5rem auto .75rem; color:var(--muted); font-size:.72rem; }
 .google-reviews-attribution { max-width:1280px; margin:0 auto 1rem; color:var(--muted); font-size:.72rem; font-weight:600; letter-spacing:.04em; }
 .google-reviews-attribution a { color:inherit; }
