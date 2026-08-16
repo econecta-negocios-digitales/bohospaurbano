@@ -6,6 +6,7 @@ import type {
   ContentPage,
   CorporateExperience,
   Faq,
+  FaqPage,
   Footer,
   GiftCard,
   HomePage,
@@ -36,8 +37,8 @@ export const loadGiftCardsPage = (client?: SanityClient): Promise<ContentPage | 
   loadSingleton<ContentPage>(singletonQueries.giftCardsPage, client);
 export const loadCorporatePage = (client?: SanityClient): Promise<ContentPage | null> =>
   loadSingleton<ContentPage>(singletonQueries.corporatePage, client);
-export const loadFaqPage = (client?: SanityClient): Promise<ContentPage | null> =>
-  loadSingleton<ContentPage>(singletonQueries.faqPage, client);
+export const loadFaqPage = (client?: SanityClient): Promise<FaqPage | null> =>
+  loadSingleton<FaqPage>(singletonQueries.faqPage, client);
 export const loadPrivacyPage = (client?: SanityClient): Promise<LegalPage | null> =>
   loadSingleton<LegalPage>(singletonQueries.privacy, client);
 export const loadTermsPage = (client?: SanityClient): Promise<LegalPage | null> =>

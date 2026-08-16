@@ -119,6 +119,32 @@ h3 { font-size:clamp(2rem,2.7vw,2.75rem); }
 .legal-content { max-width:58rem; display:grid; gap:1px; }
 .legal-section { padding:clamp(2rem,5vw,4rem); background:var(--cream-deep); }
 .legal-section:nth-child(even) { background:var(--stone); }
+body:has(.faq-page) .site-header { color:var(--ink); }
+.faq-page { background:var(--cream); }
+.faq-hero { padding:clamp(8rem,14vw,12rem) clamp(1.25rem,5vw,4rem) clamp(4rem,8vw,7rem); background:var(--cream-deep); }
+.faq-hero-inner { max-width:760px; margin:auto; display:grid; gap:1.2rem; text-align:center; }
+.faq-hero-inner h1 { max-width:44rem; margin:auto; }
+.faq-hero-inner > p:last-child { max-width:38rem; margin:auto; color:var(--muted); font-size:1.05rem; }
+.faq-groups { max-width:1100px; margin:auto; padding:clamp(4rem,9vw,8rem) clamp(1.25rem,5vw,4rem); display:grid; gap:clamp(4rem,8vw,7rem); }
+.faq-group { display:grid; grid-template-columns:minmax(13rem,.65fr) minmax(0,1.35fr); gap:clamp(2rem,7vw,7rem); align-items:start; }
+.faq-group-heading { display:grid; gap:.8rem; position:sticky; top:7rem; }
+.faq-group-heading h2 { font-size:clamp(2rem,3.2vw,3rem); }
+.faq-group-heading > p:last-child { color:var(--muted); font-size:.92rem; }
+.faq-list { border-top:1px solid var(--line); }
+.faq-item { border-bottom:1px solid var(--line); }
+.faq-item summary { list-style:none; min-height:4.6rem; padding:1.25rem 0; display:flex; align-items:center; justify-content:space-between; gap:1.25rem; cursor:pointer; font:500 1.08rem/1.35 "Playfair Display",serif; }
+.faq-item summary::-webkit-details-marker { display:none; }
+.faq-item summary:focus-visible { outline:2px solid var(--terracotta); outline-offset:4px; }
+.faq-toggle { flex:0 0 auto; color:var(--terracotta); font:400 1.7rem/1 "Montserrat",sans-serif; transition:transform .2s ease; }
+.faq-item[open] .faq-toggle { transform:rotate(45deg); }
+.faq-answer { padding:0 2.5rem 1.5rem 0; color:var(--muted); font-size:.93rem; }
+.faq-answer p + p { margin-top:.9rem; }
+.faq-answer strong { color:var(--ink); font-weight:600; }
+.faq-close { max-width:1100px; margin:0 auto clamp(4rem,9vw,8rem); padding:clamp(2.5rem,6vw,5rem); background:var(--moss); color:var(--cream); display:grid; gap:1.2rem; }
+.faq-close .eyebrow { color:var(--sand); }
+.faq-close > p:not(.eyebrow) { max-width:35rem; color:rgba(255,248,242,.8); }
+.faq-close .button-secondary { border-color:var(--sand); color:var(--cream); }
+@media (max-width:800px) { body:has(.faq-page) .site-header:not(.is-scrolled) { background:rgba(255,248,242,.94); box-shadow:0 1px 0 var(--line); } .faq-hero { padding-top:8rem; } .faq-hero-inner { text-align:left; } .faq-hero-inner h1,.faq-hero-inner > p:last-child { margin:0; } .faq-group { grid-template-columns:1fr; gap:1.5rem; } .faq-group-heading { position:static; } .faq-item summary { min-height:4.3rem; font-size:1rem; } .faq-answer { padding-right:1.5rem; font-size:.9rem; } .faq-close { margin-inline:1.25rem; padding:2.5rem 1.5rem 3rem; } }
 .legal-section h2 { margin-bottom:1.5rem; }
 .legal-section h3 { margin:1.5rem 0 .8rem; font-size:1.35rem; }
 .legal-section p { max-width:48rem; margin:.8rem 0; color:var(--muted); line-height:1.7; }

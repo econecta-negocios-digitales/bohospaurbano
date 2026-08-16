@@ -1,0 +1,10 @@
+---
+import type { PortableTextBlock } from "../lib/sanity/types";
+import { faqAnswerParagraphs, faqInlineSegments } from "../lib/faq";
+
+interface Props { blocks?: PortableTextBlock[] }
+const { blocks } = Astro.props;
+const paragraphs = faqAnswerParagraphs(blocks);
+---
+
+{paragraphs.map((paragraph) => <p>{faqInlineSegments(paragraph).map((segment) => segment.bold ? <strong>{segment.text}</strong> : segment.text)}</p>)}

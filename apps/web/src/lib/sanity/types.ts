@@ -114,6 +114,23 @@ export type ContentPage = {
   seo?: Seo;
 };
 
+export type FaqTopicGroup = {
+  key: string;
+  label: string;
+  description?: string;
+  order?: number;
+  visible?: boolean;
+  faqs?: Faq[];
+};
+
+export type FaqPage = {
+  _id: "faqPage";
+  title?: string;
+  description?: string;
+  topics?: FaqTopicGroup[];
+  seo?: Seo;
+};
+
 export type Navigation = {
   _id: "navigation";
   mainItems?: Cta[];
@@ -258,6 +275,9 @@ export type Faq = {
   question: string;
   answer: PortableTextBlock[];
   order?: number;
+  visible?: boolean;
+  archived?: boolean;
+  relatedPages?: Array<{ _id: string; _type: string }>;
   relatedService?: { _id: string; name?: string; slug?: string };
 };
 

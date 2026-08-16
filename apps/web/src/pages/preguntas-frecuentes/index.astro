@@ -1,0 +1,84 @@
+---
+import SiteFooter from "../../components/SiteFooter.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import FaqAnswer from "../../components/FaqAnswer.astro";
+import FloatingWhatsApp from "../../components/FloatingWhatsApp.astro";
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import { faqAnswerText } from "../../lib/faq";
+import { bookingHref, whatsappHref } from "../../lib/site";
+import { loadFaqPage, loadFooter, loadNavigation, loadSiteSettings } from "../../lib/sanity";
+
+const [page, navigation, footer, settings] = await Promise.all([
+  loadFaqPage(),
+  loadNavigation(),
+  loadFooter(),
+  loadSiteSettings(),
+]);
+
+if (!page) return Astro.redirect("/");
+
+const groups = (page.topics || [])
+  .filter((group) => group.visible !== false)
+  .sort((a, b) => (a.order ?? 9999) - (b.order ?? 9999))
+  .map((group) => ({
+      ...group,
+      faqs: (group.faqs || [])
+      .filter((faq) => faq.visible !== false && faq.archived !== true)
+      .sort((a, b) => (a.order ?? 9999) - (b.order ?? 9999)),
+  }))
+  .filter((group) => group.faqs.length);
+
+const metaTitle = page.seo?.title || "Preguntas frecuentes | Boho Spa Urbano Bahía Blanca";
+const metaDescription = page.seo?.description || page.description || "Respuestas sobre reservas, experiencias, Gift Cards, tratamientos y servicios de Boho Spa Urbano en Bahía Blanca.";
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: groups.flatMap((group) => group.faqs).map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faqAnswerText(faq.answer) },
+  })),
+};
+---
+
+<SiteLayout title={metaTitle} description={metaDescription}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+  <SiteHeader navigation={navigation} settings={settings} />
+  <main id="contenido" class="faq-page">
+    <section class="faq-hero" aria-labelledby="faq-title">
+      <div class="faq-hero-inner">
+        <p class="eyebrow">Preguntas frecuentes</p>
+        <h1 id="faq-title">Todo lo que necesitás saber antes de venir</h1>
+        <p>{page.description || metaDescription}</p>
+      </div>
+    </section>
+
+    <section class="faq-groups" aria-label="Preguntas frecuentes por tema">
+      {groups.map((group, groupIndex) => <section class="faq-group" aria-labelledby={`faq-group-${groupIndex}`}>
+        <div class="faq-group-heading">
+          <p class="eyebrow">{String(groupIndex + 1).padStart(2, "0")}</p>
+          <h2 id={`faq-group-${groupIndex}`}>{group.label}</h2>
+          {group.description && <p>{group.description}</p>}
+        </div>
+        <div class="faq-list">
+          {group.faqs.map((faq) => <details class="faq-item">
+            <summary><span>{faq.question}</span><span class="faq-toggle" aria-hidden="true">+</span></summary>
+            <div class="faq-answer"><FaqAnswer blocks={faq.answer} /></div>
+          </details>)}
+        </div>
+      </section>)}
+    </section>
+
+    <section class="faq-close" aria-labelledby="faq-close-title">
+      <p class="eyebrow">Antes de reservar</p>
+      <h2 id="faq-close-title">¿Te quedó alguna duda?</h2>
+      <p>Si necesitás orientación antes de reservar, escribinos y te ayudamos a encontrar la opción adecuada.</p>
+      <div class="cta-row">
+        <a class="button button-primary" href={whatsappHref(settings)} target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+        <a class="button button-secondary" href={bookingHref(settings)} target="_blank" rel="noopener noreferrer">Reservá tu turno</a>
+      </div>
+    </section>
+  </main>
+  <SiteFooter footer={footer} settings={settings} />
+  <FloatingWhatsApp settings={settings} />
+</SiteLayout>

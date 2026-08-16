@@ -10,6 +10,7 @@ const categoryProjection = `_id, name, "slug": slug.current, description, conten
 const serviceProjection = `_id, name, "slug": slug.current, category->{_id, name, "slug": slug.current}, shortDescription, mainContent${portableText}, duration, price, showPrice, modality, maxPeople, coordinateByWhatsapp, primaryCta${cta}, secondaryCta${cta}, mainImage${image}, featured, order, landingEnabled, seo${seo}`;
 const giftCardProjection = `_id, name, "slug": slug.current, kind, relatedService->{_id, name, "slug": slug.current}, shortDescription, content${portableText}, image${image}, price, showPrice, modality, people, deliveryFormat, coordinateByWhatsapp, cta${cta}, featured, order`;
 const corporateProjection = `_id, name, description, content${portableText}, image${image}, benefits${portableText}, minPeople, maxPeople, modality, priceOrBudget, primaryCta${cta}, secondaryCta${cta}, featured, order, seo${seo}`;
+const faqProjection = `_id, question, answer${portableText}, order, visible, archived, relatedPages[]->{_id, _type}, relatedService->{_id, name, "slug": slug.current}`;
 
 const singleton = (id: string, projection: string) =>
   `*[_id == "${id}" && ${visibility}][0]{${projection}}`;
@@ -46,7 +47,7 @@ export const singletonQueries = {
   ),
   faqPage: singleton(
     "faqPage",
-    `_id, title, description, topics[]{key, label, description, order, visible, faqs}`,
+    `_id, title, description, topics[visible != false] | order(order asc, key asc){key, label, description, order, visible, faqs[@->.visible == true && @->.archived != true] | order(coalesce(@->.order, 9999) asc, @->.question asc, @->_id asc)->{${faqProjection}}}, seo${seo}`,
   ),
   navigation: singleton(
     "navigation",
@@ -83,5 +84,5 @@ export const collectionQueries = {
   team: `*[_type == "teamMember" && ${visibility} && visible == true && archived != true] | order(coalesce(order, 9999) asc, name asc, _id asc){_id, name, role, shortBio, biography${portableText}, training${portableText}, specialties, photo${image}, order, featured, isFounder, isDirector}`,
   featuredTeam: `*[_type == "teamMember" && ${visibility} && visible == true && archived != true && featured == true] | order(coalesce(order, 9999) asc, name asc, _id asc){_id, name, role, shortBio, photo${image}, order, featured, isFounder, isDirector}`,
   testimonials: `*[_type == "testimonial" && ${visibility} && authorization == true && visible == true && archived != true] | order(coalesce(order, 9999) asc, coalesce(date, "") desc, _id asc){_id, publicName, initials, text, source, originalUrl, date, featured, order}`,
-  faqs: `*[_type == "faq" && ${visibility} && visible == true && archived != true] | order(coalesce(order, 9999) asc, question asc, _id asc){_id, question, answer${portableText}, order, relatedService->{_id, name, "slug": slug.current}}`,
+  faqs: `*[_type == "faq" && ${visibility} && visible == true && archived != true] | order(coalesce(order, 9999) asc, question asc, _id asc){${faqProjection}}`,
 } as const;
