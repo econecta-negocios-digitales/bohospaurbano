@@ -5,6 +5,9 @@ type FaqInlineSegment = { text: string; bold: boolean };
 const blockText = (block: PortableTextBlock) =>
   block.children?.map((child) => child.text || "").join("") || "";
 
+const isEditorialInstruction = (value: string) =>
+  /^\s*\*{0,2}(?:CTA|Comportamiento|Antetítulo|Título|Encabezado|Cierre)\b/i.test(value);
+
 export function faqAnswerParagraphs(blocks: PortableTextBlock[] | undefined): string[] {
   const source = (blocks || [])
     .map(blockText)
@@ -21,6 +24,7 @@ export function faqAnswerParagraphs(blocks: PortableTextBlock[] | undefined): st
         .replace(/\s+/g, " ")
         .trim(),
     )
+    .filter((paragraph) => !isEditorialInstruction(paragraph))
     .filter(Boolean);
 }
 

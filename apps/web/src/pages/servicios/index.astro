@@ -6,28 +6,30 @@ import ContactReservation from '../../components/ContactReservation.astro';
 import ConversionClose from '../../components/ConversionClose.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import FloatingWhatsApp from '../../components/FloatingWhatsApp.astro';
-import { loadFooter, loadNavigation, loadServicesPage, loadSiteSettings } from '../../lib/sanity';
-import { editorialField, editorialSections } from '../../lib/site';
+import { loadFooter, loadNavigation, loadServices, loadServicesPage, loadSiteSettings } from '../../lib/sanity';
+import { bookingHref, editorialField, editorialSections, seoValue } from '../../lib/site';
 import { sanityImageUrl } from '../../lib/sanity';
 import { imageAlt, localImages, routeForLabel } from '../../lib/site';
+import { serviceCatalogGroups } from '../../lib/serviceCatalog';
 
-const [page, settings, navigation, footer] = await Promise.all([
+const [page, settings, navigation, footer, services] = await Promise.all([
   loadServicesPage(),
   loadSiteSettings(),
   loadNavigation(),
   loadFooter(),
+  loadServices(),
 ]);
 const source = page?.content;
 const sections = editorialSections(source);
 const categorySections = sections.filter((section) => section.level === 3).slice(0, 4);
 const categories = page?.categories || [];
-const featuredServices = page?.featuredServices || [];
 const title = editorialField(source, 'Título') || page?.title || 'Servicios';
 const description = editorialField(source, 'Texto') || page?.description;
 const eyebrow = editorialField(source, 'Antetítulo') || 'Nuestros servicios';
-const seoTitle = page?.seo?.title || 'Servicios de spa, masajes y bienestar en Bahía Blanca | Boho';
-const seoDescription = page?.seo?.description || 'Experiencias de spa, masajes, tratamientos faciales y corporales, belleza consciente y servicios especiales en Bahía Blanca.';
+const seoTitle = seoValue(page?.seo?.title, 'Servicios de spa, masajes y bienestar en Bahía Blanca | Boho');
+const seoDescription = seoValue(page?.seo?.description, 'Experiencias de spa, masajes, tratamientos faciales y corporales, belleza consciente y servicios especiales en Bahía Blanca.');
 const categoryFallbacks = [localImages.experiences, localImages.massage, localImages.facial, '/images/internal/servicios-cuidado.webp'];
+const catalogGroups = serviceCatalogGroups(services);
 ---
 
 <!doctype html>
@@ -72,11 +74,17 @@ const categoryFallbacks = [localImages.experiences, localImages.massage, localIm
           })}
         </div>
       </section>
-      <section class="section services-featured" aria-labelledby="services-featured-title">
-        <div class="section-heading"><div><p class="eyebrow">Algunas formas de vivir Boho</p><h2 id="services-featured-title">Podés empezar por acá</h2></div><p>Propuestas que representan distintas formas de disfrutar el cuidado, el bienestar y una pausa sin apuro.</p></div>
-        <div class="services-featured-list">
-          {featuredServices.slice(0, 5).map((service, index) => <article class={`service-featured-item service-featured-item-${(index % 3) + 1}`}><p class="eyebrow">{service.category?.name || 'Propuesta Boho'}</p><h3>{service.name}</h3><p>{service.shortDescription}</p></article>)}
+      <section class="section services-inventory" aria-labelledby="services-inventory-title">
+        <div class="section-heading"><div><p class="eyebrow">El catálogo de Boho</p><h2 id="services-inventory-title">Encontrá tu forma de entrar en pausa</h2></div><p>Una mirada general a nuestras propuestas de bienestar, belleza y cuidado. Para conocer disponibilidad y elegir tu turno, escribinos o ingresá a la agenda.</p></div>
+        <div class="services-inventory-grid">
+          {catalogGroups.map((group, index) => <article class="services-inventory-group">
+            <div class="services-inventory-heading"><p class="eyebrow">0{index + 1}</p><h3>{group.name}</h3><a class="inline-link" href={group.href}>Explorar {group.name} <span aria-hidden="true">↗</span></a></div>
+            <ul class="services-inventory-list">
+              {group.services.map((service) => <li>{service}</li>)}
+            </ul>
+          </article>)}
         </div>
+        <div class="section-action services-inventory-action"><a class="button button-primary" href={bookingHref(settings)} target="_blank" rel="noopener noreferrer">Reservá tu turno</a></div>
       </section>
       <ContactReservation settings={settings} />
       <ConversionClose settings={settings} />

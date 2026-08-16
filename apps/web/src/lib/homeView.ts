@@ -9,6 +9,7 @@ import {
   loadNavigation,
   loadSiteSettings,
 } from "./sanity";
+import { seoValue } from "./site";
 import type { HomeBlock, Service, ServiceCategory } from "./sanity/types";
 
 export type HomeView = {
@@ -52,7 +53,7 @@ export const loadHomeView = async (client?: SanityClient): Promise<HomeView> => 
   return {
     home, settings, navigation, footer, categoryData, selectedExperienceData,
     featuredGiftCards, homeExperienceBlock, giftBlock,
-    title: home?.seo?.title || "Boho Spa Urbano | Bienestar boutique en Bahía Blanca",
-    description: home?.seo?.description || "Masajes, experiencias de spa, tratamientos faciales y corporales y Gift Cards en Santa Fe 157, Bahía Blanca.",
+    title: seoValue(home?.seo?.title, "Boho Spa Urbano | Bienestar boutique en Bahía Blanca"),
+    description: seoValue(home?.seo?.description, "Masajes, experiencias de spa, tratamientos faciales y corporales y Gift Cards en Santa Fe 157, Bahía Blanca."),
   };
 };

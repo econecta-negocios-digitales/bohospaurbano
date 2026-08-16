@@ -83,6 +83,12 @@ export function bookingHref(_settings?: SiteSettings | null): string {
   return typeof value === "string" && value.startsWith("https://") ? value : BOHO_BOOKING_URL;
 }
 
+export function seoValue(value: string | undefined, fallback: string, requiredText?: string): string {
+  const candidate = value?.trim();
+  const includesRequiredText = !requiredText || candidate?.toLocaleLowerCase().includes(requiredText.toLocaleLowerCase());
+  return candidate && candidate.toLowerCase() !== "boho spa urbano" && includesRequiredText ? candidate : fallback;
+}
+
 export function experienceHref(_slug?: string): string {
   return publicRoutes.experiencias;
 }

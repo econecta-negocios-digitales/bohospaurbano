@@ -1,4 +1,5 @@
 import type { PortableTextBlock, Service, ServiceCategory } from "./sanity/types";
+import { seoValue } from "./site";
 
 export type CategoryServiceView = {
   name: string;
@@ -82,9 +83,21 @@ export function servicesForCategory(category: ServiceCategory, services: Service
 }
 
 export function technicalCategoryTitle(category: ServiceCategory): string {
-  return category.seo?.title || "Boho Spa Urbano";
+  const fallbacks: Record<string, string> = {
+    "experiencias-boho": "Experiencias de spa en Bahía Blanca | Boho Spa Urbano",
+    "masajes-bienestar": "Masajes y bienestar en Bahía Blanca | Boho Spa Urbano",
+    "belleza-consciente": "Belleza consciente y manicuría en Bahía Blanca | Boho",
+    "cuidado-facial-corporal": "Tratamientos faciales y corporales en Bahía Blanca | Boho",
+  };
+  return seoValue(category.seo?.title, fallbacks[category.slug || ""] || "Servicios de spa en Bahía Blanca | Boho Spa Urbano", "Bahía Blanca");
 }
 
 export function technicalCategoryDescription(category: ServiceCategory): string {
-  return category.seo?.description || "Boho Spa Urbano";
+  const fallbacks: Record<string, string> = {
+    "experiencias-boho": "Experiencias de spa individuales y compartidas con masajes, cuidado facial, rituales corporales y propuestas de bienestar en Bahía Blanca.",
+    "masajes-bienestar": "Masajes relajantes, descontracturantes, reflexología y drenaje linfático manual con atención personalizada en Bahía Blanca.",
+    "belleza-consciente": "Cuidado de manos y pies, Manicura Japonesa y técnicas manuales sin torno en Boho Spa Urbano, Bahía Blanca.",
+    "cuidado-facial-corporal": "Tratamientos faciales y corporales personalizados con cosmética natural y atención profesional en Bahía Blanca.",
+  };
+  return seoValue(category.seo?.description, fallbacks[category.slug || ""] || "Servicios de spa, bienestar y belleza en Bahía Blanca.", "Bahía Blanca");
 }
