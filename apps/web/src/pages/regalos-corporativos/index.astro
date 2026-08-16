@@ -3,22 +3,32 @@ import '../../styles/global.css';
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import FloatingWhatsApp from '../../components/FloatingWhatsApp.astro';
-import InternalPageHero from '../../components/InternalPageHero.astro';
-import ContactReservation from '../../components/ContactReservation.astro';
-import ConversionClose from '../../components/ConversionClose.astro';
 import { loadCorporatePage, loadFooter, loadNavigation, loadSiteSettings } from '../../lib/sanity';
-import { editorialSections, whatsappHref } from '../../lib/site';
+import { whatsappHref } from '../../lib/site';
 
 const [page, navigation, footer, settings] = await Promise.all([
   loadCorporatePage(), loadNavigation(), loadFooter(), loadSiteSettings(),
 ]);
 if (!page) return Astro.redirect('/servicios/');
-const sections = editorialSections(page.content);
-const heading = sections.find((section) => section.heading.toLowerCase() === 'encabezado');
-const publicSections = sections.filter((section) => !['encabezado', 'contacto y reserva'].includes(section.heading.toLowerCase()));
-const ctaLabels = new Set(['Solicitar propuesta', 'Consultar opciones', 'Más información']);
-const clean = (paragraphs: string[]) => paragraphs.filter((paragraph) => !ctaLabels.has(paragraph));
-const headerParagraphs = heading?.paragraphs || [];
+
+const whatsappLink = (message: string) => {
+  const url = new URL(whatsappHref(settings));
+  url.searchParams.set('text', message);
+  return url.toString();
+};
+
+const messages = {
+  hero: 'Hola, quiero consultar por las propuestas corporativas de Boho para mi empresa.',
+  options: 'Hola, quiero conocer las opciones corporativas de Boho y cuál puede adaptarse mejor a mi empresa.',
+  gifts: 'Hola, quiero consultar una propuesta de Gift Cards o regalos corporativos para varias personas.',
+  closing: 'Hola, quiero conversar sobre una propuesta corporativa de Boho para mi empresa.',
+};
+
+const heroTitle = page.title || 'Regalos y experiencias corporativas que se sienten';
+const heroDescription = page.description || 'Gift Cards, regalos corporativos y propuestas de bienestar para colaboradores, clientes y equipos. En Boho armamos alternativas para empresas en Bahía Blanca según la ocasión, la cantidad de personas y el objetivo.';
+const heroCtaLabel = page.cta?.label || 'Consultar propuesta por WhatsApp';
+const metaTitle = page.seo?.title || 'Regalos corporativos en Bahía Blanca | Boho Spa Urbano';
+const metaDescription = page.seo?.description || 'Gift Cards, regalos corporativos y propuestas de bienestar para colaboradores, clientes y equipos en Bahía Blanca. Consultá opciones para tu empresa.';
 ---
 
 <!doctype html>
@@ -26,30 +36,130 @@ const headerParagraphs = heading?.paragraphs || [];
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content={page.description || 'Regalos y experiencias corporativas de Boho Spa Urbano.'} />
-    <title>{page.title || 'Regalos corporativos | Boho Spa Urbano'}</title>
+    <meta name="description" content={metaDescription} />
+    {page.seo?.noIndex && <meta name="robots" content="noindex,nofollow" />}
+    <title>{metaTitle}</title>
     <link rel="icon" href="/brand/favicon.ico" sizes="any" />
     <link rel="icon" href="/brand/favicon-512.png" type="image/png" sizes="512x512" />
     <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
   </head>
   <body>
     <SiteHeader navigation={navigation} settings={settings} />
-    <main id="contenido">
-      <InternalPageHero eyebrow={headerParagraphs[0] || 'Regalos corporativos'} title={headerParagraphs[1] || page.title || 'Una forma simple de reconocer a tu equipo'} description={headerParagraphs.slice(2).join(' ')} fallbackImage="/images/home/brunch-boho.webp" />
-      <section class="section editorial-page-sections">
-        <div class="section-heading"><div><p class="eyebrow">Regalos corporativos</p><h2>Propuestas claras para empresas y equipos</h2></div><p>Coordinamos regalos, experiencias y propuestas a medida para que la gestión sea simple.</p></div>
-        <div class="editorial-page-grid">
-          {publicSections.map((section) => <article class="editorial-page-card"><p class="eyebrow">{section.heading.replace(/^\d+\.\s*/, '')}</p><h2>{clean(section.paragraphs)[0] || section.heading.replace(/^\d+\.\s*/, '')}</h2>{clean(section.paragraphs).slice(1).map((paragraph) => <p>{paragraph}</p>)}</article>)}
+    <main id="contenido" class="corporate-page">
+      <section class="corporate-hero" aria-labelledby="corporate-hero-title">
+        <div class="corporate-hero-copy">
+          <p class="eyebrow">REGALOS CORPORATIVOS · BAHÍA BLANCA</p>
+          <h1 id="corporate-hero-title">{heroTitle}</h1>
+          <p class="corporate-lead">{heroDescription}</p>
+          <a class="button button-primary" href={whatsappLink(messages.hero)} target="_blank" rel="noopener noreferrer">{heroCtaLabel}</a>
+        </div>
+        <div class="corporate-hero-media image-frame">
+          <img src="/images/categories/experiencias-lounge.webp" alt="Dos personas compartiendo una experiencia de bienestar en Boho" width="1200" height="1600" fetchpriority="high" />
         </div>
       </section>
-      <section class="section corporate-close"><div><p class="eyebrow">Convenio Corporativo</p><h2>Un beneficio permanente para tu equipo</h2><p>La propuesta contempla un 15% de beneficio sobre los servicios regulares de Boho, sin acumulación con promociones.</p><ul><li>La empresa entrega previamente el listado de personas habilitadas con DNI.</li><li>Los medios de pago son efectivo, débito o transferencia.</li><li>La vigencia es indefinida hasta que Boho o la empresa decidan discontinuarlo.</li><li>No se entregan reportes de utilización a la empresa.</li></ul><p>Consultanos por WhatsApp para definir la propuesta y la coordinación.</p><a class="button button-primary" href={whatsappHref()} target="_blank" rel="noopener noreferrer">Solicitar propuesta</a></div><div class="image-frame"><img src="/images/home/brunch-boho.webp" alt="Experiencia compartida de Boho para equipos" width="1200" height="900" loading="lazy" /></div></section>
-      <ContactReservation settings={settings} />
-      <ConversionClose settings={settings} />
+
+      <section class="section corporate-ways" id="modalidades" aria-labelledby="corporate-ways-title">
+        <div class="section-heading corporate-section-heading">
+          <div><p class="eyebrow">TRES FORMAS DE TRABAJAR CON BOHO</p><h2 id="corporate-ways-title">Una propuesta que se adapta a lo que necesitás resolver</h2></div>
+        </div>
+        <div class="corporate-way-grid">
+          <article class="corporate-way">
+            <p class="eyebrow">01 · Regalos corporativos</p>
+            <h3>Gift Cards personalizadas para colaboradores o clientes</h3>
+            <p>Podés elegir un importe determinado o una propuesta de bienestar y definir la modalidad de entrega que mejor se adapte a la ocasión.</p>
+          </article>
+          <article class="corporate-way corporate-way-agreement">
+            <p class="eyebrow">02 · Convenio Corporativo</p>
+            <h3>Un beneficio permanente para tus colaboradores</h3>
+            <p>Una opción para que las personas de tu empresa accedan a servicios regulares de Boho con condiciones preferenciales, sin necesidad de realizar compras anticipadas.</p>
+          </article>
+          <article class="corporate-way">
+            <p class="eyebrow">03 · Propuestas para equipos</p>
+            <h3>Una pausa diferente para equipos reducidos</h3>
+            <p>Podemos diseñar experiencias compartidas para reconocimientos, celebraciones, encuentros o momentos especiales del equipo.</p>
+          </article>
+        </div>
+        <div class="corporate-section-cta"><a class="button button-secondary" href={whatsappLink(messages.options)} target="_blank" rel="noopener noreferrer">Quiero conocer las opciones</a></div>
+      </section>
+
+      <section class="section corporate-gifts" id="regalos-corporativos" aria-labelledby="corporate-gifts-title">
+        <div class="corporate-gifts-media image-frame">
+          <img src="/images/home/gift-card.webp" alt="Packaging físico de una Gift Card Boho" width="1200" height="1800" loading="lazy" />
+        </div>
+        <div class="corporate-gifts-copy">
+          <p class="eyebrow">UNA FORMA SIMPLE DE REGALAR BIENESTAR</p>
+          <h2 id="corporate-gifts-title">La empresa elige. Nosotros nos ocupamos del resto.</h2>
+          <div class="corporate-gift-options">
+            <article><h3>Monto abierto</h3><p>La empresa define un importe y la persona puede utilizarlo en los servicios o propuestas disponibles de Boho.</p></article>
+            <article><h3>Experiencia armada</h3><p>Podemos preparar una propuesta concreta y dejar la Gift Card lista para entregar como regalo, reconocimiento o incentivo.</p></article>
+          </div>
+          <div class="corporate-management">
+            <div><p class="eyebrow">Gestión</p><h3>Nos ocupamos de hacerlo simple</h3></div>
+            <ul class="corporate-list"><li>personalización de la Gift Card;</li><li>formato digital o físico;</li><li>preparación y coordinación de la entrega;</li><li>coordinación posterior con cada beneficiario;</li><li>adaptación según cantidad y necesidad;</li><li>documentación comercial correspondiente.</li></ul>
+          </div>
+          <div class="corporate-volume-callout"><strong>¿El regalo es para varias personas?</strong><p>Preparamos condiciones especiales para compras por volumen según la cantidad y la modalidad de entrega.</p></div>
+          <div class="corporate-section-cta"><a class="button button-primary" href={whatsappLink(messages.gifts)} target="_blank" rel="noopener noreferrer">Consultar propuesta para mi empresa</a></div>
+        </div>
+      </section>
+
+      <section class="corporate-close" aria-labelledby="corporate-close-title">
+        <p class="eyebrow">ARMEMOS LA PROPUESTA JUNTOS</p>
+        <h2 id="corporate-close-title">Contanos qué querés resolver para tu empresa</h2>
+        <p>Puede ser un regalo para colaboradores o clientes, un convenio para tu equipo o una propuesta especial. Escribinos y armamos la alternativa adecuada según la cantidad de personas y lo que necesitás resolver.</p>
+        <a class="button button-light" href={whatsappLink(messages.closing)} target="_blank" rel="noopener noreferrer">Hablar por WhatsApp</a>
+      </section>
     </main>
     <SiteFooter footer={footer} settings={settings} />
     <FloatingWhatsApp settings={settings} />
   </body>
 </html>
+
+<style>
+  .corporate-page { background: var(--cream); }
+  .corporate-hero { max-width: 1400px; margin: 0 auto; padding: 9rem clamp(1.25rem, 5vw, 4rem) 5rem; display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(2rem, 7vw, 7rem); align-items: center; }
+  .corporate-hero-copy, .corporate-gifts-copy { display: grid; gap: 1.25rem; }
+  .corporate-hero-copy { max-width: 38rem; }
+  .corporate-hero-copy h1 { max-width: 10ch; }
+  .corporate-lead { color: var(--muted); font-size: 1.05rem; line-height: 1.7; }
+  .corporate-hero-media { aspect-ratio: 1.08; }
+  .corporate-ways { background: var(--cream-deep); }
+  .corporate-section-heading { max-width: 1280px; }
+  .corporate-way-grid { max-width: 1280px; margin: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); }
+  .corporate-way { min-width: 0; min-height: 22rem; padding: clamp(1.5rem, 3.5vw, 3.25rem); display: grid; align-content: start; gap: 1rem; background: var(--cream); }
+  .corporate-way:nth-child(2) { background: var(--moss); color: var(--cream); }
+  .corporate-way:nth-child(2) .eyebrow, .corporate-way:nth-child(2) > p:not(.eyebrow) { color: var(--sand); }
+  .corporate-way:nth-child(2) > p:not(.eyebrow) { color: rgba(255, 248, 242, .8); }
+  .corporate-way h3, .corporate-gift-options h3, .corporate-management h3 { font-size: clamp(1.45rem, 2.4vw, 2.1rem); }
+  .corporate-way > p:not(.eyebrow), .corporate-gift-options p, .corporate-management li, .corporate-volume-callout p { color: var(--muted); }
+  .corporate-way:nth-child(2) > p:not(.eyebrow) { color: rgba(255, 248, 242, .8); }
+  .corporate-section-cta { display: flex; justify-content: center; margin-top: 2.5rem; }
+  .corporate-gifts { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(2rem, 7vw, 7rem); align-items: center; background: var(--cream); }
+  .corporate-gifts-media { aspect-ratio: 4 / 5; max-height: 44rem; }
+  .corporate-gift-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .corporate-gift-options article { padding-top: 1rem; border-top: 1px solid var(--line); display: grid; gap: .6rem; }
+  .corporate-gift-options p, .corporate-management li, .corporate-volume-callout p { font-size: .86rem; line-height: 1.6; }
+  .corporate-management { padding-top: 1.25rem; border-top: 1px solid var(--line); display: grid; grid-template-columns: .75fr 1.25fr; gap: 2rem; align-items: start; }
+  .corporate-management .eyebrow { margin-bottom: .5rem; }
+  .corporate-management h3 { margin: 0; }
+  .corporate-list { margin: 0; padding-left: 1.25rem; display: grid; gap: .45rem; }
+  .corporate-volume-callout { padding: 1.25rem 1.5rem; background: var(--stone); border-left: 3px solid var(--terracotta); }
+  .corporate-volume-callout strong { display: block; margin-bottom: .35rem; color: var(--ink); }
+  .corporate-volume-callout p { margin: 0; }
+  .corporate-close { padding: clamp(5rem, 10vw, 9rem) 1.25rem; display: grid; justify-items: center; gap: 1.2rem; text-align: center; background: var(--terracotta); color: var(--cream); }
+  .corporate-close .eyebrow { color: var(--sand); }
+  .corporate-close h2 { max-width: 14ch; }
+  .corporate-close > p:not(.eyebrow) { max-width: 38rem; color: rgba(255, 248, 242, .82); }
+  @media (max-width: 800px) {
+    .corporate-hero, .corporate-gifts { display: flex; flex-direction: column; align-items: stretch; gap: 2.5rem; }
+    .corporate-hero { padding-top: 7.5rem; }
+    .corporate-hero-copy { order: 1; }
+    .corporate-hero-media { order: 0; aspect-ratio: 1.15; }
+    .corporate-way-grid, .corporate-gift-options, .corporate-management { grid-template-columns: minmax(0, 1fr); }
+    .corporate-way { min-height: auto; }
+    .corporate-gifts-media { min-height: 0; aspect-ratio: 1.1; }
+    .corporate-management { gap: 1rem; }
+  }
+</style>
