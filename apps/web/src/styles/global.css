@@ -167,10 +167,12 @@ body:has(.faq-page) .site-header { color:var(--ink); }
 .footer-whatsapp { margin-left:auto; color:var(--sand); font-size:.75rem; }
 .footer-columns { max-width:1280px; margin:auto; padding:3rem 0; display:grid; grid-template-columns:2fr repeat(3,1fr); gap:2rem; }
 .footer-columns > div { display:grid; align-content:start; gap:.55rem; }
-.footer-columns a { color:rgba(255,248,242,.68); font-size:.8rem; }
-.footer-preferences-row { max-width:1280px; margin:auto; padding-bottom:1rem; }
+.footer-columns a,.footer-columns .footer-preferences { color:rgba(255,248,242,.68); font-size:.8rem; }
 .footer-bottom { max-width:1280px; margin:auto; padding-top:1rem; display:flex; justify-content:space-between; color:rgba(255,248,242,.65); font-size:.72rem; }
-.footer-preferences { padding:0; border:0; background:none; color:var(--sand); font:inherit; cursor:pointer; }
+.footer-preferences { padding:0; border:0; background:none; text-align:left; font:inherit; cursor:pointer; }
+.footer-credit { color:inherit; text-decoration:none; }
+.footer-credit:hover,.footer-credit:focus-visible { color:var(--cream); }
+.footer-credit:focus-visible { text-decoration:underline; text-underline-offset:.2em; }
 .footer-location { max-width:1280px; margin:auto; padding:3rem 0; display:grid; grid-template-columns:minmax(13rem,.7fr) minmax(0,1.3fr); gap:clamp(2rem,5vw,5rem); border-bottom:1px solid rgba(255,248,242,.18); }
 .footer-location-copy { display:grid; align-content:center; gap:.8rem; }
 .footer-location-copy h2 { font-size:clamp(1.8rem,3vw,2.8rem); }
