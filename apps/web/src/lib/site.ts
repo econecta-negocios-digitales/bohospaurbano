@@ -11,6 +11,12 @@ export const localImages = {
   ambience: "/images/home/contact-ambience.webp",
 } as const;
 
+export function localImageSrcSet(source: string, widths: readonly number[]): string {
+  const extension = source.lastIndexOf(".");
+  const base = extension > -1 ? source.slice(0, extension) : source;
+  return widths.map((width) => `${base}-${width}.webp ${width}w`).join(", ");
+}
+
 export const BOHO_WHATSAPP_NUMBER = "5492916412343";
 export const BOHO_WHATSAPP_URL = `https://wa.me/${BOHO_WHATSAPP_NUMBER}`;
 export const BOHO_BOOKING_URL = "https://bohospaurbano.site.agendapro.com/ar/sucursal/412054";

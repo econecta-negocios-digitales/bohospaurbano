@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-:root { --cream:#fff8f2; --cream-deep:#f9f1e8; --sand:#d4cf8e; --stone:#efe7de; --moss:#645d1e; --terracotta:#b07d62; --ink:#2b1c13; --muted:#6e625a; --line:rgba(43,28,19,.16); }
+:root { --cream:#fff8f2; --cream-deep:#f9f1e8; --sand:#ddd99a; --stone:#efe7de; --moss:#645d1e; --terracotta:#8a5b46; --ink:#2b1c13; --muted:#6e625a; --line:rgba(43,28,19,.16); }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; background:var(--cream); }
 body { margin:0; color:var(--ink); background:var(--cream); font-family:"Montserrat",sans-serif; font-size:16px; line-height:1.65; overflow-x:hidden; }
@@ -89,7 +89,7 @@ h3 { font-size:clamp(2rem,2.7vw,2.75rem); }
 .gift-image img { width:100%; height:100%; object-fit:cover; }
 .gift-copy { padding:clamp(2rem,7vw,7rem); align-self:center; display:grid; gap:1.5rem; }
 .gift-copy .eyebrow { color:var(--sand); }
-.gift-copy > p { color:rgba(255,248,242,.8); }
+.gift-copy > p { color:rgba(255,248,242,.9); }
 .gift-whatsapp { color:var(--sand); font-size:.73rem; font-weight:600; letter-spacing:.06em; }
 .detail-list { list-style:none; padding:1rem 0 0; margin:0; border-top:1px solid var(--line); display:grid; gap:.8rem; color:var(--moss); font-size:.8rem; text-transform:uppercase; letter-spacing:.08em; }
 .detail-list li::before { content:"—"; color:var(--terracotta); margin-right:.8rem; }
@@ -142,7 +142,7 @@ body:has(.faq-page) .site-header { color:var(--ink); }
 .faq-answer strong { color:var(--ink); font-weight:600; }
 .faq-close { max-width:1100px; margin:0 auto clamp(4rem,9vw,8rem); padding:clamp(2.5rem,6vw,5rem); background:var(--moss); color:var(--cream); display:grid; gap:1.2rem; }
 .faq-close .eyebrow { color:var(--sand); }
-.faq-close > p:not(.eyebrow) { max-width:35rem; color:rgba(255,248,242,.8); }
+.faq-close > p:not(.eyebrow) { max-width:35rem; color:rgba(255,248,242,.9); }
 .faq-close .button-secondary { border-color:var(--sand); color:var(--cream); }
 @media (max-width:800px) { body:has(.faq-page) .site-header:not(.is-scrolled) { background:rgba(255,248,242,.94); box-shadow:0 1px 0 var(--line); } .faq-hero { padding-top:8rem; } .faq-hero-inner { text-align:left; } .faq-hero-inner h1,.faq-hero-inner > p:last-child { margin:0; } .faq-group { grid-template-columns:1fr; gap:1.5rem; } .faq-group-heading { position:static; } .faq-item summary { min-height:4.3rem; font-size:1rem; } .faq-answer { padding-right:1.5rem; font-size:.9rem; } .faq-close { margin-inline:1.25rem; padding:2.5rem 1.5rem 3rem; } }
 .legal-section h2 { margin-bottom:1.5rem; }
@@ -166,7 +166,7 @@ body:has(.faq-page) .site-header { color:var(--ink); }
 .footer-columns { max-width:1280px; margin:auto; padding:3rem 0; display:grid; grid-template-columns:2fr repeat(3,1fr); gap:2rem; }
 .footer-columns > div { display:grid; align-content:start; gap:.55rem; }
 .footer-columns a { color:rgba(255,248,242,.68); font-size:.8rem; }
-.footer-bottom { max-width:1280px; margin:auto; padding-top:1rem; display:flex; justify-content:space-between; color:rgba(255,248,242,.45); font-size:.72rem; }
+.footer-bottom { max-width:1280px; margin:auto; padding-top:1rem; display:flex; justify-content:space-between; color:rgba(255,248,242,.65); font-size:.72rem; }
 .footer-location { max-width:1280px; margin:auto; padding:3rem 0; display:grid; grid-template-columns:minmax(13rem,.7fr) minmax(0,1.3fr); gap:clamp(2rem,5vw,5rem); border-bottom:1px solid rgba(255,248,242,.18); }
 .footer-location-copy { display:grid; align-content:center; gap:.8rem; }
 .footer-location-copy h2 { font-size:clamp(1.8rem,3vw,2.8rem); }
@@ -229,7 +229,7 @@ body:has(.faq-page) .site-header { color:var(--ink); }
 .gift-option:nth-child(2) { background:var(--moss); color:var(--cream); }
 .gift-option:nth-child(2) .eyebrow { color:var(--sand); }
 .gift-option p:not(.eyebrow) { color:var(--muted); line-height:1.65; }
-.gift-option:nth-child(2) p:not(.eyebrow) { color:rgba(255,248,242,.78); }
+.gift-option:nth-child(2) p:not(.eyebrow) { color:rgba(255,248,242,.9); }
 .gift-option h3,.gift-step h3 { font-family:var(--serif); font-size:clamp(1.65rem,2.7vw,2.35rem); font-weight:500; line-height:1.05; }
 .gift-process { max-width:1280px; margin:0 auto; padding:clamp(4rem,9vw,8rem) clamp(1.25rem,5vw,4rem); display:grid; grid-template-columns:.7fr 1.3fr; gap:clamp(2rem,7vw,7rem); align-items:start; }
 .gift-process-heading { max-width:20rem; }
@@ -281,10 +281,10 @@ body:has(.faq-page) .site-header { color:var(--ink); }
 .service-featured-item:nth-child(2n) { background:var(--moss); color:var(--cream); }
 .service-featured-item:nth-child(2n) .eyebrow { color:var(--sand); }
 .service-featured-item p:not(.eyebrow) { color:var(--muted); font-size:.9rem; line-height:1.5; }
-.service-featured-item:nth-child(2n) p:not(.eyebrow) { color:rgba(255,248,242,.78); }
+.service-featured-item:nth-child(2n) p:not(.eyebrow) { color:rgba(255,248,242,.9); }
 @media (max-width:800px) { .internal-hero { padding-top:7.5rem; grid-template-columns:1fr; gap:2rem; } .internal-hero-copy { padding-bottom:0; } .internal-hero-media { aspect-ratio:1.15; } .editorial-content { padding-bottom:4rem; } .editorial-content-section,.editorial-content-section:nth-child(odd) { margin:0; padding:2.5rem 1.5rem; } .services-philosophy-grid { display:flex; flex-direction:column; } .services-philosophy-media { order:-1; aspect-ratio:1.15; } .service-category-row,.service-category-row:nth-child(even) { display:flex; flex-direction:column; align-items:stretch; gap:1.5rem; } .service-category-row:nth-child(even) .service-category-media { order:initial; } .service-category-media { aspect-ratio:1.1; } .services-featured-list { grid-template-columns:1fr; background:none; gap:.8rem; } .service-featured-item { min-height:auto; padding:1.6rem; } }
 @media (min-width:801px) { .gift-section { padding:clamp(1.25rem,3vw,2.5rem); } .gift-image { min-height:0; aspect-ratio:1; } .gift-copy { padding:clamp(2rem,4.5vw,4.5rem); gap:1.25rem; } }
-@media (max-width:800px) { h1 { font-size:clamp(2.65rem,12vw,3rem); } h2 { font-size:clamp(2.25rem,10vw,2.5rem); } .header-inner nav,.header-cta { display:none; } .menu-toggle { display:block; } .mobile-menu { display:grid; gap:1rem; padding:1.5rem 1.25rem 2rem; background:var(--cream); color:var(--ink); } .mobile-menu a:not(.button) { padding:.55rem 0; border-bottom:1px solid var(--line); font-size:.78rem; text-transform:uppercase; letter-spacing:.12em; } .hero { min-height:720px; } .hero-content { text-align:left; justify-items:start; } .hero-copy { max-width:30rem; } .section-heading,.section-heading-wide { display:grid; align-items:start; gap:1.5rem; margin-bottom:2.5rem; } .intro-grid { display:flex; flex-direction:column; align-items:stretch; } .intro-grid .image-frame { width:100%; } .intro-copy { gap:1.25rem; } .category-mosaic { grid-template-columns:1fr; gap:.8rem; } .category-tile { min-height:66vw; } .category-tile-2,.category-tile-4 { transform:none; } .gift-section,.contact-section { grid-template-columns:1fr; margin-inline:1.25rem; padding:0; } .gift-image { min-height:20rem; } .gift-copy { padding:2.5rem 1.5rem 3rem; } .contact-ambient { min-height:18rem; } .contact-copy { padding:2.5rem 1.5rem; } .google-reviews-grid { grid-auto-flow:column; grid-auto-columns:minmax(82%,1fr); grid-template-columns:none; overflow-x:auto; overscroll-behavior-inline:contain; padding:0 1.25rem 1rem; scroll-snap-type:x mandatory; scrollbar-width:thin; } .google-review-card { height:17rem; min-height:0; max-height:17rem; scroll-snap-align:start; padding:1.35rem; } .google-reviews-order,.google-reviews-attribution { margin-inline:1.25rem; } .google-reviews-cta { margin-inline:1.25rem; } .google-reviews-summary { white-space:normal; flex-wrap:wrap; row-gap:.2rem; } .legal-page { padding-top:7rem; padding-bottom:4rem; } .legal-section { padding:2rem 1.5rem; } .footer-brand { display:grid; gap:1rem; } .footer-brand .brand img { width:9.5rem; } .footer-whatsapp { margin-left:0; } .footer-location { grid-template-columns:1fr; gap:1.5rem; padding-block:2.5rem; } .footer-map-shell,.footer-map-fallback { min-height:14rem; } .footer-columns { grid-template-columns:repeat(2,1fr); padding-block:2rem; } .footer-bottom { display:grid; gap:.3rem; } .floating-whatsapp { right:.75rem; bottom:.75rem; width:2.9rem; height:2.9rem; padding:0; justify-content:center; gap:0; } .floating-whatsapp span:last-child { display:none; } .floating-whatsapp span:first-child { font-size:1.2rem; } }
+@media (max-width:800px) { h1 { font-size:clamp(2.65rem,12vw,3rem); } h2 { font-size:clamp(2.25rem,10vw,2.5rem); } .header-inner nav,.header-cta { display:none; } .menu-toggle { display:block; } .mobile-menu { display:grid; gap:1rem; padding:1.5rem 1.25rem 2rem; background:var(--cream); color:var(--ink); } .mobile-menu a:not(.button) { padding:.55rem 0; border-bottom:1px solid var(--line); font-size:.78rem; text-transform:uppercase; letter-spacing:.12em; } .hero { min-height:720px; } .hero-content { text-align:left; justify-items:start; } .hero-copy { max-width:30rem; } .section-heading,.section-heading-wide { display:grid; align-items:start; gap:1.5rem; margin-bottom:2.5rem; } .intro-grid { display:flex; flex-direction:column; align-items:stretch; } .intro-grid .image-frame { width:100%; } .intro-copy { gap:1.25rem; } .category-mosaic { grid-template-columns:1fr; gap:.8rem; } .category-tile { min-height:66vw; } .category-tile-2,.category-tile-4 { transform:none; } .gift-section,.contact-section { grid-template-columns:1fr; margin-inline:1.25rem; padding:0; } .gift-image { min-height:20rem; } .gift-copy { padding:2.5rem 1.5rem 3rem; } .contact-ambient { min-height:18rem; background-image:linear-gradient(135deg,rgba(100,93,30,.18),rgba(176,125,98,.15)),url('/images/home/contact-ambience-768.webp'); } .contact-copy { padding:2.5rem 1.5rem; } .google-reviews-grid { grid-auto-flow:column; grid-auto-columns:minmax(82%,1fr); grid-template-columns:none; overflow-x:auto; overscroll-behavior-inline:contain; padding:0 1.25rem 1rem; scroll-snap-type:x mandatory; scrollbar-width:thin; } .google-review-card { height:17rem; min-height:0; max-height:17rem; scroll-snap-align:start; padding:1.35rem; } .google-reviews-order,.google-reviews-attribution { margin-inline:1.25rem; } .google-reviews-cta { margin-inline:1.25rem; } .google-reviews-summary { white-space:normal; flex-wrap:wrap; row-gap:.2rem; } .legal-page { padding-top:7rem; padding-bottom:4rem; } .legal-section { padding:2rem 1.5rem; } .footer-brand { display:grid; gap:1rem; } .footer-brand .brand img { width:9.5rem; } .footer-whatsapp { margin-left:0; } .footer-location { grid-template-columns:1fr; gap:1.5rem; padding-block:2.5rem; } .footer-map-shell,.footer-map-fallback { min-height:14rem; } .footer-columns { grid-template-columns:repeat(2,1fr); padding-block:2rem; } .footer-bottom { display:grid; gap:.3rem; } .floating-whatsapp { right:.75rem; bottom:.75rem; width:2.9rem; height:2.9rem; padding:0; justify-content:center; gap:0; } .floating-whatsapp span:last-child { display:none; } .floating-whatsapp span:first-child { font-size:1.2rem; } }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition-duration:.01ms !important; animation-duration:.01ms !important; } }
 
 .category-journey-intro { background:var(--cream); }
@@ -304,7 +304,7 @@ body:has(.faq-page) .site-header { color:var(--ink); }
 .category-service-item { display:grid; grid-template-columns:5rem 1fr; gap:1.5rem; padding:clamp(1.5rem,4vw,3rem); background:var(--cream); }
 .category-service-list-featured .category-service-item:nth-child(odd) { background:var(--stone); }
 .category-service-list-featured .category-service-item:nth-child(even) { background:var(--moss); color:var(--cream); }
-.category-service-list-featured .category-service-item:nth-child(even) .category-service-lead,.category-service-list-featured .category-service-item:nth-child(even) p:not(.category-service-lead) { color:rgba(255,248,242,.78); }
+.category-service-list-featured .category-service-item:nth-child(even) .category-service-lead,.category-service-list-featured .category-service-item:nth-child(even) p:not(.category-service-lead) { color:rgba(255,248,242,.9); }
 .category-service-index { color:var(--terracotta); font-size:.75rem; letter-spacing:.12em; }
 .category-service-copy { display:grid; gap:.8rem; max-width:52rem; }
 .category-service-copy h3 { font-size:clamp(1.65rem,2.5vw,2.5rem); }
@@ -358,7 +358,7 @@ body:has(.faq-page) .site-header { color:var(--ink); }
 .beauty-philosophy { background:var(--moss); color:var(--cream); display:grid; justify-items:start; gap:1.2rem; }
 .beauty-philosophy .eyebrow { color:var(--sand); }
 .beauty-philosophy h2 { max-width:42rem; }
-.beauty-philosophy > p:not(.eyebrow) { max-width:42rem; color:rgba(255,248,242,.78); }
+.beauty-philosophy > p:not(.eyebrow) { max-width:42rem; color:rgba(255,248,242,.9); }
 
 @media (max-width:800px) {
   .category-journey-grid,.experience-featured-editorial,.category-shared,.massage-intro-layout,.massage-intro-detail,.massage-featured,.massage-orientation,.facial-intro,.facial-sensory,.beauty-intro,.beauty-highlight { display:flex; flex-direction:column; align-items:stretch; gap:2rem; }

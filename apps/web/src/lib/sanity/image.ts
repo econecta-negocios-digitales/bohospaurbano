@@ -29,3 +29,15 @@ export function sanityImageUrl(
 
   return image.auto("format").url();
 }
+
+export function sanityImageSrcSet(
+  source: ImageWithAlt | null | undefined,
+  widths: readonly number[],
+  quality?: number,
+): string | null {
+  const entries = widths.flatMap((width) => {
+    const url = sanityImageUrl(source, { width, quality });
+    return url ? [`${url} ${width}w`] : [];
+  });
+  return entries.length ? entries.join(", ") : null;
+}

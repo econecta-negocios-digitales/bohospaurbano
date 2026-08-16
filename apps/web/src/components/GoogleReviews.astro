@@ -1,4 +1,6 @@
 ---
+
+const reviewsFallbackUrl = "https://www.google.com/maps/search/?api=1&query=Boho%20Spa%20Urbano&query_place_id=ChIJYRc0Q7C97ZURDQMSJV4RzbE";
 ---
 
 <div class="google-reviews-sentinel" data-google-reviews-sentinel aria-hidden="true"></div>
@@ -16,7 +18,7 @@
     <span>Google Maps</span>
     <span data-google-attributions></span>
   </div>
-  <div class="google-reviews-cta"><a class="inline-link" data-google-reviews-link target="_blank" rel="noopener noreferrer">Ver todas las reseñas en Google Maps <span aria-hidden="true">↗</span></a></div>
+  <div class="google-reviews-cta"><a class="inline-link" data-google-reviews-link href={reviewsFallbackUrl} target="_blank" rel="noopener noreferrer">Ver todas las reseñas en Google Maps <span aria-hidden="true">↗</span></a></div>
 </section>
 
 <script>
