@@ -6,6 +6,8 @@ import FloatingWhatsApp from '../../components/FloatingWhatsApp.astro';
 import InternalPageHero from '../../components/InternalPageHero.astro';
 import ContactReservation from '../../components/ContactReservation.astro';
 import ConversionClose from '../../components/ConversionClose.astro';
+import SiteMeta from '../../components/SiteMeta.astro';
+import ConsentBanner from '../../components/ConsentBanner.astro';
 import CategoryServiceList from '../../components/CategoryServiceList.astro';
 import { bookingHref } from '../../lib/site';
 import { categoryField, sectionByHeading, sectionTitle, servicesForCategory, technicalCategoryDescription, technicalCategoryTitle } from '../../lib/categoryPresentation';
@@ -29,6 +31,7 @@ const categoryServices = servicesForCategory(category, services);
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={technicalCategoryDescription(category)} />
     <title>{technicalCategoryTitle(category)}</title>
+    <SiteMeta title={technicalCategoryTitle(category)} description={technicalCategoryDescription(category)} />
     <link rel="icon" href="/brand/favicon.ico" sizes="any" />
     <link rel="icon" href="/brand/favicon-512.png" type="image/png" sizes="512x512" />
     <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
@@ -49,12 +52,13 @@ const categoryServices = servicesForCategory(category, services);
         <div class="image-frame beauty-highlight-media"><img src="/images/categories/manicura-japonesa.webp" alt="Manicura manual y cuidado natural de uñas" width="960" height="1200" /></div>
       </section>
       <section class="section beauty-philosophy" aria-labelledby="beauty-philosophy-title">
-        <p class="eyebrow">{philosophySection?.heading}</p><h2 id="beauty-philosophy-title">{sectionTitle(philosophySection) || philosophySection?.heading}</h2>{philosophySection?.paragraphs.map((paragraph) => <p>{paragraph}</p>)}<a class="button button-secondary" href={bookingHref()} target="_blank" rel="noopener noreferrer">{categoryField(category, 'CTA de filosofía')}</a>
+        <p class="eyebrow">{philosophySection?.heading}</p><h2 id="beauty-philosophy-title">{sectionTitle(philosophySection) || philosophySection?.heading}</h2>{philosophySection?.paragraphs.map((paragraph) => <p>{paragraph}</p>)}<a class="button button-secondary" href={bookingHref()} target="_blank" rel="noopener noreferrer" data-boho-track="reservation_click" data-boho-track-context="category_beauty">{categoryField(category, 'CTA de filosofía')}</a>
       </section>
       <ContactReservation settings={settings} />
       <ConversionClose settings={settings} />
     </main>
     <SiteFooter footer={footer} settings={settings} />
     <FloatingWhatsApp settings={settings} />
+    <ConsentBanner />
   </body>
 </html>

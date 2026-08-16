@@ -8,5 +8,5 @@ if (!page) return Astro.redirect("/");
 ---
 
 <SiteLayout title={page.seo?.title || page.title || "Política de Privacidad | Boho Spa Urbano"} description={page.seo?.description}>
-  <LegalPage page={page} navigation={navigation} footer={footer} settings={settings} />
+  <LegalPage page={page} navigation={navigation} footer={footer} settings={settings} showMeasurementNotice />
 </SiteLayout>

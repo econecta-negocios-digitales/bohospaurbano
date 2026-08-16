@@ -74,8 +74,8 @@ const faqJsonLd = {
       <h2 id="faq-close-title">¿Te quedó alguna duda?</h2>
       <p>Si necesitás orientación antes de reservar, escribinos y te ayudamos a encontrar la opción adecuada.</p>
       <div class="cta-row">
-        <a class="button button-primary" href={whatsappHref(settings)} target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
-        <a class="button button-secondary" href={bookingHref(settings)} target="_blank" rel="noopener noreferrer">Reservá tu turno</a>
+        <a class="button button-primary" href={whatsappHref(settings)} target="_blank" rel="noopener noreferrer" data-boho-track="whatsapp_click" data-boho-track-context="faq_close">Consultar por WhatsApp</a>
+        <a class="button button-secondary" href={bookingHref(settings)} target="_blank" rel="noopener noreferrer" data-boho-track="reservation_click" data-boho-track-context="faq_close">Reservá tu turno</a>
       </div>
     </section>
   </main>

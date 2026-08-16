@@ -1,0 +1,90 @@
+---
+import { BOHO_MEASUREMENT_CONSENT_KEY } from "../lib/consent";
+
+const ga4Id = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID?.trim() || "";
+const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID?.trim() || "";
+const consentKey = BOHO_MEASUREMENT_CONSENT_KEY;
+---
+
+<script is:inline define:vars={{ ga4Id, metaPixelId, consentKey }}>
+  (() => {
+    if (window.__bohoTrackingRuntimeInitialized) return;
+    window.__bohoTrackingRuntimeInitialized = true;
+
+    const hasGa4 = Boolean(ga4Id);
+    const hasMeta = Boolean(metaPixelId);
+    let consentStatus = "pending";
+    let trackingEnabled = false;
+    let ga4Initialized = false;
+    let metaInitialized = false;
+
+    try {
+      const stored = window.localStorage.getItem(consentKey);
+      consentStatus = stored === "accepted" || stored === "rejected" ? stored : "pending";
+    } catch {
+      consentStatus = "pending";
+    }
+
+    const loadGa4 = () => {
+      if (!hasGa4 || ga4Initialized) return;
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+      window.gtag("js", new Date());
+      window.gtag("config", ga4Id);
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(ga4Id)}`;
+      document.head.appendChild(script);
+      ga4Initialized = true;
+    };
+
+    const loadMeta = () => {
+      if (!hasMeta || metaInitialized) return;
+      window.fbq = window.fbq || function () { window.fbq.callMethod ? window.fbq.callMethod.apply(window.fbq, arguments) : window.fbq.queue.push(arguments); };
+      if (!window._fbq) window._fbq = window.fbq;
+      window.fbq.push = window.fbq;
+      window.fbq.loaded = true;
+      window.fbq.version = "2.0";
+      window.fbq.queue = window.fbq.queue || [];
+      window.fbq("init", metaPixelId);
+      window.fbq("track", "PageView");
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = "https://connect.facebook.net/en_US/fbevents.js";
+      document.head.appendChild(script);
+      metaInitialized = true;
+    };
+
+    const initialize = () => {
+      if (!trackingEnabled) return;
+      loadGa4();
+      loadMeta();
+    };
+
+    const track = (eventName, context) => {
+      if (!trackingEnabled) return;
+      const params = { page_path: window.location.pathname, context };
+      if (hasGa4 && typeof window.gtag === "function") window.gtag("event", eventName, params);
+      if (hasMeta && typeof window.fbq === "function") window.fbq("trackCustom", eventName, params);
+    };
+
+    window.addEventListener("boho:consent-changed", (event) => {
+      const status = event.detail?.status;
+      if (status !== "accepted" && status !== "rejected") return;
+      consentStatus = status;
+      trackingEnabled = consentStatus === "accepted";
+      initialize();
+    });
+
+    document.addEventListener("click", (event) => {
+      const target = event.target instanceof Element ? event.target.closest("a[data-boho-track]") : null;
+      if (!target) return;
+      const eventName = target.getAttribute("data-boho-track");
+      if (!eventName) return;
+      track(eventName, target.getAttribute("data-boho-track-context") || "unknown");
+    }, true);
+
+    trackingEnabled = consentStatus === "accepted";
+    initialize();
+  })();
+</script>

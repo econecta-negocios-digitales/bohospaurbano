@@ -3,6 +3,8 @@ import '../../styles/global.css';
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import FloatingWhatsApp from '../../components/FloatingWhatsApp.astro';
+import SiteMeta from '../../components/SiteMeta.astro';
+import ConsentBanner from '../../components/ConsentBanner.astro';
 import { loadCorporatePage, loadFooter, loadNavigation, loadSiteSettings } from '../../lib/sanity';
 import { whatsappHref } from '../../lib/site';
 
@@ -37,8 +39,8 @@ const metaDescription = page.seo?.description || 'Gift Cards, regalos corporativ
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={metaDescription} />
-    {page.seo?.noIndex && <meta name="robots" content="noindex,nofollow" />}
     <title>{metaTitle}</title>
+    <SiteMeta title={metaTitle} description={metaDescription} noindex={page.seo?.noIndex} />
     <link rel="icon" href="/brand/favicon.ico" sizes="any" />
     <link rel="icon" href="/brand/favicon-512.png" type="image/png" sizes="512x512" />
     <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
@@ -54,7 +56,7 @@ const metaDescription = page.seo?.description || 'Gift Cards, regalos corporativ
           <p class="eyebrow">REGALOS CORPORATIVOS · BAHÍA BLANCA</p>
           <h1 id="corporate-hero-title">{heroTitle}</h1>
           <p class="corporate-lead">{heroDescription}</p>
-          <a class="button button-primary" href={whatsappLink(messages.hero)} target="_blank" rel="noopener noreferrer">{heroCtaLabel}</a>
+          <a class="button button-primary" href={whatsappLink(messages.hero)} target="_blank" rel="noopener noreferrer" data-boho-track="corporate_contact" data-boho-track-context="corporate_hero">{heroCtaLabel}</a>
         </div>
         <div class="corporate-hero-media image-frame">
           <img src="/images/categories/experiencias-lounge.webp" alt="Dos personas compartiendo una experiencia de bienestar en Boho" width="1200" height="1600" fetchpriority="high" />
@@ -82,7 +84,7 @@ const metaDescription = page.seo?.description || 'Gift Cards, regalos corporativ
             <p>Podemos diseñar experiencias compartidas para reconocimientos, celebraciones, encuentros o momentos especiales del equipo.</p>
           </article>
         </div>
-        <div class="corporate-section-cta"><a class="button button-secondary" href={whatsappLink(messages.options)} target="_blank" rel="noopener noreferrer">Quiero conocer las opciones</a></div>
+        <div class="corporate-section-cta"><a class="button button-secondary" href={whatsappLink(messages.options)} target="_blank" rel="noopener noreferrer" data-boho-track="corporate_contact" data-boho-track-context="corporate_options">Quiero conocer las opciones</a></div>
       </section>
 
       <section class="section corporate-gifts" id="regalos-corporativos" aria-labelledby="corporate-gifts-title">
@@ -101,7 +103,7 @@ const metaDescription = page.seo?.description || 'Gift Cards, regalos corporativ
             <ul class="corporate-list"><li>personalización de la Gift Card;</li><li>formato digital o físico;</li><li>preparación y coordinación de la entrega;</li><li>coordinación posterior con cada beneficiario;</li><li>adaptación según cantidad y necesidad;</li><li>documentación comercial correspondiente.</li></ul>
           </div>
           <div class="corporate-volume-callout"><strong>¿El regalo es para varias personas?</strong><p>Preparamos condiciones especiales para compras por volumen según la cantidad y la modalidad de entrega.</p></div>
-          <div class="corporate-section-cta"><a class="button button-primary" href={whatsappLink(messages.gifts)} target="_blank" rel="noopener noreferrer">Consultar propuesta para mi empresa</a></div>
+          <div class="corporate-section-cta"><a class="button button-primary" href={whatsappLink(messages.gifts)} target="_blank" rel="noopener noreferrer" data-boho-track="corporate_contact" data-boho-track-context="corporate_gifts">Consultar propuesta para mi empresa</a></div>
         </div>
       </section>
 
@@ -109,11 +111,12 @@ const metaDescription = page.seo?.description || 'Gift Cards, regalos corporativ
         <p class="eyebrow">ARMEMOS LA PROPUESTA JUNTOS</p>
         <h2 id="corporate-close-title">Contanos qué querés resolver para tu empresa</h2>
         <p>Puede ser un regalo para colaboradores o clientes, un convenio para tu equipo o una propuesta especial. Escribinos y armamos la alternativa adecuada según la cantidad de personas y lo que necesitás resolver.</p>
-        <a class="button button-light" href={whatsappLink(messages.closing)} target="_blank" rel="noopener noreferrer">Hablar por WhatsApp</a>
+        <a class="button button-light" href={whatsappLink(messages.closing)} target="_blank" rel="noopener noreferrer" data-boho-track="corporate_contact" data-boho-track-context="corporate_close">Hablar por WhatsApp</a>
       </section>
     </main>
     <SiteFooter footer={footer} settings={settings} />
     <FloatingWhatsApp settings={settings} />
+    <ConsentBanner />
   </body>
 </html>
 

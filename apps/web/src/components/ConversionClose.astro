@@ -4,4 +4,4 @@ import { hrefForCta, whatsappHref } from "../lib/site";
 interface Props { block?: HomeBlock; settings?: SiteSettings | null }
 const { block, settings } = Astro.props;
 ---
-<section class="conversion-section"><p class="eyebrow">{block?.eyebrow || "¿Necesitás orientación?"}</p><h2>{block?.title || "Encontramos el momento adecuado para vos."}</h2>{block?.description && <p>{block.description}</p>}<a class="button button-primary" href={hrefForCta(block?.primaryCta, whatsappHref(settings))} target="_blank" rel="noopener noreferrer">{block?.primaryCta?.label || "Hablar por WhatsApp"}</a></section>
+<section class="conversion-section"><p class="eyebrow">{block?.eyebrow || "¿Necesitás orientación?"}</p><h2>{block?.title || "Encontramos el momento adecuado para vos."}</h2>{block?.description && <p>{block.description}</p>}<a class="button button-primary" href={hrefForCta(block?.primaryCta, whatsappHref(settings))} target="_blank" rel="noopener noreferrer" data-boho-track="whatsapp_click" data-boho-track-context="conversion_close">{block?.primaryCta?.label || "Hablar por WhatsApp"}</a></section>

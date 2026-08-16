@@ -6,6 +6,8 @@ import ContactReservation from '../../components/ContactReservation.astro';
 import ConversionClose from '../../components/ConversionClose.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import FloatingWhatsApp from '../../components/FloatingWhatsApp.astro';
+import SiteMeta from '../../components/SiteMeta.astro';
+import ConsentBanner from '../../components/ConsentBanner.astro';
 import { loadFooter, loadNavigation, loadServices, loadServicesPage, loadSiteSettings } from '../../lib/sanity';
 import { bookingHref, editorialField, editorialSections, seoValue } from '../../lib/site';
 import { sanityImageUrl } from '../../lib/sanity';
@@ -39,6 +41,7 @@ const catalogGroups = serviceCatalogGroups(services);
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={seoDescription} />
     <title>{seoTitle}</title>
+    <SiteMeta title={seoTitle} description={seoDescription} />
     <link rel="icon" href="/brand/favicon.ico" sizes="any" />
     <link rel="icon" href="/brand/favicon-512.png" type="image/png" sizes="512x512" />
     <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
@@ -84,12 +87,13 @@ const catalogGroups = serviceCatalogGroups(services);
             </ul>
           </article>)}
         </div>
-        <div class="section-action services-inventory-action"><a class="button button-primary" href={bookingHref(settings)} target="_blank" rel="noopener noreferrer">Reservá tu turno</a></div>
+        <div class="section-action services-inventory-action"><a class="button button-primary" href={bookingHref(settings)} target="_blank" rel="noopener noreferrer" data-boho-track="reservation_click" data-boho-track-context="services_catalog">Reservá tu turno</a></div>
       </section>
       <ContactReservation settings={settings} />
       <ConversionClose settings={settings} />
     </main>
     <SiteFooter footer={footer} settings={settings} />
     <FloatingWhatsApp settings={settings} />
+    <ConsentBanner />
   </body>
 </html>

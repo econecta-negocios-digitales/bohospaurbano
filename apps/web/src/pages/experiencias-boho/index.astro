@@ -6,6 +6,8 @@ import FloatingWhatsApp from '../../components/FloatingWhatsApp.astro';
 import InternalPageHero from '../../components/InternalPageHero.astro';
 import ContactReservation from '../../components/ContactReservation.astro';
 import ConversionClose from '../../components/ConversionClose.astro';
+import SiteMeta from '../../components/SiteMeta.astro';
+import ConsentBanner from '../../components/ConsentBanner.astro';
 import CategoryServiceList from '../../components/CategoryServiceList.astro';
 import { whatsappHref } from '../../lib/site';
 import { categoryField, sectionByHeading, sectionEyebrow, sectionTitle, servicesForCategory, technicalCategoryDescription, technicalCategoryTitle } from '../../lib/categoryPresentation';
@@ -30,6 +32,7 @@ const featured = categoryServices[0]!;
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={technicalCategoryDescription(category)} />
     <title>{technicalCategoryTitle(category)}</title>
+    <SiteMeta title={technicalCategoryTitle(category)} description={technicalCategoryDescription(category)} />
     <link rel="icon" href="/brand/favicon.ico" sizes="any" />
     <link rel="icon" href="/brand/favicon-512.png" type="image/png" sizes="512x512" />
     <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
@@ -61,7 +64,7 @@ const featured = categoryServices[0]!;
         <CategoryServiceList services={categoryServices.slice(1)} variant="featured" />
       </section>
       <section class="section category-shared" aria-labelledby="shared-title">
-        <div class="category-shared-copy"><p class="eyebrow">{sharedSection?.heading}</p><h2 id="shared-title">{sectionTitle(sharedSection) || sharedSection?.heading}</h2>{sharedSection?.paragraphs.map((paragraph) => <p>{paragraph}</p>)}{sharedSection?.fields.cta && <a class="button button-secondary" href={whatsappHref()} target="_blank" rel="noopener noreferrer">{sharedSection.fields.cta}</a>}</div>
+        <div class="category-shared-copy"><p class="eyebrow">{sharedSection?.heading}</p><h2 id="shared-title">{sectionTitle(sharedSection) || sharedSection?.heading}</h2>{sharedSection?.paragraphs.map((paragraph) => <p>{paragraph}</p>)}{sharedSection?.fields.cta && <a class="button button-secondary" href={whatsappHref()} target="_blank" rel="noopener noreferrer" data-boho-track="whatsapp_click" data-boho-track-context="category_experiences">{sharedSection.fields.cta}</a>}</div>
         <div class="image-frame category-shared-media"><img src="/images/categories/experiencias-brunch.webp" alt="Pausa compartida con brunch en el lounge de Boho" width="1200" height="900" /></div>
       </section>
       <ContactReservation settings={settings} />
@@ -69,5 +72,6 @@ const featured = categoryServices[0]!;
     </main>
     <SiteFooter footer={footer} settings={settings} />
     <FloatingWhatsApp settings={settings} />
+    <ConsentBanner />
   </body>
 </html>

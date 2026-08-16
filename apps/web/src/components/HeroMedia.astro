@@ -19,7 +19,7 @@ const description = block?.description || "Bienestar boutique y rituales de calm
     <h1 id="hero-title">{title}</h1>
     <p class="hero-copy">{description}</p>
     <div class="cta-row">
-      <a class="button button-primary" href={hrefForCta(block?.primaryCta, bookingHref(settings))} target="_blank" rel="noopener noreferrer">{block?.primaryCta?.label || "Reservá tu turno"}</a>
+      <a class="button button-primary" href={hrefForCta(block?.primaryCta, bookingHref(settings))} target="_blank" rel="noopener noreferrer" data-boho-track="reservation_click" data-boho-track-context="hero">{block?.primaryCta?.label || "Reservá tu turno"}</a>
       <a class="button button-light" href="/nosotros/">{block?.secondaryCta?.label || "Descubrí Boho"}</a>
     </div>
   </div>

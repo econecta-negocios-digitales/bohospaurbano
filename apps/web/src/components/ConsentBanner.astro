@@ -1,0 +1,74 @@
+---
+import { BOHO_MEASUREMENT_CONSENT_KEY } from "../lib/consent";
+
+const consentKey = BOHO_MEASUREMENT_CONSENT_KEY;
+---
+
+<aside class="consent-banner" data-consent-banner hidden aria-labelledby="consent-title" aria-describedby="consent-description" role="region">
+  <div class="consent-copy">
+    <p class="eyebrow">Privacidad y medición</p>
+    <h2 id="consent-title">Ayudanos a mejorar Boho</h2>
+    <p id="consent-description">Usamos herramientas de medición para entender cómo se utiliza el sitio y mejorar nuestras campañas y contenidos. Podés aceptar la medición o continuar sin ella.</p>
+    <a href="/privacidad/">Política de privacidad</a>
+  </div>
+  <div class="consent-actions" aria-label="Preferencias de medición">
+    <button class="button button-secondary" type="button" data-consent-action="rejected">Continuar sin medición</button>
+    <button class="button button-primary" type="button" data-consent-action="accepted">Aceptar</button>
+  </div>
+</aside>
+
+<script is:inline define:vars={{ consentKey }}>
+  (() => {
+    const banner = document.querySelector("[data-consent-banner]");
+    if (!banner) return;
+
+    const readConsent = () => {
+      try {
+        const value = window.localStorage.getItem(consentKey);
+        return value === "accepted" || value === "rejected" ? value : "pending";
+      } catch {
+        return "pending";
+      }
+    };
+
+    const writeConsent = (status) => {
+      try {
+        window.localStorage.setItem(consentKey, status);
+      } catch {
+        // If storage is unavailable, the choice applies to this page only.
+      }
+      window.dispatchEvent(new CustomEvent("boho:consent-changed", { detail: { status } }));
+    };
+
+    const setVisibility = (visible, focus = false) => {
+      banner.hidden = !visible;
+      banner.setAttribute("aria-hidden", String(!visible));
+      if (visible && focus) banner.querySelector("[data-consent-action='accepted']")?.focus();
+    };
+
+    const status = readConsent();
+    if (status === "pending") {
+      try {
+        window.localStorage.setItem(consentKey, "pending");
+      } catch {
+        // If storage is unavailable, the choice applies to this page only.
+      }
+    }
+    setVisibility(status === "pending");
+
+    document.addEventListener("click", (event) => {
+      const target = event.target instanceof Element ? event.target : null;
+      const preferenceTrigger = target?.closest("[data-boho-preferences]");
+      if (preferenceTrigger) {
+        event.preventDefault();
+        setVisibility(true, true);
+        return;
+      }
+
+      const action = target?.closest("[data-consent-action]")?.getAttribute("data-consent-action");
+      if (action !== "accepted" && action !== "rejected") return;
+      writeConsent(action);
+      setVisibility(false);
+    });
+  })();
+</script>

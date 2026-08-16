@@ -11,11 +11,19 @@ interface Props {
   navigation?: Navigation | null;
   footer?: Footer | null;
   settings?: SiteSettings | null;
+  showMeasurementNotice?: boolean;
 }
 
-const { page, navigation, footer, settings } = Astro.props;
+const { page, navigation, footer, settings, showMeasurementNotice = false } = Astro.props;
 const source = portableTextToString(page.content).replace(/\r/g, "").trim();
-const sections: Array<{ level: 2 | 3; heading: string; blocks: Array<{ type: "paragraph" | "list"; text?: string; items?: string[] }> }> = [];
+type LegalSection = {
+  level: 2 | 3;
+  heading: string;
+  blocks: Array<{ type: "paragraph" | "list"; text?: string; items?: string[] }>;
+  measurement?: boolean;
+};
+
+const sections: LegalSection[] = [];
 let current: (typeof sections)[number] | undefined;
 let paragraph: string[] = [];
 let list: string[] = [];
@@ -30,7 +38,7 @@ const flushList = () => {
 };
 
 for (const rawLine of source.split("\n")) {
-  const line = rawLine.trim();
+  const line = rawLine.trim().replace(/^--+\s+(?=##\s|###\s)/, "");
   const heading = line.match(/^(##|###)\s+(.+)$/);
   if (heading) {
     flushParagraph();
@@ -51,6 +59,23 @@ for (const rawLine of source.split("\n")) {
 }
 flushParagraph();
 flushList();
+
+if (showMeasurementNotice) {
+  const measurementSection: LegalSection = {
+    level: 2,
+    heading: "10. Medición del sitio",
+    measurement: true,
+    blocks: [],
+  };
+  const mapsIndex = sections.findIndex((section) => /Servicios de Google Maps/i.test(section.heading));
+  const mapsSection = mapsIndex >= 0 ? sections[mapsIndex] : undefined;
+  if (mapsSection) {
+    mapsSection.heading = mapsSection.heading.replace(/^10\./, "11.");
+    sections.splice(mapsIndex, 0, measurementSection);
+  } else {
+    sections.push(measurementSection);
+  }
+}
 
 const escapeHtml = (value: string) => value.replace(/[&<>"']/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[character] || character);
 const inlineHtml = (value: string) => {
@@ -78,7 +103,10 @@ const updatedAt = page.updatedAt ? new Intl.DateTimeFormat("es-AR", { day: "nume
   <div class="legal-content">
     {sections.map((section) => <section class="legal-section">
       {section.level === 2 ? <h2>{section.heading}</h2> : <h3>{section.heading}</h3>}
-      {section.blocks.map((block) => block.type === "list"
+      {section.measurement ? <>
+        <p>Boho puede utilizar Google Analytics 4 para obtener estadísticas agregadas de navegación y comprender cómo se utiliza el sitio, y Meta Pixel para medir resultados de acciones publicitarias y comprender la efectividad de sus campañas.</p>
+        <p>Estas herramientas sólo se activan cuando aceptás la medición. Podés continuar utilizando el sitio sin aceptarlas y cambiar posteriormente tu elección desde <button class="inline-preferences" type="button" data-boho-preferences>Preferencias de privacidad</button>.</p>
+      </> : section.blocks.map((block) => block.type === "list"
         ? <ul>{block.items?.map((item) => <li set:html={inlineHtml(item)} />)}</ul>
         : <p set:html={inlineHtml(block.text || "")} />)}
     </section>)}

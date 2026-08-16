@@ -20,6 +20,32 @@ export function localImageSrcSet(source: string, widths: readonly number[]): str
 export const BOHO_WHATSAPP_NUMBER = "5492916412343";
 export const BOHO_WHATSAPP_URL = `https://wa.me/${BOHO_WHATSAPP_NUMBER}`;
 export const BOHO_BOOKING_URL = "https://bohospaurbano.site.agendapro.com/ar/sucursal/412054";
+export const BOHO_SITE_URL = "https://www.bohospaurbano.com.ar";
+
+export const INDEXABLE_PUBLIC_ROUTES = [
+  "/",
+  "/servicios/",
+  "/experiencias-boho/",
+  "/masajes-bienestar/",
+  "/belleza-consciente/",
+  "/cuidado-facial-corporal/",
+  "/gift-cards/",
+  "/regalos-corporativos/",
+  "/preguntas-frecuentes/",
+  "/nosotros/",
+  "/privacidad/",
+  "/terminos-y-condiciones/",
+] as const;
+
+export function canonicalPath(pathname: string): string {
+  const path = pathname.split(/[?#]/, 1)[0] || "/";
+  if (path === "/") return "/";
+  return `/${path.replace(/^\/+|\/+$/g, "")}/`;
+}
+
+export function canonicalHref(pathname: string): string {
+  return new URL(canonicalPath(pathname), BOHO_SITE_URL).toString();
+}
 
 export const publicRoutes = {
   servicios: "/servicios/",

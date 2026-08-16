@@ -6,6 +6,8 @@ import FloatingWhatsApp from '../../components/FloatingWhatsApp.astro';
 import InternalPageHero from '../../components/InternalPageHero.astro';
 import ContactReservation from '../../components/ContactReservation.astro';
 import ConversionClose from '../../components/ConversionClose.astro';
+import SiteMeta from '../../components/SiteMeta.astro';
+import ConsentBanner from '../../components/ConsentBanner.astro';
 import CategoryServiceList from '../../components/CategoryServiceList.astro';
 import { whatsappHref } from '../../lib/site';
 import { categoryField, sectionByHeading, sectionTitle, servicesForCategory, technicalCategoryDescription, technicalCategoryTitle } from '../../lib/categoryPresentation';
@@ -28,6 +30,7 @@ const categoryServices = servicesForCategory(category, services);
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={technicalCategoryDescription(category)} />
     <title>{technicalCategoryTitle(category)}</title>
+    <SiteMeta title={technicalCategoryTitle(category)} description={technicalCategoryDescription(category)} />
     <link rel="icon" href="/brand/favicon.ico" sizes="any" />
     <link rel="icon" href="/brand/favicon-512.png" type="image/png" sizes="512x512" />
     <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
@@ -50,12 +53,13 @@ const categoryServices = servicesForCategory(category, services);
       </section>
       <section class="section facial-sensory" aria-labelledby="facial-sensory-title">
         <div class="image-frame"><img src="/images/categories/facial-protocolo.webp" alt="Preparación de un protocolo facial en Boho" width="960" height="720" loading="lazy" /></div>
-        <div class="facial-sensory-copy"><p class="eyebrow">{category.name}</p><h2 id="facial-sensory-title">{categoryField(category, 'Título de protocolos')}</h2><p>{categoryField(category, 'Texto de protocolos')}</p><a class="button button-secondary" href={whatsappHref()} target="_blank" rel="noopener noreferrer">{categoryField(category, 'CTA de protocolos')}</a></div>
+        <div class="facial-sensory-copy"><p class="eyebrow">{category.name}</p><h2 id="facial-sensory-title">{categoryField(category, 'Título de protocolos')}</h2><p>{categoryField(category, 'Texto de protocolos')}</p><a class="button button-secondary" href={whatsappHref()} target="_blank" rel="noopener noreferrer" data-boho-track="whatsapp_click" data-boho-track-context="category_facial">{categoryField(category, 'CTA de protocolos')}</a></div>
       </section>
       <ContactReservation settings={settings} />
       <ConversionClose settings={settings} />
     </main>
     <SiteFooter footer={footer} settings={settings} />
     <FloatingWhatsApp settings={settings} />
+    <ConsentBanner />
   </body>
 </html>

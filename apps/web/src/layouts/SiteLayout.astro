@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import SiteMeta from "../components/SiteMeta.astro";
+import ConsentBanner from "../components/ConsentBanner.astro";
 
 interface Props {
   title: string;
@@ -17,7 +19,7 @@ const fontStylesheet = "https://fonts.googleapis.com/css2?family=Montserrat:wght
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     {description && <meta name="description" content={description} />}
-    {noindex && <meta name="robots" content="noindex,nofollow" />}
+    <SiteMeta title={title} description={description} noindex={noindex} />
     <title>{title}</title>
     <link rel="icon" href="/brand/favicon.ico" sizes="any" />
     <link rel="icon" href="/brand/favicon-512.png" type="image/png" sizes="512x512" />
@@ -30,5 +32,6 @@ const fontStylesheet = "https://fonts.googleapis.com/css2?family=Montserrat:wght
   </head>
   <body>
     <slot />
+    <ConsentBanner />
   </body>
 </html>

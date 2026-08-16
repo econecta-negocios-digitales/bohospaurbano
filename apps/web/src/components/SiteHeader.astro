@@ -25,14 +25,14 @@ const bookingLabel = primaryCta?.label || "Reservá tu turno";
         {items.map(([label, href]) => <li><a href={href}>{label}</a></li>)}
       </ul>
     </nav>
-    <a class="header-cta" href={booking} target="_blank" rel="noopener noreferrer">{bookingLabel}</a>
+    <a class="header-cta" href={booking} target="_blank" rel="noopener noreferrer" data-boho-track="reservation_click" data-boho-track-context="header">{bookingLabel}</a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
       <span aria-hidden="true">☰</span><span class="sr-only">Abrir menú</span>
     </button>
   </div>
   <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
     {items.map(([label, href]) => <a href={href}>{label}</a>)}
-    <a class="button button-primary" href={booking} target="_blank" rel="noopener noreferrer">{bookingLabel}</a>
+    <a class="button button-primary" href={booking} target="_blank" rel="noopener noreferrer" data-boho-track="reservation_click" data-boho-track-context="mobile_menu">{bookingLabel}</a>
   </div>
 </header>
 
