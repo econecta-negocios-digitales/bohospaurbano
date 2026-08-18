@@ -6,7 +6,7 @@ import { sanityImageSrcSet, sanityImageUrl } from "../lib/sanity";
 interface Props { block?: HomeBlock }
 const { block } = Astro.props;
 const image = sanityImageUrl(block?.image, { width: 1000, quality: 78 }) || localImages.intro;
-const imageSrcSet = sanityImageSrcSet(block?.image, [480, 768, 1000], 78) || localImageSrcSet(localImages.intro, [480, 768, 1000]);
+const imageSrcSet = sanityImageSrcSet(block?.image, [480, 640, 768, 1000], 78) || localImageSrcSet(localImages.intro, [480, 640, 768, 1000]);
 const parsed = parseHomeAboutContent(block?.content);
 const copy = block?.description || parsed.mainText || "Un espacio íntimo para bajar el ritmo, recibir atención personalizada y volver a vos.";
 ---

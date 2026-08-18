@@ -46,30 +46,43 @@ const mapsUrl = "https://www.google.com/maps/search/?api=1&query=Boho%20Spa%20Ur
       document.head.appendChild(script);
     });
 
-    loadGoogleMaps().then(async (maps) => {
-      const [{ Map }, { AdvancedMarkerElement }, { Geocoder }] = await Promise.all([
-        maps.importLibrary("maps"),
-        maps.importLibrary("marker"),
-        maps.importLibrary("geocoding"),
-      ]);
-      const { results } = await new Geocoder().geocode({ placeId });
-      const location = results?.[0]?.geometry?.location;
-      if (!location) return;
-      const map = new Map(mapShell, {
-        center: location,
-        zoom: 16,
-        mapId,
-        disableDefaultUI: true,
-        zoomControl: true,
-        gestureHandling: "cooperative",
+    const initializeGoogleMap = () => {
+      loadGoogleMaps().then(async (maps) => {
+        const [{ Map }, { AdvancedMarkerElement }, { Geocoder }] = await Promise.all([
+          maps.importLibrary("maps"),
+          maps.importLibrary("marker"),
+          maps.importLibrary("geocoding"),
+        ]);
+        const { results } = await new Geocoder().geocode({ placeId });
+        const location = results?.[0]?.geometry?.location;
+        if (!location) return;
+        const map = new Map(mapShell, {
+          center: location,
+          zoom: 16,
+          mapId,
+          disableDefaultUI: true,
+          zoomControl: true,
+          gestureHandling: "cooperative",
+        });
+        const markerContent = document.createElement("div");
+        markerContent.className = "footer-map-marker";
+        markerContent.innerHTML = '<img src="/brand/favicon-512.png" alt="" />';
+        new AdvancedMarkerElement({ map, position: location, content: markerContent, title: "Boho Spa Urbano" });
+        mapShell.querySelector(".footer-map-fallback")?.setAttribute("hidden", "true");
+      }).catch(() => {
+        // The fallback remains visible when Maps cannot load.
       });
-      const markerContent = document.createElement("div");
-      markerContent.className = "footer-map-marker";
-      markerContent.innerHTML = '<img src="/brand/favicon-512.png" alt="" />';
-      new AdvancedMarkerElement({ map, position: location, content: markerContent, title: "Boho Spa Urbano" });
-      mapShell.querySelector(".footer-map-fallback")?.setAttribute("hidden", "true");
-    }).catch(() => {
-      // The fallback remains visible when Maps cannot load.
-    });
+    };
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        observer.disconnect();
+        initializeGoogleMap();
+      }, { rootMargin: "400px 0px" });
+      observer.observe(mapShell);
+    } else {
+      initializeGoogleMap();
+    }
   }
 </script>

@@ -16,7 +16,7 @@ const fallbacks = [localImages.experiences, localImages.massage, localImages.fac
     {categories.slice(0, 4).map((category, index) => {
       const fallback = fallbacks[index] || localImages.experiences;
       const image = sanityImageUrl(category.image, { width: 1000, quality: 76 }) || fallback;
-      const imageSrcSet = sanityImageSrcSet(category.image, [480, 768, 1000], 76) || localImageSrcSet(fallback, [480, 768, 1000]);
+      const imageSrcSet = sanityImageSrcSet(category.image, [480, 640, 768, 1000], 76) || localImageSrcSet(fallback, [480, 640, 768, 1000]);
       const slug = routeForLabel(category.name) || "/servicios/#categorias";
       return <a class={`category-tile category-tile-${index + 1}`} href={slug}>
         <img src={image} srcset={imageSrcSet} sizes="(min-width: 801px) 50vw, calc(100vw - 2.5rem)" alt={imageAlt(category.image, category.name)} width="1000" height="1334" loading="lazy" />
