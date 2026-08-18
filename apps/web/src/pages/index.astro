@@ -1,11 +1,17 @@
 ---
 import HomeComposition from "../components/HomeComposition.astro";
 import { loadHomeView } from "../lib/homeView";
+import { sanityImageSrcSet, sanityImageUrl } from "../lib/sanity";
+import { localImageSrcSet, localImages } from "../lib/site";
 import SiteLayout from "../layouts/SiteLayout.astro";
+import type { HomeBlock } from "../lib/sanity/types";
 
 const view = await loadHomeView();
+const heroBlock = view.home?.hero as HomeBlock | undefined;
+const heroPreloadImage = sanityImageUrl(heroBlock?.image, { width: 768, quality: 78 }) || "/images/home/space-hero-768.webp";
+const heroSrcSet = sanityImageSrcSet(heroBlock?.image, [768, 1200, 1800], 78) || localImageSrcSet(localImages.hero, [768, 1200, 1800]);
 ---
 
-<SiteLayout title={view.title} description={view.description}>
+<SiteLayout title={view.title} description={view.description} preloadImage={{ href: heroPreloadImage, srcset: heroSrcSet, sizes: "100vw", media: "(max-width: 800px)" }}>
   <HomeComposition view={view} />
 </SiteLayout>

@@ -10,6 +10,6 @@ const imageSrcSet = sanityImageSrcSet(block?.image, [480, 768, 1200], 78) || loc
 ---
 
 <section class="gift-section" id="gift-cards" aria-labelledby="gift-title">
-  <div class="gift-image"><img src={image} srcset={imageSrcSet} sizes="(min-width: 801px) 50vw, 100vw" alt={imageAlt(block?.image, "Gift Card de Boho Spa Urbano")} width="1200" height="2133" loading="lazy" /></div>
+  <div class="gift-image"><img src={image} srcset={imageSrcSet} sizes="(min-width: 801px) 50vw, calc(100vw - 2.5rem)" alt={imageAlt(block?.image, "Gift Card de Boho Spa Urbano")} width="1200" height="2133" loading="lazy" /></div>
   <div class="gift-copy"><p class="eyebrow">{block?.eyebrow || "Gift Cards Boho"}</p><h2 id="gift-title">{block?.title || "Regalá un momento para disfrutar."}</h2><p>{block?.description || "Hay regalos que se usan y otros que se viven. Elegí una experiencia y dejá que Boho prepare el resto."}</p><a class="button button-light" href={hrefForCta(block?.primaryCta, "/gift-cards/")}>{block?.primaryCta?.label || "Ver Gift Cards"}</a><a class="gift-whatsapp" href={whatsappHref(settings)} target="_blank" rel="noopener noreferrer" data-boho-track="gift_card_contact" data-boho-track-context="home_gift_card">También podemos ayudarte por WhatsApp ↗</a></div>
 </section>

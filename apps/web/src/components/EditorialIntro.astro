@@ -13,7 +13,7 @@ const copy = block?.description || parsed.mainText || "Un espacio íntimo para b
 
 <section class="section intro-section" id="propuesta" aria-labelledby="intro-title">
   <div class="editorial-grid intro-grid">
-    <div class="image-frame image-frame-tall"><img src={image} srcset={imageSrcSet} sizes="(min-width: 801px) 50vw, 100vw" alt={imageAlt(block?.image, "Productos y texturas de cuidado en Boho")} width="1000" height="1250" loading="lazy" /></div>
+    <div class="image-frame image-frame-tall"><img src={image} srcset={imageSrcSet} sizes="(min-width: 801px) 50vw, calc(100vw - 2.5rem)" alt={imageAlt(block?.image, "Productos y texturas de cuidado en Boho")} width="1000" height="1250" loading="lazy" /></div>
     <div class="intro-copy">
       <p class="eyebrow">{block?.eyebrow || parsed.eyebrow || "La propuesta Boho"}</p>
       <h2 id="intro-title">{block?.title || parsed.title || "Cuidarte también puede ser una forma de hacer pausa."}</h2>
