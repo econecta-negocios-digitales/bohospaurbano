@@ -9,7 +9,7 @@ import ConversionClose from '../../components/ConversionClose.astro';
 import SiteMeta from '../../components/SiteMeta.astro';
 import ConsentBanner from '../../components/ConsentBanner.astro';
 import CategoryServiceList from '../../components/CategoryServiceList.astro';
-import { whatsappHref } from '../../lib/site';
+import { whatsappHref, whatsappHrefWithMessage } from '../../lib/site';
 import { categoryField, sectionByHeading, sectionEyebrow, sectionTitle, servicesForCategory, technicalCategoryDescription, technicalCategoryTitle } from '../../lib/categoryPresentation';
 import { loadCategories, loadServices, loadFooter, loadNavigation, loadSiteSettings } from '../../lib/sanity';
 
@@ -23,6 +23,7 @@ const serviceSection = sectionByHeading(category, /masajes destacados/i);
 const guidanceSection = sectionByHeading(category, /qué masaje elegir/i);
 const categoryServices = servicesForCategory(category, services);
 const featured = categoryServices[0]!;
+const guidanceWhatsAppMessage = 'Hola, necesito orientación para elegir un masaje en Boho Spa Urbano.';
 ---
 
 <!doctype html>
@@ -66,7 +67,7 @@ const featured = categoryServices[0]!;
         </div>
       </section>
       <section class="section massage-orientation" aria-labelledby="massage-orientation-title">
-        <div class="massage-orientation-copy"><p class="eyebrow">{guidanceSection?.heading}</p><h2 id="massage-orientation-title">{sectionTitle(guidanceSection) || guidanceSection?.heading}</h2>{guidanceSection?.paragraphs.map((paragraph) => <p>{paragraph}</p>)}{guidanceSection?.fields["cta principal"] && <a class="button button-primary" href={whatsappHref()} target="_blank" rel="noopener noreferrer" data-boho-track="whatsapp_click" data-boho-track-context="category_massage">{guidanceSection.fields["cta principal"]}</a>}</div>
+        <div class="massage-orientation-copy"><p class="eyebrow">{guidanceSection?.heading}</p><h2 id="massage-orientation-title">{sectionTitle(guidanceSection) || guidanceSection?.heading}</h2>{guidanceSection?.paragraphs.map((paragraph) => paragraph === 'Consultar por WhatsApp' ? <a href={whatsappHrefWithMessage(guidanceWhatsAppMessage, settings)} target="_blank" rel="noopener noreferrer" data-boho-track="whatsapp_click" data-boho-track-context="category_massage">{paragraph}</a> : <p>{paragraph}</p>)}{guidanceSection?.fields["cta principal"] && <a class="button button-primary" href={whatsappHref()} target="_blank" rel="noopener noreferrer" data-boho-track="whatsapp_click" data-boho-track-context="category_massage">{guidanceSection.fields["cta principal"]}</a>}</div>
         <div class="massage-orientation-notes"><span>Masaje</span><span>Reflexología</span><span>Drenaje</span></div>
       </section>
       <ContactReservation settings={settings} />

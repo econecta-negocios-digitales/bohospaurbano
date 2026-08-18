@@ -15,6 +15,7 @@ const env = loadEnv(
 export default defineConfig({
   output: "static",
   site: "https://www.bohospaurbano.com.ar",
+  trailingSlash: "always",
   adapter: vercel(),
   integrations: [
     sanity({

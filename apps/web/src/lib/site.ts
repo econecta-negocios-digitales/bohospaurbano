@@ -21,6 +21,30 @@ export const BOHO_WHATSAPP_NUMBER = "5492916412343";
 export const BOHO_WHATSAPP_URL = `https://wa.me/${BOHO_WHATSAPP_NUMBER}`;
 export const BOHO_BOOKING_URL = "https://bohospaurbano.site.agendapro.com/ar/sucursal/412054";
 export const BOHO_SITE_URL = "https://www.bohospaurbano.com.ar";
+export const BOHO_ADDRESS = "Santa Fe 157";
+export const BOHO_CITY = "Bahía Blanca";
+export const BOHO_REGION = "Buenos Aires";
+export const BOHO_MAPS_URL = "https://www.google.com/maps/search/?api=1&query=Boho%20Spa%20Urbano&query_place_id=ChIJYRc0Q7C97ZURDQMSJV4RzbE";
+export const BOHO_INSTAGRAM_URL = "https://www.instagram.com/boho.beauty.spa/";
+
+export const bohoLocalBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "DaySpa",
+  "@id": `${BOHO_SITE_URL}/#business`,
+  name: "Boho Spa Urbano",
+  url: `${BOHO_SITE_URL}/`,
+  logo: `${BOHO_SITE_URL}/brand/logo-boho.webp`,
+  telephone: `+${BOHO_WHATSAPP_NUMBER}`,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: BOHO_ADDRESS,
+    addressLocality: BOHO_CITY,
+    addressRegion: BOHO_REGION,
+    addressCountry: "AR",
+  },
+  sameAs: [BOHO_INSTAGRAM_URL],
+  hasMap: BOHO_MAPS_URL,
+} as const;
 
 export const INDEXABLE_PUBLIC_ROUTES = [
   "/",
@@ -102,6 +126,12 @@ export function hrefForCta(cta: Cta | undefined, fallback: string): string {
 export function whatsappHref(_settings?: SiteSettings | null): string {
   const value = _settings?.contact?.whatsapp;
   return typeof value === "string" && value.startsWith("https://wa.me/") ? value : BOHO_WHATSAPP_URL;
+}
+
+export function whatsappHrefWithMessage(message: string, _settings?: SiteSettings | null): string {
+  const url = new URL(whatsappHref(_settings));
+  url.searchParams.set("text", message);
+  return url.toString();
 }
 
 export function bookingHref(_settings?: SiteSettings | null): string {
