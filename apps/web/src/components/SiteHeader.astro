@@ -6,9 +6,14 @@ interface Props { navigation?: Navigation | null; settings?: SiteSettings | null
 const { navigation, settings } = Astro.props;
 const isHome = Astro.url.pathname === "/";
 const fallbackItems = ["Servicios", "Experiencias", "Gift Cards", "Nosotros"].map((label) => [label, currentPhaseRoute(label, isHome)]);
-const items = navigation?.mainItems?.length
+const configuredItems = navigation?.mainItems?.length
   ? navigation.mainItems.map((item) => [item.label, item.link?.externalUrl || currentPhaseRoute(item.label, isHome)])
   : fallbackItems;
+const items = configuredItems.some(([label]) => (label || "").toLowerCase() === "regalos corporativos")
+  ? configuredItems
+  : configuredItems.flatMap(([label, href]) => (label || "").toLowerCase() === "gift cards"
+    ? [[label, href], ["Regalos Corporativos", "/regalos-corporativos/"]]
+    : [[label, href]]);
 const primaryCta = navigation?.primaryCta;
 const booking = hrefForCta(primaryCta, bookingHref(settings));
 const bookingLabel = primaryCta?.label || "Reservá tu turno";
