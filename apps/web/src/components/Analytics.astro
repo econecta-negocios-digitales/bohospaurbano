@@ -13,6 +13,12 @@ const consentKey = BOHO_MEASUREMENT_CONSENT_KEY;
 
     const hasGa4 = Boolean(ga4Id);
     const hasMeta = Boolean(metaPixelId);
+    const metaEventNames = {
+      reservation_click: "Schedule",
+      whatsapp_click: "Contact",
+      gift_card_contact: "Contact",
+      corporate_contact: "Contact",
+    };
     let consentStatus = "pending";
     let trackingEnabled = false;
     let ga4Initialized = false;
@@ -40,6 +46,7 @@ const consentKey = BOHO_MEASUREMENT_CONSENT_KEY;
 
     const loadMeta = () => {
       if (!hasMeta || metaInitialized) return;
+      metaInitialized = true;
       window.fbq = window.fbq || function () { window.fbq.callMethod ? window.fbq.callMethod.apply(window.fbq, arguments) : window.fbq.queue.push(arguments); };
       if (!window._fbq) window._fbq = window.fbq;
       window.fbq.push = window.fbq;
@@ -50,9 +57,9 @@ const consentKey = BOHO_MEASUREMENT_CONSENT_KEY;
       window.fbq("track", "PageView");
       const script = document.createElement("script");
       script.async = true;
+      script.dataset.bohoMetaPixel = "true";
       script.src = "https://connect.facebook.net/en_US/fbevents.js";
       document.head.appendChild(script);
-      metaInitialized = true;
     };
 
     const initialize = () => {
@@ -65,7 +72,8 @@ const consentKey = BOHO_MEASUREMENT_CONSENT_KEY;
       if (!trackingEnabled) return;
       const params = { page_path: window.location.pathname, context };
       if (hasGa4 && typeof window.gtag === "function") window.gtag("event", eventName, params);
-      if (hasMeta && typeof window.fbq === "function") window.fbq("trackCustom", eventName, params);
+      const metaEventName = metaEventNames[eventName];
+      if (hasMeta && metaEventName && typeof window.fbq === "function") window.fbq("track", metaEventName);
     };
 
     window.addEventListener("boho:consent-changed", (event) => {
